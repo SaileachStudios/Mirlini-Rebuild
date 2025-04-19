@@ -8,6 +8,7 @@ namespace SaileachStudios.Mirlini.InputSystem {
         public float GetAxisValue(string axisName);
 
         //Touch Input
+        Vector2 screenSize { get; }
         int TouchCount { get; }
         Vector2 GetTouchPosition(int index);
 

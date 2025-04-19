@@ -12,6 +12,7 @@ public class MockInputWrapper : IInputWrapper
     }
 
     //Touch
+    public Vector2 screenSize { get; set; } = new Vector2(1200, 800);
     public int TouchCount { get; set; } = 1;
     public Vector2 TouchPosition { get; set; } = new Vector2(300, 500);
     public Vector2 GetTouchPosition(int index) {
@@ -21,4 +22,5 @@ public class MockInputWrapper : IInputWrapper
     //Gyro
     public bool GyroEnabled { get; set; } = false;
     public Vector3 GyroGravity { get; set; } = Vector3.zero;
+
 }

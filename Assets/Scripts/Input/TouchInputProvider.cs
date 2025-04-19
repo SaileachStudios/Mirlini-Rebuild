@@ -10,10 +10,10 @@ namespace SaileachStudios.Mirlini.InputSystem
         private Vector2 screenCenter = Vector2.zero;
         private float speedModifer = 1f;
 
-        public TouchInputProvider(IInputWrapper wrapper, float speedMod, Vector2 screenSize) {
+        public TouchInputProvider(IInputWrapper wrapper, float speedMod) {
             inputWrapper = wrapper;
             this.speedModifer = speedMod;
-            screenCenter = new Vector2(screenSize.x / 2f, screenSize.y / 2f);
+            screenCenter = new Vector2(wrapper.screenSize.x / 2f, wrapper.screenSize.y / 2f);
         }
 
         public Vector2 GetInput() {

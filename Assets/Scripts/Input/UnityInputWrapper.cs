@@ -12,6 +12,7 @@ namespace SaileachStudios.Mirlini.InputSystem
         }
 
         //Touch
+        public Vector2 screenSize => new Vector2(Screen.width, Screen.height);
         public int TouchCount => Input.touchCount;
         public Vector2 GetTouchPosition(int index) {
             return Input.GetTouch(index).position;
