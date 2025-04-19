@@ -63,4 +63,15 @@ public class GyroInputProviderTests
         Assert.AreEqual(0.4f, result.x, 0.01f, $"Expected X = 0.4, got {result.x}");
         Assert.AreEqual(-0.2f, result.y, 0.01f, $"Expected Y = -0.2, got {result.y}");
     }
+
+    [Test]
+    public void GetInput_ReturnsCorrectVector_WithNegativeGyroValues() {
+        var mockGyro = new MockInputWrapper { GyroGravity = new Vector2(-0.3f, 0.5f) };  // Simulating device tilt
+        var gyroInput = new GyroInputProvider(mockGyro);
+
+        Vector2 result = gyroInput.GetInput();
+
+        Assert.AreEqual(1.0f, result.x, 0.001f, $"Expected X: 1.0f, but got {result.x}");
+        Assert.AreEqual(0.6f, result.y, 0.001f, $"Expected Y: 0.6f, but got {result.y}");
+    }
 }
