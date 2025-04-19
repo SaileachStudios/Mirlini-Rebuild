@@ -7,9 +7,11 @@ namespace SaileachStudios.Mirlini.InputSystem
     public class GyroInputProvider : IInputProvider
     {
         private IInputWrapper inputWrapper;
+        private float speedModifer = 1f;
 
-        public GyroInputProvider(IInputWrapper wrapper) {
+        public GyroInputProvider(IInputWrapper wrapper, float speedMod) {
             inputWrapper = wrapper;
+            this.speedModifer = speedMod;
         }
 
         public bool GyroEnabled {
@@ -23,12 +25,8 @@ namespace SaileachStudios.Mirlini.InputSystem
             return new Vector2 (gravity.y, -gravity.x);
         }
 
-        public float GetSunRotationModifier() {
-            return 0;
-        }
-
         public float GetSpeedModifier() {
-            return 2f;
+            return speedModifer;
         }
 
     }

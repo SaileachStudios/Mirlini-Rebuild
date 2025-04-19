@@ -9,7 +9,7 @@ public class TouchInputProviderTests
         var mockInput = new MockInputWrapper { TouchPosition = new Vector2(600, 400), TouchCount = 0 };
         var screenSize = new Vector2(1200, 800);
 
-        var testTouchHandler = new TouchInputProvider(mockInput, screenSize);
+        var testTouchHandler = new TouchInputProvider(mockInput, 0.2f, screenSize);
 
         var result = testTouchHandler.GetInput();
         Assert.AreEqual(0f, result.x);
@@ -21,7 +21,7 @@ public class TouchInputProviderTests
         var mockInput = new MockInputWrapper { TouchPosition = new Vector2(600, 400), TouchCount = 1 };
         var screenSize = new Vector2(1200, 800);
 
-        var testTouchHandler = new TouchInputProvider(mockInput, screenSize);
+        var testTouchHandler = new TouchInputProvider(mockInput, 0.2f, screenSize);
 
         var result = testTouchHandler.GetInput();
         Assert.AreEqual(0f, result.x);
@@ -33,7 +33,7 @@ public class TouchInputProviderTests
         var mockInput = new MockInputWrapper { TouchPosition = new Vector2(0, 800), TouchCount = 1 };
         var screenSize = new Vector2(1200, 800);
 
-        var testTouchHandler = new TouchInputProvider(mockInput, screenSize);
+        var testTouchHandler = new TouchInputProvider(mockInput, 0.2f, screenSize);
 
         var result = testTouchHandler.GetInput();
         Assert.AreEqual(0.2f, result.x);
@@ -45,7 +45,7 @@ public class TouchInputProviderTests
         var mockInput = new MockInputWrapper { TouchPosition = new Vector2(1200, 0), TouchCount = 1 };
         var screenSize = new Vector2(1200, 800);
 
-        var testTouchHandler = new TouchInputProvider(mockInput, screenSize);
+        var testTouchHandler = new TouchInputProvider(mockInput, 0.2f, screenSize);
 
         var result = testTouchHandler.GetInput();
         Assert.AreEqual(-0.2f, result.x);

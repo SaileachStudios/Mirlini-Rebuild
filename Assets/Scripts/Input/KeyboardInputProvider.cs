@@ -4,12 +4,12 @@ namespace SaileachStudios.Mirlini.InputSystem
 {
     public class KeyboardInputProvider : IInputProvider
     {
-        private readonly float sunRotationModifier;
         private readonly IInputWrapper inputWrapper;
+        private float speedModifer = 1f;
 
-        public KeyboardInputProvider(IInputWrapper wrapper, float sunRotMod = -60f) {
+        public KeyboardInputProvider(IInputWrapper wrapper, float speedMod) {
             inputWrapper = wrapper;
-            sunRotationModifier = sunRotMod;
+            speedModifer = speedMod;
         }
 
         public Vector2 GetInput() {
@@ -19,12 +19,8 @@ namespace SaileachStudios.Mirlini.InputSystem
             ) * GetSpeedModifier();
         }
 
-        public float GetSunRotationModifier() {
-            return sunRotationModifier;
-        }
-
         public float GetSpeedModifier() {
-            return 1f;
+            return speedModifer;
         }
     }
 }

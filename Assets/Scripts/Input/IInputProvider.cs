@@ -10,11 +10,6 @@ namespace SaileachStudios.Mirlini.InputSystem
         Vector2 GetInput();
 
         /// <summary>
-        /// Returns a modifier to adjust sun/light rotation based on input type.
-        /// </summary>
-        float GetSunRotationModifier();
-
-        /// <summary>
         /// Returns speed modifier to be used for this provider
         /// </summary>
         float GetSpeedModifier();

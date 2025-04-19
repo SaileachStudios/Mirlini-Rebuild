@@ -8,9 +8,11 @@ namespace SaileachStudios.Mirlini.InputSystem
     {
         private readonly IInputWrapper inputWrapper;
         private Vector2 screenCenter = Vector2.zero;
+        private float speedModifer = 1f;
 
-        public TouchInputProvider(IInputWrapper wrapper, Vector2 screenSize) {
+        public TouchInputProvider(IInputWrapper wrapper, float speedMod, Vector2 screenSize) {
             inputWrapper = wrapper;
+            this.speedModifer = speedMod;
             screenCenter = new Vector2(screenSize.x / 2f, screenSize.y / 2f);
         }
 
@@ -24,13 +26,8 @@ namespace SaileachStudios.Mirlini.InputSystem
             return Vector2.zero;
         }
 
-        public float GetSunRotationModifier() {
-            return 0f;
-        }
-
-
         public float GetSpeedModifier() {
-            return 0.2f;
+            return speedModifer;
         }
 
     }
