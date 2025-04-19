@@ -4,8 +4,16 @@ using UnityEngine;
 
 namespace SaileachStudios.Mirlini.InputSystem { 
     public interface IInputWrapper {
+        //Keyboard Input
+        public float GetAxisValue(string axisName);
+
+        //Touch Input
         int TouchCount { get; }
         Vector2 GetTouchPosition(int index);
-        public float GetAxisValue(string axisName);
+
+        //Gyro Input
+        public bool GyroEnabled { get; set; }
+        public Vector3 GyroGravity { get; set; }
+
     }
 }

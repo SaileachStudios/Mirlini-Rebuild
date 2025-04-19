@@ -19,13 +19,19 @@ namespace SaileachStudios.Mirlini.InputSystem
                 Vector2 touchPos = inputWrapper.GetTouchPosition(0);
                 float x = (touchPos.y / screenCenter.y) - 1f;
                 float y = -1f * ((touchPos.x / screenCenter.x) - 1f);
-                return new Vector2(x, y);
+                return new Vector2(x, y) * GetSpeedModifier();
             }
             return Vector2.zero;
         }
 
         public float GetSunRotationModifier() {
-            throw new System.NotImplementedException();
+            return 0f;
         }
+
+
+        public float GetSpeedModifier() {
+            return 0.2f;
+        }
+
     }
 }

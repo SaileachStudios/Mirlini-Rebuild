@@ -2,7 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using SaileachStudios.Mirlini.InputSystem;
 
-public class TouchInputProviderTest
+public class TouchInputProviderTests
 {
     [Test]
     public void GetInput_ReturnsCorrectVector_withoutTouch() {
@@ -36,8 +36,8 @@ public class TouchInputProviderTest
         var testTouchHandler = new TouchInputProvider(mockInput, screenSize);
 
         var result = testTouchHandler.GetInput();
-        Assert.AreEqual(1f, result.x);
-        Assert.AreEqual(1f, result.y);
+        Assert.AreEqual(0.2f, result.x);
+        Assert.AreEqual(0.2f, result.y);
     }
 
     [Test]
@@ -48,7 +48,7 @@ public class TouchInputProviderTest
         var testTouchHandler = new TouchInputProvider(mockInput, screenSize);
 
         var result = testTouchHandler.GetInput();
-        Assert.AreEqual(-1f, result.x);
-        Assert.AreEqual(-1f, result.y);
+        Assert.AreEqual(-0.2f, result.x);
+        Assert.AreEqual(-0.2f, result.y);
     }
 }

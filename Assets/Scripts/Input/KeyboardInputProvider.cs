@@ -16,11 +16,15 @@ namespace SaileachStudios.Mirlini.InputSystem
             return new Vector2(
                 inputWrapper.GetAxisValue("Vertical"),
                 -1 * inputWrapper.GetAxisValue("Horizontal")
-            );
+            ) * GetSpeedModifier();
         }
 
         public float GetSunRotationModifier() {
             return sunRotationModifier;
+        }
+
+        public float GetSpeedModifier() {
+            return 1f;
         }
     }
 }
