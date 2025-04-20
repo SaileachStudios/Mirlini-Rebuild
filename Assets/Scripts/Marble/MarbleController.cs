@@ -17,7 +17,7 @@ namespace SaileachStudios.Mirlini.Marble
         }
 
         public Vector3 CalculateMovementForce() {
-            Vector2 playerInput = inputProvider.GetInput();
+            Vector2 playerInput = inputProvider.GetInput().normalized;
             Vector3 result = new Vector3(playerInput.x * speed, 0f, playerInput.y * speed);
             velocity = result.magnitude;
 
