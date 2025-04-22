@@ -27,6 +27,10 @@ namespace SaileachStudios.Mirlini.Board
             }
         }
 
+        private void OnTriggerEnter(Collider other) {
+            controller.MarbleDropped();
+        }
+
         public HoleController GetHoleController() {
             return controller;
         }
