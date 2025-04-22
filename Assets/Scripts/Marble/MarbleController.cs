@@ -27,5 +27,6 @@ namespace SaileachStudios.Mirlini.Marble
         public bool IsMoving {
             get { return velocity != 0f; }
         }
+
     }
 }

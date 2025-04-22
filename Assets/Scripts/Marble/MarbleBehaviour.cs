@@ -1,15 +1,21 @@
 using SaileachStudios.Mirlini.InputSystem;
 using UnityEngine;
+using SaileachStudios.Mirlini.Board;
+using System.Collections;
 
 namespace SaileachStudios.Mirlini.Marble
 {
     public class MarbleBehaviour : MonoBehaviour
     {
         [SerializeField] private float speed = 1f;
+        [SerializeField] private float shrinkDuration = 1f;
 
         private Rigidbody rb;
         private IInputProvider inputProvider;
         private MarbleController controller;
+        private bool isPaused = false;
+        private Vector3 holeLocation = Vector3.zero;
+        private float currentSpeed = 0f;
 
         private void Awake() {
             rb = GetComponent<Rigidbody>();
@@ -19,10 +25,21 @@ namespace SaileachStudios.Mirlini.Marble
             var factory = new InputProviderFactory(new PlatformDetector(), new UnityInputWrapper());
             inputProvider = factory.Create();
             controller = new MarbleController(inputProvider, speed);
+
+            HoleBehavior hole = GameObject.FindObjectOfType<HoleBehavior>();
+            holeLocation = hole.gameObject.transform.position;
+            HoleController holeController = hole.GetHoleController();
+            holeController.onMarbleDropped += OnMarbleDropped;
         }
 
         private void FixedUpdate() {
-            rb.AddForce(controller.CalculateMovementForce());
+            if (!isPaused) {
+                rb.AddForce(controller.CalculateMovementForce());
+                currentSpeed = rb.velocity.magnitude;
+            }
+            else {
+                rb.velocity = Vector3.zero;
+            }
         }
 
         private void OnDrawGizmosSelected() {
@@ -31,6 +48,26 @@ namespace SaileachStudios.Mirlini.Marble
                 Gizmos.color = Color.green;
                 Gizmos.DrawLine(transform.position, transform.position + force.normalized * 5f);
             }
+        }
+
+        public void OnMarbleDropped(bool isCorrect) {
+            isPaused = true;
+            StartCoroutine("ShrinkOverTime");
+        }
+
+        IEnumerator ShrinkOverTime() {
+            Vector3 startScale = transform.localScale;
+            Vector3 endScale = Vector3.zero;
+            float elapsed = 0f;
+
+            while (elapsed < shrinkDuration) {
+                elapsed += Time.deltaTime;
+                transform.localScale = Vector3.Lerp(startScale, endScale, elapsed / shrinkDuration);
+                transform.position = Vector3.Lerp(transform.position, holeLocation, elapsed / shrinkDuration);
+                yield return null;
+            }
+
+            transform.localScale = endScale;
         }
     }
 }
