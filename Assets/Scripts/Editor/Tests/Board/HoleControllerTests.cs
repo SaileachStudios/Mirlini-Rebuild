@@ -15,7 +15,7 @@ public class HoleControllerTests
         controller.onHoleStatusChanged += HoleChangedListener;
     }
 
-    private void MarbleListener(bool isCorrect) { 
+    private void MarbleListener(bool isCorrect, Vector3 holeLocation) { 
         holeIsCorrect = isCorrect;
     }
     private void HoleChangedListener(bool isCorrect) { 
@@ -26,7 +26,7 @@ public class HoleControllerTests
     public void Test_OnMarbleDroppedCalled_WithFalse() {
         holeIsCorrect = true;
         controller.SetAsCorrectHole(false);
-        controller.MarbleDropped();
+        controller.MarbleDropped(Vector3.zero);
         Assert.AreEqual(false, holeIsCorrect);
     }
 
@@ -34,7 +34,7 @@ public class HoleControllerTests
     public void Test_OnMarbleDroppedCalled_WithTrue() {
         holeIsCorrect = false;
         controller.SetAsCorrectHole(true);
-        controller.MarbleDropped();
+        controller.MarbleDropped(Vector3.zero);
         Assert.AreEqual(true, holeIsCorrect);
     }
 

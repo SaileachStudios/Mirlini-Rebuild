@@ -23,7 +23,7 @@ namespace SaileachStudios.Mirlini.Board
             controller.onMarbleDropped += OnBallDropped;
         }
 
-        private void OnBallDropped(bool isCorrect) {
+        private void OnBallDropped(bool isCorrect, Vector3 holeLocation) {
             audioSource.clip = dropSFX;
             audioSource.Play();
         }

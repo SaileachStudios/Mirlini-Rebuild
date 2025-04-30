@@ -14,7 +14,6 @@ namespace SaileachStudios.Mirlini.Marble
         private IInputProvider inputProvider;
         private MarbleController controller;
         private bool isPaused = false;
-        private Vector3 holeLocation = Vector3.zero;
         private float currentSpeed = 0f;
 
         private void Awake() {
@@ -27,7 +26,6 @@ namespace SaileachStudios.Mirlini.Marble
             controller = new MarbleController(inputProvider, speed);
 
             HoleBehavior hole = GameObject.FindObjectOfType<HoleBehavior>();
-            holeLocation = hole.gameObject.transform.position;
             HoleController holeController = hole.GetHoleController();
             holeController.onMarbleDropped += OnMarbleDropped;
         }
@@ -50,12 +48,12 @@ namespace SaileachStudios.Mirlini.Marble
             }
         }
 
-        public void OnMarbleDropped(bool isCorrect) {
+        public void OnMarbleDropped(bool isCorrect, Vector3 holeLocation) {
             isPaused = true;
-            StartCoroutine("ShrinkOverTime");
+            StartCoroutine(ShrinkOverTime(holeLocation));
         }
 
-        IEnumerator ShrinkOverTime() {
+        IEnumerator ShrinkOverTime(Vector3 holePosition) {
             Vector3 startScale = transform.localScale;
             Vector3 endScale = Vector3.zero;
             float elapsed = 0f;
@@ -63,7 +61,7 @@ namespace SaileachStudios.Mirlini.Marble
             while (elapsed < shrinkDuration) {
                 elapsed += Time.deltaTime;
                 transform.localScale = Vector3.Lerp(startScale, endScale, elapsed / shrinkDuration);
-                transform.position = Vector3.Lerp(transform.position, holeLocation, elapsed / shrinkDuration);
+                transform.position = Vector3.Lerp(transform.position, holePosition, elapsed / shrinkDuration);
                 yield return null;
             }
 

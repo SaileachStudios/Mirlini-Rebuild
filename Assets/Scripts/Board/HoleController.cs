@@ -6,7 +6,7 @@ namespace SaileachStudios.Mirlini.Board
 {
     public class HoleController
     {
-        public delegate void OnMarbleDropped(bool isCorrect);
+        public delegate void OnMarbleDropped(bool isCorrect, Vector3 holeLocation);
         public OnMarbleDropped onMarbleDropped;
         public delegate void OnHoleStatusChanged(bool isCorrect);
         public OnHoleStatusChanged onHoleStatusChanged;
@@ -20,9 +20,9 @@ namespace SaileachStudios.Mirlini.Board
             }
         }
 
-        public void MarbleDropped() {
+        public void MarbleDropped(Vector3 holeLocation) {
             if (onMarbleDropped != null) {
-                onMarbleDropped(isCorrectHole);
+                onMarbleDropped(isCorrectHole, holeLocation);
             }
         }
 
