@@ -5,8 +5,7 @@ using UnityEngine;
 
 namespace SaileachStudios.Mirlini.Board
 {
-    public class AudioSFXController
-    {
+    public class AudioSFXController {
         private AudioClip clangSFX;
         private AudioClip dropSFX;
         private AudioSource audioSource;
@@ -28,6 +27,8 @@ namespace SaileachStudios.Mirlini.Board
             audioSource.Play();
         }
 
-
+        public void TearDown() {
+            GameManagerBehavior.Instance.Events.OnMarbleDropped -= OnBallDropped;
+        }
     }
 }

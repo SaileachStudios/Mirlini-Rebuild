@@ -12,7 +12,7 @@ namespace SaileachStudios.Mirlini.Board
 
         private HoleController controller;
 
-        void Awake() {
+        void Start() {
             GameManagerBehavior.Instance.Events.OnHoleStatusChanged += OnStatusChanged;
         }
 
@@ -31,8 +31,8 @@ namespace SaileachStudios.Mirlini.Board
             controller.MarbleDropped(transform.position);
         }
 
-        public HoleController GetHoleController() {
-            return controller;
+        private void OnDestroy() {
+            GameManagerBehavior.Instance.Events.OnHoleStatusChanged -= OnStatusChanged;
         }
     }
 }

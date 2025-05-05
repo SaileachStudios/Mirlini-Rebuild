@@ -66,5 +66,9 @@ namespace SaileachStudios.Mirlini.Marble
 
             transform.localScale = endScale;
         }
+
+        private void OnDestroy() {
+            GameManagerBehavior.Instance.Events.OnMarbleDropped -= OnMarbleDropped;
+        }
     }
 }
