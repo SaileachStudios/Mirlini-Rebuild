@@ -1,29 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SaileachStudios.Mirlini.Core;
 
 namespace SaileachStudios.Mirlini.Board
 {
     public class HoleController
     {
-        public delegate void OnMarbleDropped(bool isCorrect, Vector3 holeLocation);
-        public OnMarbleDropped onMarbleDropped;
-        public delegate void OnHoleStatusChanged(bool isCorrect);
-        public OnHoleStatusChanged onHoleStatusChanged;
-
         private bool isCorrectHole = false;
+        private GameEvents events = null; 
 
+        public HoleController() {
+            Debug.LogError("HoleController Instatiated Without GameEvents");
+        }
+
+        public HoleController(GameEvents eventManager ) {
+            events = eventManager;
+        }
         public void SetAsCorrectHole(bool isCorrect) {
             isCorrectHole = isCorrect;
-            if(onHoleStatusChanged != null) {
-                onHoleStatusChanged(isCorrectHole);
-            }
+            events.ChangeHoleStatus(isCorrect);
         }
 
         public void MarbleDropped(Vector3 holeLocation) {
-            if (onMarbleDropped != null) {
-                onMarbleDropped(isCorrectHole, holeLocation);
-            }
+            events.BallDropped(isCorrectHole, holeLocation);
         }
 
     }

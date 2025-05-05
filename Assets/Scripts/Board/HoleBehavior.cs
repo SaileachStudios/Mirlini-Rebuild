@@ -1,3 +1,4 @@
+using SaileachStudios.Mirlini.Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +13,7 @@ namespace SaileachStudios.Mirlini.Board
         private HoleController controller;
 
         void Awake() {
-            controller = new HoleController();
-            controller.onHoleStatusChanged += OnStatusChanged;
+            GameManagerBehavior.Instance.Events.OnHoleStatusChanged += OnStatusChanged;
         }
 
         void OnStatusChanged(bool isCorrect) {

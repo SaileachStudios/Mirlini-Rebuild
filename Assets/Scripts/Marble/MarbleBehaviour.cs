@@ -2,6 +2,7 @@ using SaileachStudios.Mirlini.InputSystem;
 using UnityEngine;
 using SaileachStudios.Mirlini.Board;
 using System.Collections;
+using SaileachStudios.Mirlini.Core;
 
 namespace SaileachStudios.Mirlini.Marble
 {
@@ -25,9 +26,7 @@ namespace SaileachStudios.Mirlini.Marble
             inputProvider = factory.Create();
             controller = new MarbleController(inputProvider, speed);
 
-            HoleBehavior hole = GameObject.FindObjectOfType<HoleBehavior>();
-            HoleController holeController = hole.GetHoleController();
-            holeController.onMarbleDropped += OnMarbleDropped;
+            GameManagerBehavior.Instance.Events.OnMarbleDropped += OnMarbleDropped;
         }
 
         private void FixedUpdate() {

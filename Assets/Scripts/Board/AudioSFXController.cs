@@ -1,3 +1,4 @@
+using SaileachStudios.Mirlini.Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,8 +20,7 @@ namespace SaileachStudios.Mirlini.Board
             dropSFX = drop;
             clangSFX = clang;
 
-            HoleController controller = GameObject.FindObjectOfType<HoleBehavior>().GetHoleController();
-            controller.onMarbleDropped += OnBallDropped;
+            GameManagerBehavior.Instance.Events.OnMarbleDropped += OnBallDropped;
         }
 
         private void OnBallDropped(bool isCorrect, Vector3 holeLocation) {

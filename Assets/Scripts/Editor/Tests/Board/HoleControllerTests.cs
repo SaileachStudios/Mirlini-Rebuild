@@ -4,51 +4,51 @@ using SaileachStudios.Mirlini.Board;
 
 public class HoleControllerTests
 {
-    private bool holeIsCorrect = false;
-    private bool holeWasChanged = false;
     private HoleController controller;
-    
+    private MockGameEvents gameEvents;
     [SetUp]
     public void Setup() {
-        controller = new HoleController();
-        controller.onMarbleDropped += MarbleListener;
-        controller.onHoleStatusChanged += HoleChangedListener;
-    }
-
-    private void MarbleListener(bool isCorrect, Vector3 holeLocation) { 
-        holeIsCorrect = isCorrect;
-    }
-    private void HoleChangedListener(bool isCorrect) { 
-        holeWasChanged = isCorrect;
+        gameEvents = new MockGameEvents();
+        controller = new HoleController(gameEvents);
     }
 
     [Test]
     public void Test_OnMarbleDroppedCalled_WithFalse() {
-        holeIsCorrect = true;
         controller.SetAsCorrectHole(false);
-        controller.MarbleDropped(Vector3.zero);
-        Assert.AreEqual(false, holeIsCorrect);
+        controller.MarbleDropped(Vector3.up);
+        Assert.AreEqual(true, gameEvents.BallDroppedCalled);
+        Assert.AreEqual(false, gameEvents.BallDroppedCalledWithStatus);
+        Assert.AreEqual(Vector3.up, gameEvents.BallDroppedCalledWithLocation);
     }
 
     [Test]
     public void Test_OnMarbleDroppedCalled_WithTrue() {
-        holeIsCorrect = false;
         controller.SetAsCorrectHole(true);
-        controller.MarbleDropped(Vector3.zero);
-        Assert.AreEqual(true, holeIsCorrect);
+        controller.MarbleDropped(Vector3.up);
+        Assert.AreEqual(true, gameEvents.BallDroppedCalled);
+        Assert.AreEqual(true, gameEvents.BallDroppedCalledWithStatus);
+        Assert.AreEqual(Vector3.up, gameEvents.BallDroppedCalledWithLocation);
     }
 
     [Test]
-    public void Test_OnCorrectHoleChanged() {
-        holeWasChanged = false;
+    public void Test_HoleStatusChangedToTrue() {
         controller.SetAsCorrectHole(true);
 
-        Assert.AreEqual(true, holeWasChanged);
+        Assert.AreEqual(true, gameEvents.HoleStatusWasChanged);
+        Assert.AreEqual(true, gameEvents.HoleStatusChangedTo);
+    }
+
+    [Test]
+    public void Test_HoleStatusChangedToFalse() {
+        controller.SetAsCorrectHole(false);
+
+        Assert.AreEqual(true, gameEvents.HoleStatusWasChanged, "ChangeHoleStatus not called");
+        Assert.AreEqual(false, gameEvents.HoleStatusChangedTo, "ChangeHoleStatus called with wrong value");
     }
 
     [TearDown]
     public void TearDown() {
-        controller.onMarbleDropped -= MarbleListener;
-        controller.onHoleStatusChanged -= HoleChangedListener;
+        controller = null;
+        gameEvents = null;
     }
 }
