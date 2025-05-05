@@ -1,3 +1,4 @@
+using SaileachStudios.Mirlini.Audio;
 using SaileachStudios.Mirlini.Board;
 using System;
 using System.Collections;
@@ -25,16 +26,10 @@ namespace SaileachStudios.Mirlini.Core
 
     public class GameManagerBehavior : MonoBehaviour
     {
-
-        [SerializeField] private AudioClip clangAudio;
-        [SerializeField] private AudioClip dropAudio;
         [SerializeField] private LevelManager levelManager;
+
         public static GameManagerBehavior Instance { get; private set; }
         public GameEvents Events { get; private set; } = new GameEvents();
-
-        private AudioSource audioSource;
-
-        private AudioSFXController audioSFXController;
 
         private void Awake() {
             if (Instance != null && Instance != this) {
@@ -44,28 +39,20 @@ namespace SaileachStudios.Mirlini.Core
             Instance = this;
             DontDestroyOnLoad(this);
 
-            audioSource = GetComponent<AudioSource>();
             Validate();
         }
 
         private void Validate() {
-            if (clangAudio == null) {
-                Debug.LogError("Clang Sound not set");
-            }
-            if (dropAudio == null) {
-                Debug.LogError("drop Sound not set");
-            }
             if (levelManager == null) {
                 Debug.LogError("LevelManager not set");
             }
         }
 
         private void Start() {
-            audioSFXController = new AudioSFXController();
-            audioSFXController.Initialize(audioSource, dropAudio, clangAudio);
         }
 
         private void Update() {
+            //Temp Testing code
             if (Input.GetKeyDown(KeyCode.Space)) {
                 levelManager.SetupLevel(0);
             }

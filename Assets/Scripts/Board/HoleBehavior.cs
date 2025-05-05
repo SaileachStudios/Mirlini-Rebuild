@@ -13,6 +13,7 @@ namespace SaileachStudios.Mirlini.Board
         private HoleController controller;
 
         void Start() {
+            controller = new HoleController(GameManagerBehavior.Instance.Events);
             GameManagerBehavior.Instance.Events.OnHoleStatusChanged += OnStatusChanged;
         }
 
