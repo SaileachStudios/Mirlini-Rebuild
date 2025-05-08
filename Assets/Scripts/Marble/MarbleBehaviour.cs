@@ -1,4 +1,3 @@
-using SaileachStudios.Mirlini.InputSystem;
 using UnityEngine;
 using SaileachStudios.Mirlini.Board;
 using System.Collections;
@@ -12,9 +11,7 @@ namespace SaileachStudios.Mirlini.Marble
         [SerializeField] private float shrinkDuration = 1f;
 
         private Rigidbody rb;
-        private IInputProvider inputProvider;
         private MarbleController controller;
-        private bool isPaused = false;
         private float currentSpeed = 0f;
 
         private void Awake() {
@@ -22,16 +19,15 @@ namespace SaileachStudios.Mirlini.Marble
         }
 
         private void Start() {
-            var factory = new InputProviderFactory(new PlatformDetector(), new UnityInputWrapper());
-            inputProvider = factory.Create();
-            controller = new MarbleController(inputProvider, speed);
+            controller = new MarbleController(speed);
 
             GameManagerBehavior.Instance.Events.OnMarbleDropped += OnMarbleDropped;
+            GameManagerBehavior.Instance.Events.OnFixedUpdate += OnPlayerInput;
         }
 
-        private void FixedUpdate() {
+        private void OnPlayerInput(bool isPaused, Vector2 playerInput) {
             if (!isPaused) {
-                rb.AddForce(controller.CalculateMovementForce());
+                rb.AddForce(controller.CalculateMovementForce(playerInput));
                 currentSpeed = rb.velocity.magnitude;
             }
             else {
@@ -39,16 +35,7 @@ namespace SaileachStudios.Mirlini.Marble
             }
         }
 
-        private void OnDrawGizmosSelected() {
-            if (controller != null) {
-                var force = controller.CalculateMovementForce();
-                Gizmos.color = Color.green;
-                Gizmos.DrawLine(transform.position, transform.position + force.normalized * 5f);
-            }
-        }
-
         public void OnMarbleDropped(bool isCorrect, Vector3 holeLocation) {
-            isPaused = true;
             StartCoroutine(ShrinkOverTime(holeLocation));
         }
 
@@ -65,10 +52,28 @@ namespace SaileachStudios.Mirlini.Marble
             }
 
             transform.localScale = endScale;
+            //Add in animation done event
+        }
+
+        IEnumerator GrowOverTime(Vector3 startPosition) {
+            Vector3 startScale = Vector3.zero; 
+            Vector3 endScale = transform.localScale;
+            float elapsed = 0f;
+
+            while (elapsed < shrinkDuration) {
+                elapsed += Time.deltaTime;
+                transform.localScale = Vector3.Lerp(startScale, endScale, elapsed / shrinkDuration);
+                transform.position = Vector3.Lerp(transform.position, startPosition, elapsed / shrinkDuration);
+                yield return null;
+            }
+
+            transform.localScale = endScale;
+            //Add in animation done event
         }
 
         private void OnDestroy() {
             GameManagerBehavior.Instance.Events.OnMarbleDropped -= OnMarbleDropped;
+            GameManagerBehavior.Instance.Events.OnFixedUpdate -= OnPlayerInput;
         }
     }
 }

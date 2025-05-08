@@ -1,5 +1,6 @@
 using SaileachStudios.Mirlini.Audio;
 using SaileachStudios.Mirlini.Board;
+using SaileachStudios.Mirlini.InputSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace SaileachStudios.Mirlini.Core
     public class GameEvents {
         public event Action<bool, Vector3> OnMarbleDropped;
         public event Action<bool> OnHoleStatusChanged;
+        public event Action<bool, Vector2> OnFixedUpdate;
 
         public virtual void BallDropped(bool isCorrect, Vector3 location) {
             if(OnMarbleDropped != null) {
@@ -22,6 +24,12 @@ namespace SaileachStudios.Mirlini.Core
                 OnHoleStatusChanged.Invoke(newStatus);
             }
         }
+
+        public virtual void InputUpdated(bool isPaused, Vector2 playerInput) {
+            if (OnFixedUpdate != null) {
+                OnFixedUpdate.Invoke(isPaused, playerInput);
+            }
+        }
     }
 
     public class GameManagerBehavior : MonoBehaviour
@@ -30,6 +38,9 @@ namespace SaileachStudios.Mirlini.Core
 
         public static GameManagerBehavior Instance { get; private set; }
         public GameEvents Events { get; private set; } = new GameEvents();
+
+        private IInputProvider inputProvider;
+        private bool isPaused = false;
 
         private void Awake() {
             if (Instance != null && Instance != this) {
@@ -49,6 +60,9 @@ namespace SaileachStudios.Mirlini.Core
         }
 
         private void Start() {
+            var factory = new InputProviderFactory(new PlatformDetector(), new UnityInputWrapper());
+            inputProvider = factory.Create();
+
         }
 
         private void Update() {
@@ -56,6 +70,15 @@ namespace SaileachStudios.Mirlini.Core
             if (Input.GetKeyDown(KeyCode.Space)) {
                 levelManager.SetupLevel(0);
             }
+        }
+
+        private void FixedUpdate() {
+            Vector2 playerInput = inputProvider.GetInput().normalized;
+            Events.InputUpdated(isPaused, playerInput);
+        }
+
+        private void OnBalledDropped(bool isCorrect, Vector3 location) {
+            isPaused = true;
         }
     }
 }

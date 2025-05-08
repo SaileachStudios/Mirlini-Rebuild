@@ -7,17 +7,14 @@ namespace SaileachStudios.Mirlini.Marble
 {
     public class MarbleController
     {
-        private IInputProvider inputProvider = null;
         private float speed = 0;
         private float velocity = 0;
 
-        public MarbleController(IInputProvider provider, float levelSpeed) {
-            inputProvider = provider;
+        public MarbleController(float levelSpeed) {
             speed = levelSpeed;
         }
 
-        public Vector3 CalculateMovementForce() {
-            Vector2 playerInput = inputProvider.GetInput().normalized;
+        public Vector3 CalculateMovementForce(Vector2 playerInput) {
             Vector3 result = new Vector3(playerInput.x * speed, 0f, playerInput.y * speed);
             velocity = result.magnitude;
 
