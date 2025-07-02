@@ -30,8 +30,10 @@ namespace SaileachStudios.Mirlini.Audio
         }
 
         private void OnBallDropped(bool isCorrect, Vector3 holeLocation) {
-            audioSource.clip = dropSFX;
-            audioSource.Play();
+            if (!audioSource.isPlaying) {
+                audioSource.clip = dropSFX;
+                audioSource.Play();
+            }
         }
 
         private void OnDestroy() {

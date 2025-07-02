@@ -27,8 +27,11 @@ namespace SaileachStudios.Mirlini.Board
             if (walls == null || walls.Length == 0) {
                 Debug.LogError("Walls not set");
             }
+            SetupLevel(0);
         }
+
         public void SetupLevel(int levelIndex) {
+            Debug.Log("Setting up level");
             var marblePosition = levels[levelIndex].MarbleStartPosition;
             var holePosition = levels[levelIndex].HolePosition;
             var wallInfo = levels[levelIndex].wallInfo;
