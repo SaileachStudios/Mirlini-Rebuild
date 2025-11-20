@@ -28,10 +28,10 @@ namespace SaileachStudios.Mirlini.Marble
         private void OnPlayerInput(bool isPaused, Vector2 playerInput) {
             if (!isPaused) {
                 rb.AddForce(controller.CalculateMovementForce(playerInput));
-                currentSpeed = rb.velocity.magnitude;
+                currentSpeed = rb.linearVelocity.magnitude;
             }
             else {
-                rb.velocity = Vector3.zero;
+                rb.linearVelocity = Vector3.zero;
             }
         }
 
