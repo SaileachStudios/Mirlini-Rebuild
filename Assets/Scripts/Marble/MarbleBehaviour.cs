@@ -7,8 +7,10 @@ namespace SaileachStudios.Mirlini.Marble
 {
     public class MarbleBehaviour : MonoBehaviour
     {
-        [SerializeField] private float speed = 1f;
+        [SerializeField] private float speed = 5f;
+        [SerializeField] private float accelerationRate = 5f;
         [SerializeField] private float shrinkDuration = 1f;
+        [SerializeField] private float maxSpeed = 10f; // Optional speed cap
 
         private Rigidbody rb;
         private MarbleController controller;
@@ -19,15 +21,34 @@ namespace SaileachStudios.Mirlini.Marble
         }
 
         private void Start() {
-            controller = new MarbleController(speed);
+            controller = new MarbleController(speed, accelerationRate); ;
 
             GameManagerBehavior.Instance.Events.OnMarbleDropped += OnMarbleDropped;
             GameManagerBehavior.Instance.Events.OnFixedUpdate += OnPlayerInput;
         }
 
         private void OnPlayerInput(bool isPaused, Vector2 playerInput) {
+            if (controller == null || rb == null) {
+                return;
+            }
+
             if (!isPaused) {
-                rb.AddForce(controller.CalculateMovementForce(playerInput));
+
+                Vector3 targetVelocity = controller.CalculateTargetVelocity(playerInput);
+
+                Vector3 force = controller.CalculateForceToReachTarget(rb.linearVelocity);
+
+                // CHANGED: Set velocity directly instead of using AddForce
+                // Preserve Y velocity for gravity
+                Vector3 newVelocity = rb.linearVelocity + force * Time.fixedDeltaTime;
+                rb.linearVelocity = new Vector3(newVelocity.x, rb.linearVelocity.y, newVelocity.z);
+
+                Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+                if (horizontalVelocity.magnitude > maxSpeed) {
+                    Vector3 cappedVelocity = horizontalVelocity.normalized * maxSpeed;
+                    rb.linearVelocity = new Vector3(cappedVelocity.x, rb.linearVelocity.y, cappedVelocity.z);
+                }
+
                 currentSpeed = rb.linearVelocity.magnitude;
             }
             else {
@@ -55,6 +76,7 @@ namespace SaileachStudios.Mirlini.Marble
             //Add in animation done event
         }
 
+        //TODO for Marble respawn later.
         IEnumerator GrowOverTime(Vector3 startPosition) {
             Vector3 startScale = Vector3.zero; 
             Vector3 endScale = transform.localScale;
