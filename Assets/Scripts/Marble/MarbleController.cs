@@ -5,6 +5,16 @@ using SaileachStudios.Mirlini.InputSystem;
 
 namespace SaileachStudios.Mirlini.Marble
 {
+    public enum BallState
+    {
+        Idle,           // Waiting for level to start
+        Playing,        // Normal rolling
+        Falling,        // Dropping into hole
+        Respawning,     // Growing back after wrong hole
+        Stuck,          // Not moving for too long
+        LevelComplete   // Fell in correct hole
+    }
+
     public class MarbleController
     {
         private float speed = 0;
