@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SaileachStudios.Mirlini.Marble;
 
 namespace SaileachStudios.Mirlini.Board
 {
@@ -41,6 +42,14 @@ namespace SaileachStudios.Mirlini.Board
             for (int index = 0; index < wallInfo.Length; index++) {
                 walls[index].SetActive(wallInfo[index]);
             }
+
+            MarbleBehaviour marbleBehaviour = marble.GetComponent<MarbleBehaviour>();
+            if (marbleBehaviour == null) {
+                Debug.LogError("MarbleBehaviour not found on marble object.");
+                return;
+            }
+
+            marbleBehaviour.StartPlaying();
         }
     }
 }

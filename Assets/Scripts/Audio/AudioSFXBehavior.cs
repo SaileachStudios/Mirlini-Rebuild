@@ -37,7 +37,9 @@ namespace SaileachStudios.Mirlini.Audio
         }
 
         private void OnDestroy() {
-            GameManagerBehavior.Instance.Events.OnMarbleDropped -= OnBallDropped;
+            if (GameManagerBehavior.Instance != null) {
+                GameManagerBehavior.Instance.Events.OnMarbleDropped -= OnBallDropped;
+            }
         }
     }
 }
