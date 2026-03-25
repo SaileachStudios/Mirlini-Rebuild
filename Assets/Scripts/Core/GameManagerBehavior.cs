@@ -33,6 +33,10 @@ namespace SaileachStudios.Mirlini.Core
             return inputProvider is GyroInputProvider;
         }
 
+        public void SetPaused(bool paused) {
+            isPaused = paused;
+        }
+
         private void Validate() {
             if (levelManager == null) {
                 Debug.LogError("LevelManager not set");
@@ -42,7 +46,7 @@ namespace SaileachStudios.Mirlini.Core
         private void Start() {
             var factory = new InputProviderFactory(new PlatformDetector(), new UnityInputWrapper());
             inputProvider = factory.Create();
-
+            Events.OnMarbleDropped += OnBalledDropped;
         }
 
         private void Update() {
@@ -59,6 +63,14 @@ namespace SaileachStudios.Mirlini.Core
 
         private void OnBalledDropped(bool isCorrect, Vector3 location) {
             isPaused = true;
+        }
+
+        private void OnDestroy() {
+            Events.OnMarbleDropped -= OnBalledDropped;
+
+            if (Instance == this) {
+                Instance = null;
+            }
         }
     }
 }

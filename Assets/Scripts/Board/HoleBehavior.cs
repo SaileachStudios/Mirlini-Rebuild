@@ -29,11 +29,17 @@ namespace SaileachStudios.Mirlini.Board
         }
 
         private void OnTriggerEnter(Collider other) {
+            if (other.GetComponent<SaileachStudios.Mirlini.Marble.MarbleBehaviour>() == null) {
+                return;
+            }
+
             controller.MarbleDropped(transform.position);
         }
 
         private void OnDestroy() {
-            GameManagerBehavior.Instance.Events.OnHoleStatusChanged -= OnStatusChanged;
+            if (GameManagerBehavior.Instance != null) {
+                GameManagerBehavior.Instance.Events.OnHoleStatusChanged -= OnStatusChanged;
+            }
         }
     }
 }
