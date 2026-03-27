@@ -73,6 +73,42 @@ public class MarbleBehaviourTests
         Assert.AreEqual(Vector3.one, marbleObject.transform.localScale);
     }
 
+    [Test]
+    public void OnPlayerInput_WhenMarbleIsStuck_RespawnsBackToLastStartPosition() {
+        marbleObject.transform.position = new Vector3(2f, 0f, 3f);
+        SetPrivateField(marbleBehaviour, "shrinkDuration", 0f);
+        SetPrivateField(marbleBehaviour, "stuckDetectionDuration", Time.fixedDeltaTime);
+        SetPrivateField(marbleBehaviour, "stuckMovementThreshold", 0.5f);
+        marbleBehaviour.StartPlaying();
+
+        marbleObject.transform.position = new Vector3(9f, 0f, 9f);
+        SetPrivateField(marbleBehaviour, "lastProgressPosition", marbleObject.transform.position);
+
+        InvokePlayerInput(false, Vector2.right);
+
+        Assert.AreEqual(BallState.Playing, marbleBehaviour.CurrentState);
+        Assert.AreEqual(new Vector3(2f, 0f, 3f), marbleObject.transform.position);
+        Assert.AreEqual(Vector3.one, marbleObject.transform.localScale);
+    }
+
+    [Test]
+    public void OnPlayerInput_WithoutMovementInput_DoesNotTriggerStuckRespawn() {
+        marbleObject.transform.position = new Vector3(2f, 0f, 3f);
+        SetPrivateField(marbleBehaviour, "shrinkDuration", 0f);
+        SetPrivateField(marbleBehaviour, "stuckDetectionDuration", Time.fixedDeltaTime);
+        SetPrivateField(marbleBehaviour, "stuckMovementThreshold", 0.5f);
+        marbleBehaviour.StartPlaying();
+
+        marbleObject.transform.position = new Vector3(9f, 0f, 9f);
+
+        InvokePlayerInput(false, Vector2.zero);
+        InvokePlayerInput(false, Vector2.zero);
+        InvokePlayerInput(false, Vector2.zero);
+
+        Assert.AreEqual(BallState.Playing, marbleBehaviour.CurrentState);
+        Assert.AreEqual(new Vector3(9f, 0f, 9f), marbleObject.transform.position);
+    }
+
     [TearDown]
     public void TearDown() {
         if (marbleObject != null) {
@@ -99,5 +135,10 @@ public class MarbleBehaviourTests
     private static void SetPrivateField(object target, string fieldName, object value) {
         FieldInfo field = target.GetType().GetField(fieldName, InstanceBindingFlags);
         field?.SetValue(target, value);
+    }
+
+    private void InvokePlayerInput(bool isPaused, Vector2 input) {
+        MethodInfo method = marbleBehaviour.GetType().GetMethod("OnPlayerInput", InstanceBindingFlags);
+        method?.Invoke(marbleBehaviour, new object[] { isPaused, input });
     }
 }

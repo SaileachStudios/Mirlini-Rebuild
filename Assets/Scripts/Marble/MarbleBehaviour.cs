@@ -11,6 +11,8 @@ namespace SaileachStudios.Mirlini.Marble
         [SerializeField] private float accelerationRate = 5f;
         [SerializeField] private float shrinkDuration = 1f;
         [SerializeField] private float maxSpeed = 10f; // Optional speed cap
+        [SerializeField] private float stuckDetectionDuration = 1.5f;
+        [SerializeField] private float stuckMovementThreshold = 0.1f;
 
         private Rigidbody rb;
         private MarbleController controller;
@@ -20,6 +22,8 @@ namespace SaileachStudios.Mirlini.Marble
         private Vector3 pendingHolePosition;
         private Vector3 respawnPosition;
         private Vector3 initialScale;
+        private Vector3 lastProgressPosition;
+        private float stuckTimer = 0f;
 
         public BallState CurrentState => stateMachine?.CurrentState ?? BallState.Idle;
 
@@ -28,6 +32,7 @@ namespace SaileachStudios.Mirlini.Marble
             stateMachine = new BallStateMachine();
             respawnPosition = transform.position;
             initialScale = transform.localScale;
+            lastProgressPosition = transform.position;
         }
 
         private void Start() {
@@ -40,6 +45,7 @@ namespace SaileachStudios.Mirlini.Marble
 
         public bool StartPlaying() {
             respawnPosition = transform.position;
+            ResetStuckTracking();
             return stateMachine != null && stateMachine.TransitionTo(BallState.Playing);
         }
 
@@ -68,6 +74,7 @@ namespace SaileachStudios.Mirlini.Marble
             }
 
             currentSpeed = rb.linearVelocity.magnitude;
+            UpdateStuckStatus();
         }
 
         public void OnMarbleDropped(bool isCorrect, Vector3 holeLocation) {
@@ -79,15 +86,60 @@ namespace SaileachStudios.Mirlini.Marble
         private void OnStateChanged(BallState previousState, BallState newState) {
             switch (newState) {
                 case BallState.Playing:
+                    ResetStuckTracking();
                     GameManagerBehavior.Instance?.SetPaused(false);
                     break;
                 case BallState.Falling:
+                    ResetStuckTracking();
                     StartCoroutine(ShrinkOverTime(pendingHolePosition));
                     break;
+                case BallState.Stuck:
+                    RespawnFromStuck();
+                    break;
                 case BallState.Respawning:
+                    ResetStuckTracking();
                     StartCoroutine(GrowOverTime(respawnPosition));
                     break;
             }
+        }
+
+        private void UpdateStuckStatus() {
+            if (CurrentState != BallState.Playing || controller == null) {
+                return;
+            }
+
+            if (!controller.IsMoving) {
+                ResetStuckTracking();
+                return;
+            }
+
+            if (Vector3.Distance(transform.position, lastProgressPosition) >= stuckMovementThreshold) {
+                lastProgressPosition = transform.position;
+                stuckTimer = 0f;
+                return;
+            }
+
+            stuckTimer += Time.fixedDeltaTime;
+            if (stuckTimer >= stuckDetectionDuration) {
+                stateMachine?.TransitionTo(BallState.Stuck);
+            }
+        }
+
+        private void RespawnFromStuck() {
+            if (rb != null) {
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+
+            transform.position = respawnPosition;
+            transform.localScale = Vector3.zero;
+            ResetStuckTracking();
+            stateMachine?.TransitionTo(BallState.Respawning);
+        }
+
+        private void ResetStuckTracking() {
+            stuckTimer = 0f;
+            lastProgressPosition = transform.position;
         }
 
         IEnumerator ShrinkOverTime(Vector3 holePosition) {
