@@ -15,6 +15,7 @@ namespace SaileachStudios.Mirlini.Board
         public bool BallDroppedCalled = false;
         public bool BallDroppedCalledWithStatus = false;
         public Vector3 BallDroppedCalledWithLocation = Vector3.zero;
+        public bool LevelCompletedCalled = false;
 
         public override void BallDropped(bool isCorrect, Vector3 location) {
             BallDroppedCalled = true;
@@ -25,6 +26,10 @@ namespace SaileachStudios.Mirlini.Board
         public override void ChangeHoleStatus(bool newStatus) {
             HoleStatusWasChanged = true;
             HoleStatusChangedTo = newStatus;
+        }
+
+        public override void LevelCompleted() {
+            LevelCompletedCalled = true;
         }
     }
 }

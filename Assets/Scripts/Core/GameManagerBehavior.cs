@@ -10,11 +10,8 @@ namespace SaileachStudios.Mirlini.Core
 {
     public class GameManagerBehavior : MonoBehaviour
     {
-        [SerializeField] private LevelManager levelManager;
-
         public static GameManagerBehavior Instance { get; private set; }
         public GameEvents Events { get; private set; } = new GameEvents();
-        public bool HasLevelManager => levelManager != null;
 
         private IInputProvider inputProvider;
         private bool isPaused = false;
@@ -26,8 +23,6 @@ namespace SaileachStudios.Mirlini.Core
             }
             Instance = this;
             DontDestroyOnLoad(this);
-
-            Validate();
         }
 
         public bool IsGyroEnabled() {
@@ -36,22 +31,6 @@ namespace SaileachStudios.Mirlini.Core
 
         public void SetPaused(bool paused) {
             isPaused = paused;
-        }
-
-        public void LoadNextLevel() {
-            if (levelManager == null) {
-                return;
-            }
-
-            if (!levelManager.LoadNextLevel()) {
-                Debug.Log("No additional levels are configured.");
-            }
-        }
-
-        private void Validate() {
-            if (levelManager == null) {
-                Debug.LogError("LevelManager not set");
-            }
         }
 
         private void Start() {

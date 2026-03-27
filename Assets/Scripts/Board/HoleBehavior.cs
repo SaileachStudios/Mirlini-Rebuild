@@ -11,18 +11,27 @@ namespace SaileachStudios.Mirlini.Board
         [SerializeField] private GameObject incorrectIndicator;
 
         private HoleController controller;
+        private bool isSubscribedToEvents = false;
+
+        private void OnEnable() {
+            TrySubscribeToEvents();
+        }
 
         void Start() {
-            EnsureController();
-            GameManagerBehavior.Instance.Events.OnHoleStatusChanged += OnStatusChanged;
+            TrySubscribeToEvents();
+        }
+
+        private void OnDisable() {
+            UnsubscribeFromEvents();
         }
 
         public void SetIsCorrectHole(bool isCorrect) {
-            if (!EnsureController()) {
+            if (!TrySubscribeToEvents()) {
                 return;
             }
 
             controller.SetAsCorrectHole(isCorrect);
+            OnStatusChanged(isCorrect);
         }
 
         void OnStatusChanged(bool isCorrect) {
@@ -41,7 +50,25 @@ namespace SaileachStudios.Mirlini.Board
                 return;
             }
 
+            if (!TrySubscribeToEvents()) {
+                return;
+            }
+
             controller.MarbleDropped(transform.position);
+        }
+
+        private bool TrySubscribeToEvents() {
+            if (!EnsureController()) {
+                return false;
+            }
+
+            if (isSubscribedToEvents) {
+                return true;
+            }
+
+            GameManagerBehavior.Instance.Events.OnHoleStatusChanged += OnStatusChanged;
+            isSubscribedToEvents = true;
+            return true;
         }
 
         private bool EnsureController() {
@@ -57,10 +84,13 @@ namespace SaileachStudios.Mirlini.Board
             return true;
         }
 
-        private void OnDestroy() {
-            if (GameManagerBehavior.Instance != null) {
-                GameManagerBehavior.Instance.Events.OnHoleStatusChanged -= OnStatusChanged;
+        private void UnsubscribeFromEvents() {
+            if (!isSubscribedToEvents || GameManagerBehavior.Instance == null) {
+                return;
             }
+
+            GameManagerBehavior.Instance.Events.OnHoleStatusChanged -= OnStatusChanged;
+            isSubscribedToEvents = false;
         }
     }
 }

@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using SaileachStudios.Mirlini.Board;
 using SaileachStudios.Mirlini.Core;
 using SaileachStudios.Mirlini.Marble;
 using System.Reflection;
@@ -56,6 +57,21 @@ public class MarbleBehaviourTests
 
         marbleBehaviour.OnMarbleDropped(true, Vector3.one);
 
+        Assert.AreEqual(BallState.LevelComplete, marbleBehaviour.CurrentState);
+    }
+
+    [Test]
+    public void OnMarbleDropped_WhenCorrectHole_RaisesLevelCompletedAfterShrink() {
+        var mockEvents = new MockGameEvents();
+        SetGameManagerEvents(mockEvents);
+        InvokeUnityMessage(marbleBehaviour, "OnDestroy");
+        InvokeUnityMessage(marbleBehaviour, "Start");
+        SetPrivateField(marbleBehaviour, "shrinkDuration", 0f);
+        marbleBehaviour.StartPlaying();
+
+        marbleBehaviour.OnMarbleDropped(true, Vector3.one);
+
+        Assert.AreEqual(true, mockEvents.LevelCompletedCalled);
         Assert.AreEqual(BallState.LevelComplete, marbleBehaviour.CurrentState);
     }
 
@@ -130,6 +146,11 @@ public class MarbleBehaviourTests
     private static void SetGameManagerInstance(GameManagerBehavior instance) {
         FieldInfo backingField = typeof(GameManagerBehavior).GetField("<Instance>k__BackingField", StaticBindingFlags);
         backingField?.SetValue(null, instance);
+    }
+
+    private static void SetGameManagerEvents(GameEvents events) {
+        FieldInfo backingField = typeof(GameManagerBehavior).GetField("<Events>k__BackingField", InstanceBindingFlags);
+        backingField?.SetValue(GameManagerBehavior.Instance, events);
     }
 
     private static void SetPrivateField(object target, string fieldName, object value) {

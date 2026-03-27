@@ -110,11 +110,6 @@ namespace SaileachStudios.Mirlini.Marble
                     ResetStuckTracking();
                     StartCoroutine(GrowOverTime(respawnPosition));
                     break;
-                case BallState.LevelComplete:
-                    if (GameManagerBehavior.Instance != null && GameManagerBehavior.Instance.HasLevelManager) {
-                        GameManagerBehavior.Instance.LoadNextLevel();
-                    }
-                    break;
             }
         }
 
@@ -170,7 +165,13 @@ namespace SaileachStudios.Mirlini.Marble
             }
 
             transform.localScale = endScale;
-            stateMachine?.TransitionTo(pendingIsCorrect ? BallState.LevelComplete : BallState.Respawning);
+            BallState nextState = pendingIsCorrect ? BallState.LevelComplete : BallState.Respawning;
+            bool transitioned = stateMachine?.TransitionTo(nextState) ?? false;
+
+            if (pendingIsCorrect && transitioned && GameManagerBehavior.Instance != null) {
+                // This event is the post-shrink handoff point for level progression.
+                GameManagerBehavior.Instance.Events.LevelCompleted();
+            }
         }
 
         IEnumerator GrowOverTime(Vector3 startPosition) {
