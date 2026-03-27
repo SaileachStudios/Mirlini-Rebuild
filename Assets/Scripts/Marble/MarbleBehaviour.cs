@@ -45,7 +45,17 @@ namespace SaileachStudios.Mirlini.Marble
 
         public bool StartPlaying() {
             respawnPosition = transform.position;
+            transform.localScale = initialScale;
+            if (rb != null) {
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
             ResetStuckTracking();
+            if (CurrentState == BallState.Playing) {
+                GameManagerBehavior.Instance?.SetPaused(false);
+                return true;
+            }
+
             return stateMachine != null && stateMachine.TransitionTo(BallState.Playing);
         }
 
@@ -99,6 +109,11 @@ namespace SaileachStudios.Mirlini.Marble
                 case BallState.Respawning:
                     ResetStuckTracking();
                     StartCoroutine(GrowOverTime(respawnPosition));
+                    break;
+                case BallState.LevelComplete:
+                    if (GameManagerBehavior.Instance != null && GameManagerBehavior.Instance.HasLevelManager) {
+                        GameManagerBehavior.Instance.LoadNextLevel();
+                    }
                     break;
             }
         }

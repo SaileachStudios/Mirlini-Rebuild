@@ -13,8 +13,16 @@ namespace SaileachStudios.Mirlini.Board
         private HoleController controller;
 
         void Start() {
-            controller = new HoleController(GameManagerBehavior.Instance.Events);
+            EnsureController();
             GameManagerBehavior.Instance.Events.OnHoleStatusChanged += OnStatusChanged;
+        }
+
+        public void SetIsCorrectHole(bool isCorrect) {
+            if (!EnsureController()) {
+                return;
+            }
+
+            controller.SetAsCorrectHole(isCorrect);
         }
 
         void OnStatusChanged(bool isCorrect) {
@@ -34,6 +42,19 @@ namespace SaileachStudios.Mirlini.Board
             }
 
             controller.MarbleDropped(transform.position);
+        }
+
+        private bool EnsureController() {
+            if (controller != null) {
+                return true;
+            }
+
+            if (GameManagerBehavior.Instance == null) {
+                return false;
+            }
+
+            controller = new HoleController(GameManagerBehavior.Instance.Events);
+            return true;
         }
 
         private void OnDestroy() {

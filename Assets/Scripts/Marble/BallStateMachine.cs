@@ -18,7 +18,7 @@ namespace SaileachStudios.Mirlini.Marble
             { BallState.Falling, new HashSet<BallState> { BallState.Respawning, BallState.LevelComplete } },
             { BallState.Respawning, new HashSet<BallState> { BallState.Playing } },
             { BallState.Stuck, new HashSet<BallState> { BallState.Respawning } },
-            { BallState.LevelComplete, new HashSet<BallState> { } } // Terminal state
+            { BallState.LevelComplete, new HashSet<BallState> { BallState.Playing } }
         };
 
         public BallState CurrentState => currentState;

@@ -14,6 +14,7 @@ namespace SaileachStudios.Mirlini.Core
 
         public static GameManagerBehavior Instance { get; private set; }
         public GameEvents Events { get; private set; } = new GameEvents();
+        public bool HasLevelManager => levelManager != null;
 
         private IInputProvider inputProvider;
         private bool isPaused = false;
@@ -37,6 +38,16 @@ namespace SaileachStudios.Mirlini.Core
             isPaused = paused;
         }
 
+        public void LoadNextLevel() {
+            if (levelManager == null) {
+                return;
+            }
+
+            if (!levelManager.LoadNextLevel()) {
+                Debug.Log("No additional levels are configured.");
+            }
+        }
+
         private void Validate() {
             if (levelManager == null) {
                 Debug.LogError("LevelManager not set");
@@ -47,13 +58,6 @@ namespace SaileachStudios.Mirlini.Core
             var factory = new InputProviderFactory(new PlatformDetector(), new UnityInputWrapper());
             inputProvider = factory.Create();
             Events.OnMarbleDropped += OnBalledDropped;
-        }
-
-        private void Update() {
-            //Temp Testing code
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                levelManager.SetupLevel(0);
-            }
         }
 
         private void FixedUpdate() {

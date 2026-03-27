@@ -31,6 +31,7 @@ public class LevelEditorWindow : EditorWindow
         // Create a unique file name
         string assetName = "LevelData_" + System.DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".asset";
         string assetPath = $"{FOLDER_PATH}/{assetName}";
+        currentLevelData.LevelName = Path.GetFileNameWithoutExtension(assetName);
 
         // Create the asset file
         AssetDatabase.CreateAsset(currentLevelData, assetPath);
@@ -49,10 +50,15 @@ public class LevelEditorWindow : EditorWindow
     }
 
     private void RenameLevelAsset(LevelData levelData, string newName) {
+        string sanitizedName = newName?.Trim();
+        if (string.IsNullOrWhiteSpace(sanitizedName)) {
+            return;
+        }
+
         string assetPath = AssetDatabase.GetAssetPath(levelData);
         if (!string.IsNullOrEmpty(assetPath)) {
-            if (AssetDatabase.LoadAssetAtPath<LevelData>($"{FOLDER_PATH}/{newName}") == null){
-                string error = AssetDatabase.RenameAsset(assetPath, newName);
+            if (AssetDatabase.LoadAssetAtPath<LevelData>($"{FOLDER_PATH}/{sanitizedName}.asset") == null){
+                string error = AssetDatabase.RenameAsset(assetPath, sanitizedName);
                 if (!string.IsNullOrEmpty(error)) {
                     Debug.LogError("Rename failed: " + error);
                 }
@@ -97,10 +103,13 @@ public class LevelEditorWindow : EditorWindow
         GUILayout.Label("Information Section");
         currentLevelData = (LevelData)EditorGUILayout.ObjectField("Level data", currentLevelData, typeof(LevelData), false);
         if (currentLevelData != null) {
+            string currentName = currentLevelData.LevelName ?? string.Empty;
+            string updatedName = EditorGUILayout.TextField("Level Name", currentName);
+            currentLevelData.LevelName = updatedName;
 
-            currentLevelData.LevelName = EditorGUILayout.TextField("Level Name", currentLevelData.LevelName);
-            if (currentLevelData.LevelName != string.Empty && GetAssetFilename(currentLevelData) != currentLevelData.LevelName) {
-                RenameLevelAsset(currentLevelData, currentLevelData.LevelName);
+            string sanitizedName = updatedName.Trim();
+            if (!string.IsNullOrWhiteSpace(sanitizedName) && GetAssetFilename(currentLevelData) != sanitizedName) {
+                RenameLevelAsset(currentLevelData, sanitizedName);
             }
             currentLevelData.Type = (LevelType)EditorGUILayout.EnumPopup("Level Type", currentLevelData.Type);
             currentLevelData.IdealCompletionTime = EditorGUILayout.FloatField("Ideal Completion Time", currentLevelData.IdealCompletionTime);

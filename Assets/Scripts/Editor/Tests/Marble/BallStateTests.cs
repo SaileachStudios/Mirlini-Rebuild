@@ -150,7 +150,7 @@ public class BallStateTests
     }
 
     [Test]
-    public void BallStateMachine_CannotTransitionFromLevelCompleteToPlaying()
+    public void BallStateMachine_CanTransitionFromLevelCompleteToPlaying()
     {
         var stateMachine = new BallStateMachine();
         stateMachine.TransitionTo(BallState.Playing);
@@ -158,8 +158,8 @@ public class BallStateTests
         stateMachine.TransitionTo(BallState.LevelComplete);
         bool transitioned = stateMachine.TransitionTo(BallState.Playing);
 
-        Assert.AreEqual(false, transitioned, "Should NOT allow LevelComplete ? Playing");
-        Assert.AreEqual(BallState.LevelComplete, stateMachine.CurrentState);
+        Assert.AreEqual(true, transitioned, "Should allow LevelComplete ? Playing");
+        Assert.AreEqual(BallState.Playing, stateMachine.CurrentState);
     }
 
     // ===== STATE CHANGE EVENT TESTS =====
