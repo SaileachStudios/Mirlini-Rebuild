@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SaileachStudios.Mirlini.Marble;
-using SaileachStudios.Mirlini.Core;
 
 namespace SaileachStudios.Mirlini.Board
 {
+    [RequireComponent(typeof(LevelEndFlowController))]
     public class LevelManager : MonoBehaviour
     {
         [Header("Game Objects")]
@@ -16,8 +16,6 @@ namespace SaileachStudios.Mirlini.Board
         [SerializeField] private LevelData[] levels;
         [SerializeField] private GameObject[] walls;
         private int currentLevelIndex = 0;
-        private bool isSubscribedToGameEvents = false;
-        private bool isAdvancingLevel = false;
 
         private void Start() {
             if(marble == null) {
@@ -33,16 +31,7 @@ namespace SaileachStudios.Mirlini.Board
                 Debug.LogError("Walls not set");
             }
 
-            TrySubscribeToGameEvents();
             SetupLevel(0);
-        }
-
-        private void OnEnable() {
-            TrySubscribeToGameEvents();
-        }
-
-        private void OnDisable() {
-            UnsubscribeFromGameEvents();
         }
 
         public void SetupLevel(int levelIndex) {
@@ -52,7 +41,6 @@ namespace SaileachStudios.Mirlini.Board
             }
 
             currentLevelIndex = levelIndex;
-            isAdvancingLevel = false;
             Debug.Log("Setting up level: " + levelIndex);
             var marblePosition = levels[levelIndex].MarbleStartPosition;
             var holePosition = levels[levelIndex].HolePosition;
@@ -104,36 +92,6 @@ namespace SaileachStudios.Mirlini.Board
 
             SetupLevel(nextLevelIndex);
             return true;
-        }
-
-        private void OnLevelCompleted() {
-            if (isAdvancingLevel) {
-                return;
-            }
-
-            isAdvancingLevel = true;
-            if (!LoadNextLevel()) {
-                Debug.Log("No additional levels are configured.");
-                isAdvancingLevel = false;
-            }
-        }
-
-        private void TrySubscribeToGameEvents() {
-            if (isSubscribedToGameEvents || GameManagerBehavior.Instance == null) {
-                return;
-            }
-
-            GameManagerBehavior.Instance.Events.OnLevelCompleted += OnLevelCompleted;
-            isSubscribedToGameEvents = true;
-        }
-
-        private void UnsubscribeFromGameEvents() {
-            if (!isSubscribedToGameEvents || GameManagerBehavior.Instance == null) {
-                return;
-            }
-
-            GameManagerBehavior.Instance.Events.OnLevelCompleted -= OnLevelCompleted;
-            isSubscribedToGameEvents = false;
         }
     }
 }
