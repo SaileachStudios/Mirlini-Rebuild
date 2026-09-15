@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework><EnableDefaultCompileItems>false</EnableDefaultCompileItems></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="../../../Assets/Scripts/Board/BoardGrid.cs" />
+    <Compile Include="../../../Assets/Scripts/Board/HelpPositionPlanner.cs" />
+    <Compile Include="../../../Assets/Scripts/Marble/BallState.cs" />
+    <Compile Include="../../../Assets/Scripts/Marble/BallStateMachine.cs" />
+    <Compile Include="../../../Assets/Scripts/Editor/Tests/Board/BoardGridTests.cs" />
+    <Compile Include="../../../Assets/Scripts/Editor/Tests/Board/HelpPositionPlannerTests.cs" />
+    <Compile Include="../../../Assets/Scripts/Editor/Tests/Marble/BallStateTests.cs" />
+    <Compile Include="../../../Assets/Scripts/Input/*.cs" />
+    <Compile Include="../../../Assets/Scripts/Editor/Tests/Input/*.cs" />
+    <Reference Include="$(UnityReferenceEditor)/Managed/UnityEngine/UnityEngine.CoreModule.dll" />
+    <Reference Include="$(UnityReferenceEditor)/Managed/UnityEngine/UnityEngine.InputLegacyModule.dll" />
+    <Reference Include="nunit.framework"><HintPath>$(UnityReferenceEditor)/Resources/PackageManager/BuiltInPackages/com.unity.ext.nunit/net472/unity-custom/nunit.framework.dll</HintPath></Reference>
+  </ItemGroup>
+</Project>

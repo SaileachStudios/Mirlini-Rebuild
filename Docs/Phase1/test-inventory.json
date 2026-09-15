@@ -1,0 +1,86 @@
+{
+  "Assets\\Scripts\\Editor\\Tests\\Board\\BoardGridTests.cs": {
+    "Test": 6,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Board\\BoardTiltControllerTests.cs": {
+    "Test": 3,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Board\\HelpPositionPlannerTests.cs": {
+    "Test": 8,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Board\\HoleControllerTests.cs": {
+    "Test": 4,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Board\\LevelEndFlowControllerTests.cs": {
+    "Test": 0,
+    "UnityTest": 3
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Board\\LevelManagerValidationTests.cs": {
+    "Test": 0,
+    "UnityTest": 3
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Board\\SceneContractTests.cs": {
+    "Test": 3,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Core\\MockGameEvents.cs": {
+    "Test": 0,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Core\\SandboxPlayTest.cs": {
+    "Test": 0,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Input\\GyroInputProviderTests.cs": {
+    "Test": 7,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Input\\GyroLifecycleTests.cs": {
+    "Test": 1,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Input\\InputProviderFactoryTests.cs": {
+    "Test": 3,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Input\\InputRangeTests.cs": {
+    "Test": 5,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Input\\KeyboardInputProviderTests.cs": {
+    "Test": 2,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Input\\MockInputProvider.cs": {
+    "Test": 0,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Input\\MockInputWrapper.cs": {
+    "Test": 0,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Input\\MockPlatformDetector.cs": {
+    "Test": 0,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Input\\TouchInputProviderTests.cs": {
+    "Test": 4,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Marble\\BallStateTests.cs": {
+    "Test": 15,
+    "UnityTest": 0
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Marble\\MarbleBehaviourTests.cs": {
+    "Test": 0,
+    "UnityTest": 6
+  },
+  "Assets\\Scripts\\Editor\\Tests\\Marble\\MarbleControllerTests.cs": {
+    "Test": 18,
+    "UnityTest": 0
+  }
+}

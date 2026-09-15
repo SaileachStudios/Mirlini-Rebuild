@@ -1,0 +1,5 @@
+<Project>
+  <PropertyGroup>
+    <UnityReferenceEditor Condition="'$(UnityReferenceEditor)' == ''">C:/Program Files/Unity/Hub/Editor/6000.6.0f1/Editor/Data</UnityReferenceEditor>
+  </PropertyGroup>
+</Project>
