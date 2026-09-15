@@ -23,7 +23,7 @@ namespace SaileachStudios.Mirlini.InputSystem
             get {
                 return Input.gyro.enabled;
             }
-            set { return; }
+            set { Input.gyro.enabled = value; }
         }
 
         public Vector3 GyroGravity {

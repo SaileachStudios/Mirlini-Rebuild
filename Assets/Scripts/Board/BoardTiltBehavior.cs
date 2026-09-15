@@ -1,6 +1,4 @@
 using SaileachStudios.Mirlini.Core;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SaileachStudios.Mirlini.Board
@@ -9,21 +7,23 @@ namespace SaileachStudios.Mirlini.Board
     {
         [SerializeField] private float maxTiltAngle = 10f;
         [SerializeField] private float tiltSpeed = 5f;
-
         private BoardTiltController controller;
-
-        private void Start() {
-            controller = new BoardTiltController(maxTiltAngle, tiltSpeed);
-            GameManagerBehavior.Instance.Events.OnFixedUpdate += UpdateInput;
+        private GameManagerBehavior manager;
+        private GameEvents subscribedEvents;
+        private void Awake() { controller = new BoardTiltController(maxTiltAngle, tiltSpeed); }
+        private void OnEnable() {
+            manager = GameManagerBehavior.Instance;
+            if (manager == null) return;
+            subscribedEvents = manager.Events;
+            subscribedEvents.OnFixedUpdate += UpdateInput;
         }
-
-        private void UpdateInput(bool isPaused, Vector2 playerInput) {
-            if (GameManagerBehavior.Instance.IsGyroEnabled()) return;
-
-            if (!isPaused) {
-                Quaternion targetRotation = controller.UpdateTilt(playerInput, Time.fixedDeltaTime);
-                transform.rotation = targetRotation;
-            }
+        private void OnDisable() {
+            if (subscribedEvents != null) subscribedEvents.OnFixedUpdate -= UpdateInput;
+            subscribedEvents = null; manager = null;
+        }
+        private void UpdateInput(bool paused, Vector2 input) {
+            if (manager == null || manager.IsGyroEnabled() || paused) return;
+            transform.rotation = controller.UpdateTilt(input, Time.fixedDeltaTime);
         }
     }
 }

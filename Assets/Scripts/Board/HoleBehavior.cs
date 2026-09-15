@@ -1,6 +1,5 @@
 using SaileachStudios.Mirlini.Core;
-using System.Collections;
-using System.Collections.Generic;
+using SaileachStudios.Mirlini.Marble;
 using UnityEngine;
 
 namespace SaileachStudios.Mirlini.Board
@@ -9,88 +8,26 @@ namespace SaileachStudios.Mirlini.Board
     {
         [SerializeField] private GameObject correctIndicator;
         [SerializeField] private GameObject incorrectIndicator;
-
         private HoleController controller;
-        private bool isSubscribedToEvents = false;
-
-        private void OnEnable() {
-            TrySubscribeToEvents();
+        private GameManagerBehavior manager;
+        public bool IsConfigured => correctIndicator != null && incorrectIndicator != null && correctIndicator != incorrectIndicator;
+        private void OnEnable() { Bind(GameManagerBehavior.Instance); }
+        private void OnDisable() { controller = null; manager = null; }
+        public void Bind(GameManagerBehavior owner) {
+            if (owner == manager && controller != null) return;
+            manager = owner;
+            controller = owner == null ? null : new HoleController(owner.Events);
         }
-
-        void Start() {
-            TrySubscribeToEvents();
+        public void SetIsCorrectHole(bool correct) {
+            if (!IsConfigured || controller == null) return;
+            controller.SetAsCorrectHole(correct);
+            correctIndicator.SetActive(correct);
+            incorrectIndicator.SetActive(!correct);
         }
-
-        private void OnDisable() {
-            UnsubscribeFromEvents();
-        }
-
-        public void SetIsCorrectHole(bool isCorrect) {
-            if (!TrySubscribeToEvents()) {
-                return;
-            }
-
-            controller.SetAsCorrectHole(isCorrect);
-            OnStatusChanged(isCorrect);
-        }
-
-        void OnStatusChanged(bool isCorrect) {
-            if (isCorrect) {
-                correctIndicator.SetActive(true);
-                incorrectIndicator.SetActive(false);
-            }
-            else {
-                correctIndicator.SetActive(false);
-                incorrectIndicator.SetActive(true);
-            }
-        }
-
         private void OnTriggerEnter(Collider other) {
-            if (other.GetComponent<SaileachStudios.Mirlini.Marble.MarbleBehaviour>() == null) {
-                return;
-            }
-
-            if (!TrySubscribeToEvents()) {
-                return;
-            }
-
+            var marble = other.GetComponent<MarbleBehaviour>();
+            if (marble == null || !marble.CanCallForHelp || controller == null) return;
             controller.MarbleDropped(transform.position);
-        }
-
-        private bool TrySubscribeToEvents() {
-            if (!EnsureController()) {
-                return false;
-            }
-
-            if (isSubscribedToEvents) {
-                return true;
-            }
-
-            GameManagerBehavior.Instance.Events.OnHoleStatusChanged += OnStatusChanged;
-            isSubscribedToEvents = true;
-            return true;
-        }
-
-        private bool EnsureController() {
-            if (controller != null) {
-                return true;
-            }
-
-            if (GameManagerBehavior.Instance == null) {
-                return false;
-            }
-
-            controller = new HoleController(GameManagerBehavior.Instance.Events);
-            return true;
-        }
-
-        private void UnsubscribeFromEvents() {
-            if (!isSubscribedToEvents || GameManagerBehavior.Instance == null) {
-                return;
-            }
-
-            GameManagerBehavior.Instance.Events.OnHoleStatusChanged -= OnStatusChanged;
-            isSubscribedToEvents = false;
         }
     }
 }

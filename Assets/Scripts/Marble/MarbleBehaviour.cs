@@ -1,204 +1,144 @@
-using UnityEngine;
-using SaileachStudios.Mirlini.Board;
 using System.Collections;
+using UnityEngine;
 using SaileachStudios.Mirlini.Core;
 
 namespace SaileachStudios.Mirlini.Marble
 {
+    [RequireComponent(typeof(Rigidbody), typeof(SphereCollider))]
     public class MarbleBehaviour : MonoBehaviour
     {
         [SerializeField] private float speed = 5f;
         [SerializeField] private float accelerationRate = 5f;
         [SerializeField] private float shrinkDuration = 1f;
-        [SerializeField] private float maxSpeed = 10f; // Optional speed cap
-        [SerializeField] private float stuckDetectionDuration = 1.5f;
-        [SerializeField] private float stuckMovementThreshold = 0.1f;
-
+        [SerializeField] private float maxSpeed = 10f;
         private Rigidbody rb;
         private MarbleController controller;
         private BallStateMachine stateMachine;
-        private float currentSpeed = 0f;
+        private GameManagerBehavior manager;
+        private GameEvents subscribedEvents;
+        private Vector3 initialScale;
+        private Coroutine resolution;
         private bool pendingIsCorrect;
         private Vector3 pendingHolePosition;
-        private Vector3 respawnPosition;
-        private Vector3 initialScale;
-        private Vector3 lastProgressPosition;
-        private float stuckTimer = 0f;
-
         public BallState CurrentState => stateMachine?.CurrentState ?? BallState.Idle;
+        public bool CanStartPlaying => isActiveAndEnabled && (CurrentState == BallState.Idle || CurrentState == BallState.Playing || CurrentState == BallState.LevelComplete);
+        public bool CanCallForHelp => isActiveAndEnabled && CurrentState == BallState.Playing && manager != null && !manager.IsPaused && resolution == null;
+        public float CollisionRadius {
+            get {
+                var sphere = GetComponent<SphereCollider>();
+                // Setup may validate the next level while the visual marble is shrunk to zero.
+                // Always use the collider at its fully playable scale.
+                Vector3 parentScale = transform.parent == null ? Vector3.one : transform.parent.lossyScale;
+                Vector3 scale = Vector3.Scale(initialScale, parentScale);
+                return sphere.radius * Mathf.Max(Mathf.Abs(scale.x), Mathf.Abs(scale.y), Mathf.Abs(scale.z));
+            }
+        }
+        private Vector3 respawnPosition;
 
         private void Awake() {
             rb = GetComponent<Rigidbody>();
-            stateMachine = new BallStateMachine();
-            respawnPosition = transform.position;
             initialScale = transform.localScale;
-            lastProgressPosition = transform.position;
+            rb.isKinematic = true; // inert until the level has explicitly supplied its start
+            controller = new MarbleController(speed, accelerationRate);
+            stateMachine = new BallStateMachine();
         }
-
-        private void Start() {
-            controller = new MarbleController(speed, accelerationRate); ;
-            stateMachine.OnStateChanged += OnStateChanged;
-
-            GameManagerBehavior.Instance.Events.OnMarbleDropped += OnMarbleDropped;
-            GameManagerBehavior.Instance.Events.OnFixedUpdate += OnPlayerInput;
+        private void OnEnable() { Bind(GameManagerBehavior.Instance); }
+        private void OnDisable() {
+            Unsubscribe();
+            if (resolution != null) StopCoroutine(resolution);
+            resolution = null;
+            if (rb != null) rb.isKinematic = true;
+            // A disabled interrupted attempt is not resumed implicitly. Level setup starts a new one.
+            stateMachine = new BallStateMachine();
+            manager = null;
         }
-
+        public void Bind(GameManagerBehavior owner) {
+            if (owner == manager && subscribedEvents != null) return;
+            Unsubscribe(); manager = owner;
+            if (owner == null || !isActiveAndEnabled) return;
+            subscribedEvents = owner.Events;
+            subscribedEvents.OnMarbleDropped += OnMarbleDropped;
+            subscribedEvents.OnFixedUpdate += OnPlayerInput;
+        }
+        private void Unsubscribe() {
+            if (subscribedEvents == null) return;
+            subscribedEvents.OnMarbleDropped -= OnMarbleDropped;
+            subscribedEvents.OnFixedUpdate -= OnPlayerInput;
+            subscribedEvents = null;
+        }
         public bool StartPlaying() {
+            if (!CanStartPlaying || rb == null || stateMachine == null || manager == null) return false;
             respawnPosition = transform.position;
             transform.localScale = initialScale;
-            if (rb != null) {
-                rb.linearVelocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
-            }
-            ResetStuckTracking();
-            if (CurrentState == BallState.Playing) {
-                GameManagerBehavior.Instance?.SetPaused(false);
-                return true;
-            }
-
-            return stateMachine != null && stateMachine.TransitionTo(BallState.Playing);
+            rb.isKinematic = false;
+            ClearVelocity();
+            if (CurrentState != BallState.Playing && !stateMachine.TransitionTo(BallState.Playing)) return false;
+            manager.SetResolvingHole(false);
+            return true;
         }
-
-        private void OnPlayerInput(bool isPaused, Vector2 playerInput) {
-            if (controller == null || rb == null) {
-                return;
-            }
-
-            if (isPaused || CurrentState != BallState.Playing) {
-                rb.linearVelocity = Vector3.zero;
-                return;
-            }
-
-            controller.CalculateTargetVelocity(playerInput);
+        private void OnPlayerInput(bool isPaused, Vector2 input) {
+            if (rb == null || controller == null) return;
+            if (isPaused || CurrentState != BallState.Playing) { if (!rb.isKinematic) ClearVelocity(); return; }
+            controller.CalculateTargetVelocity(input);
             Vector3 force = controller.CalculateForceToReachTarget(rb.linearVelocity);
-
-            // CHANGED: Set velocity directly instead of using AddForce
-            // Preserve Y velocity for gravity
-            Vector3 newVelocity = rb.linearVelocity + force * Time.fixedDeltaTime;
-            rb.linearVelocity = new Vector3(newVelocity.x, rb.linearVelocity.y, newVelocity.z);
-
-            Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-            if (horizontalVelocity.magnitude > maxSpeed) {
-                Vector3 cappedVelocity = horizontalVelocity.normalized * maxSpeed;
-                rb.linearVelocity = new Vector3(cappedVelocity.x, rb.linearVelocity.y, cappedVelocity.z);
-            }
-
-            currentSpeed = rb.linearVelocity.magnitude;
-            UpdateStuckStatus();
+            Vector3 velocity = rb.linearVelocity + force * Time.fixedDeltaTime;
+            Vector3 horizontal = Vector3.ClampMagnitude(new Vector3(velocity.x, 0f, velocity.z), maxSpeed);
+            rb.linearVelocity = new Vector3(horizontal.x, rb.linearVelocity.y, horizontal.z);
         }
-
-        public void OnMarbleDropped(bool isCorrect, Vector3 holeLocation) {
+        public void OnMarbleDropped(bool isCorrect, Vector3 holeLocation) { TryEnterHole(isCorrect, holeLocation); }
+        public bool TryEnterHole(bool isCorrect, Vector3 holeLocation) {
+            if (!CanCallForHelp || !IsFinite(holeLocation)) return false;
+            // Freeze the outcome before any event/coroutine can re-enter this method.
+            if (!stateMachine.TransitionTo(BallState.Falling)) return false;
             pendingIsCorrect = isCorrect;
             pendingHolePosition = holeLocation;
-            stateMachine?.TransitionTo(BallState.Falling);
+            manager.SetResolvingHole(true);
+            ClearVelocity(); rb.isKinematic = true;
+            resolution = StartCoroutine(ResolveHole());
+            return true;
         }
-
-        private void OnStateChanged(BallState previousState, BallState newState) {
-            switch (newState) {
-                case BallState.Playing:
-                    ResetStuckTracking();
-                    GameManagerBehavior.Instance?.SetPaused(false);
-                    break;
-                case BallState.Falling:
-                    ResetStuckTracking();
-                    StartCoroutine(ShrinkOverTime(pendingHolePosition));
-                    break;
-                case BallState.Stuck:
-                    RespawnFromStuck();
-                    break;
-                case BallState.Respawning:
-                    ResetStuckTracking();
-                    StartCoroutine(GrowOverTime(respawnPosition));
-                    break;
+        private IEnumerator ResolveHole() {
+            // Always yield once so the coroutine handle exists even with zero-duration tests.
+            yield return null;
+            Vector3 scale = transform.localScale, start = transform.position;
+            for (float elapsed = 0; elapsed < shrinkDuration;) {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / shrinkDuration);
+                transform.localScale = Vector3.Lerp(scale, Vector3.zero, t);
+                transform.position = Vector3.Lerp(start, pendingHolePosition, t);
+                yield return null;
             }
-        }
-
-        private void UpdateStuckStatus() {
-            if (CurrentState != BallState.Playing || controller == null) {
-                return;
-            }
-
-            if (!controller.IsMoving) {
-                ResetStuckTracking();
-                return;
-            }
-
-            if (Vector3.Distance(transform.position, lastProgressPosition) >= stuckMovementThreshold) {
-                lastProgressPosition = transform.position;
-                stuckTimer = 0f;
-                return;
-            }
-
-            stuckTimer += Time.fixedDeltaTime;
-            if (stuckTimer >= stuckDetectionDuration) {
-                stateMachine?.TransitionTo(BallState.Stuck);
-            }
-        }
-
-        private void RespawnFromStuck() {
-            if (rb != null) {
-                rb.linearVelocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
-            }
-
-            transform.position = respawnPosition;
             transform.localScale = Vector3.zero;
-            ResetStuckTracking();
-            stateMachine?.TransitionTo(BallState.Respawning);
-        }
-
-        private void ResetStuckTracking() {
-            stuckTimer = 0f;
-            lastProgressPosition = transform.position;
-        }
-
-        IEnumerator ShrinkOverTime(Vector3 holePosition) {
-            Vector3 startScale = transform.localScale;
-            Vector3 endScale = Vector3.zero;
-            float elapsed = 0f;
-
-            while (elapsed < shrinkDuration) {
+            transform.position = pendingHolePosition;
+            if (pendingIsCorrect) {
+                stateMachine.TransitionTo(BallState.LevelComplete);
+                resolution = null;
+                manager.Events.LevelCompleted();
+                yield break;
+            }
+            stateMachine.TransitionTo(BallState.Respawning);
+            transform.position = respawnPosition;
+            for (float elapsed = 0; elapsed < shrinkDuration;) {
                 elapsed += Time.deltaTime;
-                transform.localScale = Vector3.Lerp(startScale, endScale, elapsed / shrinkDuration);
-                transform.position = Vector3.Lerp(transform.position, holePosition, elapsed / shrinkDuration);
+                transform.localScale = Vector3.Lerp(Vector3.zero, initialScale, elapsed / shrinkDuration);
                 yield return null;
             }
-
-            transform.localScale = endScale;
-            BallState nextState = pendingIsCorrect ? BallState.LevelComplete : BallState.Respawning;
-            bool transitioned = stateMachine?.TransitionTo(nextState) ?? false;
-
-            if (pendingIsCorrect && transitioned && GameManagerBehavior.Instance != null) {
-                // This event is the post-shrink handoff point for level progression.
-                GameManagerBehavior.Instance.Events.LevelCompleted();
-            }
+            transform.localScale = initialScale;
+            rb.isKinematic = false;
+            ClearVelocity();
+            stateMachine.TransitionTo(BallState.Playing);
+            resolution = null;
+            manager.SetResolvingHole(false);
         }
-
-        IEnumerator GrowOverTime(Vector3 startPosition) {
-            transform.position = startPosition;
-            Vector3 startScale = Vector3.zero; 
-            Vector3 endScale = initialScale;
-            float elapsed = 0f;
-
-            while (elapsed < shrinkDuration) {
-                elapsed += Time.deltaTime;
-                transform.localScale = Vector3.Lerp(startScale, endScale, elapsed / shrinkDuration);
-                yield return null;
-            }
-
-            transform.localScale = endScale;
-            stateMachine?.TransitionTo(BallState.Playing);
+        // The board owns legal-position calculation; this method is internal to that validated path.
+        internal bool ApplyHelpPosition(Vector3 position) {
+            if (!CanCallForHelp || !IsFinite(position)) return false;
+            rb.position = position;
+            transform.position = position;
+            ClearVelocity();
+            return true;
         }
-
-        private void OnDestroy() {
-            if (stateMachine != null) {
-                stateMachine.OnStateChanged -= OnStateChanged;
-            }
-
-            if (GameManagerBehavior.Instance != null) {
-                GameManagerBehavior.Instance.Events.OnMarbleDropped -= OnMarbleDropped;
-                GameManagerBehavior.Instance.Events.OnFixedUpdate -= OnPlayerInput;
-            }
-        }
+        private void ClearVelocity() { if (rb.isKinematic) return; rb.linearVelocity = Vector3.zero; rb.angularVelocity = Vector3.zero; }
+        private static bool IsFinite(Vector3 p) => !(float.IsNaN(p.x) || float.IsNaN(p.y) || float.IsNaN(p.z) || float.IsInfinity(p.x) || float.IsInfinity(p.y) || float.IsInfinity(p.z));
     }
 }

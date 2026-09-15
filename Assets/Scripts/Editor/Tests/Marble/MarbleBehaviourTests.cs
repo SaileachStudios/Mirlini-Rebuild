@@ -1,165 +1,78 @@
+using System.Collections;
 using NUnit.Framework;
 using SaileachStudios.Mirlini.Board;
 using SaileachStudios.Mirlini.Core;
 using SaileachStudios.Mirlini.Marble;
-using System.Reflection;
 using UnityEngine;
+using UnityEngine.TestTools;
 
-public class MarbleBehaviourTests
+public class MarbleBehaviourTests : SandboxPlayTest
 {
-    private static readonly BindingFlags InstanceBindingFlags = BindingFlags.Instance | BindingFlags.NonPublic;
-    private static readonly BindingFlags StaticBindingFlags = BindingFlags.Static | BindingFlags.NonPublic;
-
-    private GameObject gameManagerObject;
-    private GameObject marbleObject;
-    private MarbleBehaviour marbleBehaviour;
-
-    [SetUp]
-    public void SetUp() {
-        gameManagerObject = new GameObject("GameManager");
-        var gameManager = gameManagerObject.AddComponent<GameManagerBehavior>();
-        SetGameManagerInstance(gameManager);
-
-        marbleObject = new GameObject("Marble");
-        marbleObject.AddComponent<Rigidbody>();
-        marbleBehaviour = marbleObject.AddComponent<MarbleBehaviour>();
-
-        InvokeUnityMessage(marbleBehaviour, "Awake");
-        InvokeUnityMessage(marbleBehaviour, "Start");
+    [UnityTest]
+    public IEnumerator RealSceneStartupExplicitlyStartsMarble() {
+        Assert.AreEqual(0,Find<LevelManager>().CurrentLevelIndex);
+        Assert.AreEqual(BallState.Playing,Find<MarbleBehaviour>().CurrentState);
+        Assert.IsFalse(GameManagerBehavior.Instance.IsPaused);
+        Assert.IsFalse(Find<MarbleBehaviour>().GetComponent<Rigidbody>().isKinematic);
+        yield break;
     }
-
-    [Test]
-    public void MarbleBehaviour_StartsInIdleState() {
-        Assert.AreEqual(BallState.Idle, marbleBehaviour.CurrentState);
+    [UnityTest]
+    public IEnumerator DuplicateHoleEntryCannotOverwriteAcceptedOutcome() {
+        Find<LevelEndFlowController>().enabled=false;
+        var ball=Find<MarbleBehaviour>();Set(ball,"shrinkDuration",0);
+        Assert.IsTrue(ball.TryEnterHole(true,new Vector3(1,0,1)));
+        Assert.IsFalse(ball.TryEnterHole(false,new Vector3(9,0,9)));
+        Assert.AreEqual(BallState.Falling,ball.CurrentState);
+        Assert.IsTrue(GameManagerBehavior.Instance.IsPaused);
+        yield return null;yield return null;
+        Assert.AreEqual(BallState.LevelComplete,ball.CurrentState);
+        Assert.AreEqual(.5f,ball.CollisionRadius,.00001f);
+        Assert.AreEqual(new Vector3(1,0,1),ball.transform.position);
     }
-
-    [Test]
-    public void StartPlaying_TransitionsMarbleToPlaying() {
-        bool transitioned = marbleBehaviour.StartPlaying();
-
-        Assert.AreEqual(true, transitioned);
-        Assert.AreEqual(BallState.Playing, marbleBehaviour.CurrentState);
+    [UnityTest]
+    public IEnumerator FailureGrowthPreservesExternalPauseAndAttempt() {
+        var ball=Find<MarbleBehaviour>();Set(ball,"shrinkDuration",0);
+        Vector3 start=ball.transform.position;
+        Assert.IsTrue(ball.TryEnterHole(false,Vector3.zero));
+        GameManagerBehavior.Instance.SetPaused(true);
+        yield return null;yield return null;
+        Assert.AreEqual(BallState.Playing,ball.CurrentState);
+        Assert.AreEqual(start,ball.transform.position);
+        Assert.IsTrue(GameManagerBehavior.Instance.IsPaused);
+        Assert.IsFalse(Find<LevelManager>().TryCallForHelp());
+        GameManagerBehavior.Instance.SetPaused(false);
+        Assert.IsFalse(GameManagerBehavior.Instance.IsPaused);
     }
-
-    [Test]
-    public void OnMarbleDropped_WhenPlaying_TransitionsMarbleToFalling() {
-        marbleBehaviour.StartPlaying();
-
-        marbleBehaviour.OnMarbleDropped(true, Vector3.one);
-
-        Assert.AreEqual(BallState.Falling, marbleBehaviour.CurrentState);
+    [UnityTest]
+    public IEnumerator HelpIsGatedAndDoesNotRestartAttempt() {
+        var level=Find<LevelManager>();var ball=Find<MarbleBehaviour>();var rb=ball.GetComponent<Rigidbody>();
+        var manager=GameManagerBehavior.Instance;
+        manager.SetPaused(true);Assert.IsFalse(level.TryCallForHelp());manager.SetPaused(false);
+        rb.position=new Vector3(BoardGrid.HalfExtent-.1f,0,0);ball.transform.position=rb.position;
+        rb.linearVelocity=Vector3.right;rb.angularVelocity=Vector3.up;
+        Assert.IsTrue(level.TryCallForHelp());
+        Assert.LessOrEqual(ball.transform.position.x,BoardGrid.HalfExtent-ball.CollisionRadius-.049f);
+        Assert.AreEqual(Vector3.zero,rb.linearVelocity);Assert.AreEqual(Vector3.zero,rb.angularVelocity);
+        Assert.AreEqual(0,level.CurrentLevelIndex);Assert.AreEqual(BallState.Playing,ball.CurrentState);
+        Set(ball,"shrinkDuration",.1f);ball.TryEnterHole(false,Vector3.zero);
+        Assert.IsFalse(level.TryCallForHelp());
+        yield return null;
     }
-
-    [Test]
-    public void OnMarbleDropped_WhenCorrectHole_CompletesLevelAfterShrink() {
-        SetPrivateField(marbleBehaviour, "shrinkDuration", 0f);
-        marbleBehaviour.StartPlaying();
-
-        marbleBehaviour.OnMarbleDropped(true, Vector3.one);
-
-        Assert.AreEqual(BallState.LevelComplete, marbleBehaviour.CurrentState);
+    [UnityTest]
+    public IEnumerator SustainedBlockedInputNeverRespawnsAutomatically() {
+        var ball=Find<MarbleBehaviour>();var owner=GameManagerBehavior.Instance;
+        Vector3 location=new Vector3(0,0,0);ball.transform.position=location;
+        for (int i=0;i<300;i++) owner.Events.InputUpdated(false,Vector2.right);
+        Assert.AreEqual(BallState.Playing,ball.CurrentState);
+        Assert.AreEqual(location,ball.transform.position);
+        yield break;
     }
-
-    [Test]
-    public void OnMarbleDropped_WhenCorrectHole_RaisesLevelCompletedAfterShrink() {
-        var mockEvents = new MockGameEvents();
-        SetGameManagerEvents(mockEvents);
-        InvokeUnityMessage(marbleBehaviour, "OnDestroy");
-        InvokeUnityMessage(marbleBehaviour, "Start");
-        SetPrivateField(marbleBehaviour, "shrinkDuration", 0f);
-        marbleBehaviour.StartPlaying();
-
-        marbleBehaviour.OnMarbleDropped(true, Vector3.one);
-
-        Assert.AreEqual(true, mockEvents.LevelCompletedCalled);
-        Assert.AreEqual(BallState.LevelComplete, marbleBehaviour.CurrentState);
-    }
-
-    [Test]
-    public void OnMarbleDropped_WhenIncorrectHole_RespawnsAndReturnsToPlaying() {
-        marbleObject.transform.position = new Vector3(2f, 0f, 3f);
-        SetPrivateField(marbleBehaviour, "shrinkDuration", 0f);
-        marbleBehaviour.StartPlaying();
-
-        marbleObject.transform.position = new Vector3(10f, 0f, 12f);
-        marbleBehaviour.OnMarbleDropped(false, Vector3.one);
-
-        Assert.AreEqual(BallState.Playing, marbleBehaviour.CurrentState);
-        Assert.AreEqual(new Vector3(2f, 0f, 3f), marbleObject.transform.position);
-        Assert.AreEqual(Vector3.one, marbleObject.transform.localScale);
-    }
-
-    [Test]
-    public void OnPlayerInput_WhenMarbleIsStuck_RespawnsBackToLastStartPosition() {
-        marbleObject.transform.position = new Vector3(2f, 0f, 3f);
-        SetPrivateField(marbleBehaviour, "shrinkDuration", 0f);
-        SetPrivateField(marbleBehaviour, "stuckDetectionDuration", Time.fixedDeltaTime);
-        SetPrivateField(marbleBehaviour, "stuckMovementThreshold", 0.5f);
-        marbleBehaviour.StartPlaying();
-
-        marbleObject.transform.position = new Vector3(9f, 0f, 9f);
-        SetPrivateField(marbleBehaviour, "lastProgressPosition", marbleObject.transform.position);
-
-        InvokePlayerInput(false, Vector2.right);
-
-        Assert.AreEqual(BallState.Playing, marbleBehaviour.CurrentState);
-        Assert.AreEqual(new Vector3(2f, 0f, 3f), marbleObject.transform.position);
-        Assert.AreEqual(Vector3.one, marbleObject.transform.localScale);
-    }
-
-    [Test]
-    public void OnPlayerInput_WithoutMovementInput_DoesNotTriggerStuckRespawn() {
-        marbleObject.transform.position = new Vector3(2f, 0f, 3f);
-        SetPrivateField(marbleBehaviour, "shrinkDuration", 0f);
-        SetPrivateField(marbleBehaviour, "stuckDetectionDuration", Time.fixedDeltaTime);
-        SetPrivateField(marbleBehaviour, "stuckMovementThreshold", 0.5f);
-        marbleBehaviour.StartPlaying();
-
-        marbleObject.transform.position = new Vector3(9f, 0f, 9f);
-
-        InvokePlayerInput(false, Vector2.zero);
-        InvokePlayerInput(false, Vector2.zero);
-        InvokePlayerInput(false, Vector2.zero);
-
-        Assert.AreEqual(BallState.Playing, marbleBehaviour.CurrentState);
-        Assert.AreEqual(new Vector3(9f, 0f, 9f), marbleObject.transform.position);
-    }
-
-    [TearDown]
-    public void TearDown() {
-        if (marbleObject != null) {
-            Object.DestroyImmediate(marbleObject);
-        }
-
-        if (gameManagerObject != null) {
-            Object.DestroyImmediate(gameManagerObject);
-        }
-
-        SetGameManagerInstance(null);
-    }
-
-    private static void InvokeUnityMessage(object target, string methodName) {
-        MethodInfo method = target.GetType().GetMethod(methodName, InstanceBindingFlags);
-        method?.Invoke(target, null);
-    }
-
-    private static void SetGameManagerInstance(GameManagerBehavior instance) {
-        FieldInfo backingField = typeof(GameManagerBehavior).GetField("<Instance>k__BackingField", StaticBindingFlags);
-        backingField?.SetValue(null, instance);
-    }
-
-    private static void SetGameManagerEvents(GameEvents events) {
-        FieldInfo backingField = typeof(GameManagerBehavior).GetField("<Events>k__BackingField", InstanceBindingFlags);
-        backingField?.SetValue(GameManagerBehavior.Instance, events);
-    }
-
-    private static void SetPrivateField(object target, string fieldName, object value) {
-        FieldInfo field = target.GetType().GetField(fieldName, InstanceBindingFlags);
-        field?.SetValue(target, value);
-    }
-
-    private void InvokePlayerInput(bool isPaused, Vector2 input) {
-        MethodInfo method = marbleBehaviour.GetType().GetMethod("OnPlayerInput", InstanceBindingFlags);
-        method?.Invoke(marbleBehaviour, new object[] { isPaused, input });
+    [UnityTest]
+    public IEnumerator DisabledMarbleAndTiltDetachFromPersistentEvents() {
+        var ball=Find<MarbleBehaviour>();var tilt=Find<BoardTiltBehavior>();var events=GameManagerBehavior.Instance.Events;
+        ball.enabled=false;tilt.enabled=false;Quaternion rotation=tilt.transform.rotation;
+        events.BallDropped(true,Vector3.zero);events.InputUpdated(false,Vector2.one);
+        Assert.AreEqual(BallState.Idle,ball.CurrentState);Assert.AreEqual(rotation,tilt.transform.rotation);
+        yield break;
     }
 }

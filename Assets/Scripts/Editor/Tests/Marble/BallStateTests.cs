@@ -1,7 +1,5 @@
 using NUnit.Framework;
 using SaileachStudios.Mirlini.Marble;
-using Unity.VisualScripting;
-using UnityEngine;
 
 public class BallStateTests
 {
@@ -35,12 +33,6 @@ public class BallStateTests
         Assert.AreEqual(BallState.Respawning, state);
     }
 
-    [Test]
-    public void BallState_HasStuckState()
-    {
-        BallState state = BallState.Stuck;
-        Assert.AreEqual(BallState.Stuck, state);
-    }
 
     [Test]
     public void BallState_HasLevelCompleteState()
@@ -104,28 +96,7 @@ public class BallStateTests
         Assert.AreEqual(BallState.Playing, stateMachine.CurrentState);
     }
 
-    [Test]
-    public void BallStateMachine_CanTransitionFromPlayingToStuck()
-    {
-        var stateMachine = new BallStateMachine();
-        stateMachine.TransitionTo(BallState.Playing);
-        bool transitioned = stateMachine.TransitionTo(BallState.Stuck);
 
-        Assert.AreEqual(true, transitioned, "Should allow Playing ? Stuck");
-        Assert.AreEqual(BallState.Stuck, stateMachine.CurrentState);
-    }
-
-    [Test]
-    public void BallStateMachine_CanTransitionFromStuckToRespawning()
-    {
-        var stateMachine = new BallStateMachine();
-        stateMachine.TransitionTo(BallState.Playing);
-        stateMachine.TransitionTo(BallState.Stuck);
-        bool transitioned = stateMachine.TransitionTo(BallState.Respawning);
-
-        Assert.AreEqual(true, transitioned, "Should allow Stuck ? Respawning");
-        Assert.AreEqual(BallState.Respawning, stateMachine.CurrentState);
-    }
 
     [Test]
     public void BallStateMachine_CanTransitionFromFallingToLevelComplete()

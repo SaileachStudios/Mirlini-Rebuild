@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SaileachStudios.Mirlini.InputSystem
 {
-    public class GyroInputProvider : IInputProvider
+    public class GyroInputProvider : IInputProvider, IInputLifecycle
     {
         private IInputWrapper inputWrapper;
         private float speedModifer = 1f;
@@ -12,6 +12,19 @@ namespace SaileachStudios.Mirlini.InputSystem
         public GyroInputProvider(IInputWrapper wrapper, float speedMod) {
             inputWrapper = wrapper;
             this.speedModifer = speedMod;
+        }
+
+        private bool active;
+        public void Activate() {
+            if (active) return;
+            inputWrapper.GyroEnabled = true;
+            active = true;
+        }
+
+        public void Deactivate() {
+            if (!active) return;
+            inputWrapper.GyroEnabled = false;
+            active = false;
         }
 
         public bool GyroEnabled {

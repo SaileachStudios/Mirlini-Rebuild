@@ -1,59 +1,41 @@
-using SaileachStudios.Mirlini.Audio;
-using SaileachStudios.Mirlini.Board;
 using SaileachStudios.Mirlini.InputSystem;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SaileachStudios.Mirlini.Core
 {
+    [DefaultExecutionOrder(-1000)]
     public class GameManagerBehavior : MonoBehaviour
     {
         public static GameManagerBehavior Instance { get; private set; }
         public GameEvents Events { get; private set; } = new GameEvents();
-
         private IInputProvider inputProvider;
-        private bool isPaused = false;
+        private bool paused, resolvingHole, applicationPaused;
+        public bool IsPaused => paused || resolvingHole || applicationPaused || !isActiveAndEnabled;
 
         private void Awake() {
-            if (Instance != null && Instance != this) {
-                Destroy(gameObject);
-                return;
-            }
+            if (Instance != null && Instance != this) { Destroy(gameObject); return; }
             Instance = this;
-            DontDestroyOnLoad(this);
+            inputProvider = new InputProviderFactory(new PlatformDetector(), new UnityInputWrapper()).Create();
+            DontDestroyOnLoad(gameObject);
         }
-
-        public bool IsGyroEnabled() {
-            return inputProvider is GyroInputProvider;
+        private void OnEnable() { if (Instance == this && !applicationPaused) (inputProvider as IInputLifecycle)?.Activate(); }
+        private void OnDisable() { (inputProvider as IInputLifecycle)?.Deactivate(); }
+        private void OnApplicationPause(bool value) {
+            applicationPaused = value;
+            if (value) (inputProvider as IInputLifecycle)?.Deactivate();
+            else if (Instance == this && isActiveAndEnabled) (inputProvider as IInputLifecycle)?.Activate();
         }
-
-        public void SetPaused(bool paused) {
-            isPaused = paused;
-        }
-
-        private void Start() {
-            var factory = new InputProviderFactory(new PlatformDetector(), new UnityInputWrapper());
-            inputProvider = factory.Create();
-            Events.OnMarbleDropped += OnBalledDropped;
-        }
-
+        public bool IsGyroEnabled() => inputProvider is GyroInputProvider;
+        public void SetPaused(bool value) { paused = value; }
+        // Only an accepted marble resolution owns this pause reason. Menu/app pause is independent.
+        public void SetResolvingHole(bool value) { resolvingHole = value; }
         private void FixedUpdate() {
-            Vector2 playerInput = inputProvider.GetInput().normalized;
-            Events.InputUpdated(isPaused, playerInput);
+            if (Instance != this || inputProvider == null) return;
+            Events.InputUpdated(IsPaused, IsPaused ? Vector2.zero : InputRange.Clamp(inputProvider.GetInput()));
         }
-
-        private void OnBalledDropped(bool isCorrect, Vector3 location) {
-            isPaused = true;
-        }
-
         private void OnDestroy() {
-            Events.OnMarbleDropped -= OnBalledDropped;
-
-            if (Instance == this) {
-                Instance = null;
-            }
+            (inputProvider as IInputLifecycle)?.Deactivate();
+            if (Instance == this) Instance = null;
         }
     }
 }

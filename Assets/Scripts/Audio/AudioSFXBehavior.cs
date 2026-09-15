@@ -25,21 +25,23 @@ namespace SaileachStudios.Mirlini.Audio
             }
         }
 
-        private void Start() {
-            GameManagerBehavior.Instance.Events.OnMarbleDropped += OnBallDropped;
+        private GameEvents subscribedEvents;
+        private void OnEnable() {
+            if (GameManagerBehavior.Instance == null) return;
+            subscribedEvents = GameManagerBehavior.Instance.Events;
+            subscribedEvents.OnMarbleDropped += OnBallDropped;
         }
 
         private void OnBallDropped(bool isCorrect, Vector3 holeLocation) {
-            if (!audioSource.isPlaying) {
+            if (audioSource != null && !audioSource.isPlaying) {
                 audioSource.clip = dropSFX;
                 audioSource.Play();
             }
         }
 
-        private void OnDestroy() {
-            if (GameManagerBehavior.Instance != null) {
-                GameManagerBehavior.Instance.Events.OnMarbleDropped -= OnBallDropped;
-            }
+        private void OnDisable() {
+            if (subscribedEvents != null) subscribedEvents.OnMarbleDropped -= OnBallDropped;
+            subscribedEvents = null;
         }
     }
 }

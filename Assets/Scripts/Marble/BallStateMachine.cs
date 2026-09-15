@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace SaileachStudios.Mirlini.Marble
 {
@@ -14,10 +13,9 @@ namespace SaileachStudios.Mirlini.Marble
         private static readonly Dictionary<BallState, HashSet<BallState>> validTransitions = new Dictionary<BallState, HashSet<BallState>>
         {
             { BallState.Idle, new HashSet<BallState> { BallState.Playing } },
-            { BallState.Playing, new HashSet<BallState> { BallState.Falling, BallState.Stuck } },
+            { BallState.Playing, new HashSet<BallState> { BallState.Falling } },
             { BallState.Falling, new HashSet<BallState> { BallState.Respawning, BallState.LevelComplete } },
             { BallState.Respawning, new HashSet<BallState> { BallState.Playing } },
-            { BallState.Stuck, new HashSet<BallState> { BallState.Respawning } },
             { BallState.LevelComplete, new HashSet<BallState> { BallState.Playing } }
         };
 

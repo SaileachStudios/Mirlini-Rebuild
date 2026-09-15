@@ -5,7 +5,7 @@ namespace SaileachStudios.Mirlini.InputSystem
     public interface IInputProvider
     {
         /// <summary>
-        /// Returns a normalized 2D input vector (e.g., from keyboard or gyro).
+        /// Returns device input with its sensitivity modifier applied. The consumer clamps magnitude to one; it must not normalize sub-unit values.
         /// </summary>
         Vector2 GetInput();
 

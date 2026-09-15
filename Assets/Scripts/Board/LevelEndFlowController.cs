@@ -11,6 +11,7 @@ namespace SaileachStudios.Mirlini.Board
         [SerializeField] private float temporaryCompletionDelay = 0.15f;
 
         private bool isSubscribedToGameEvents = false;
+        private GameEvents subscribedEvents;
         private bool isHandlingLevelCompletion = false;
         private Coroutine activeCompletionFlow = null;
         private Coroutine pendingSubscriptionRetry = null;
@@ -72,16 +73,18 @@ namespace SaileachStudios.Mirlini.Board
                 return;
             }
 
-            GameManagerBehavior.Instance.Events.OnLevelCompleted += OnLevelCompleted;
+            subscribedEvents = GameManagerBehavior.Instance.Events;
+            subscribedEvents.OnLevelCompleted += OnLevelCompleted;
             isSubscribedToGameEvents = true;
         }
 
         private void UnsubscribeFromGameEvents() {
-            if (!isSubscribedToGameEvents || GameManagerBehavior.Instance == null) {
+            if (!isSubscribedToGameEvents || subscribedEvents == null) {
                 return;
             }
 
-            GameManagerBehavior.Instance.Events.OnLevelCompleted -= OnLevelCompleted;
+            subscribedEvents.OnLevelCompleted -= OnLevelCompleted;
+            subscribedEvents = null;
             isSubscribedToGameEvents = false;
         }
 
