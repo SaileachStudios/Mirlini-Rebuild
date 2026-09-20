@@ -1,0 +1,478 @@
+{
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {
+    "fileID": 0
+  },
+  "m_PrefabInstance": {
+    "fileID": 0
+  },
+  "m_PrefabAsset": {
+    "fileID": 0
+  },
+  "m_GameObject": {
+    "fileID": 121106845945603364,
+    "key": "121106845043119195/121106845945603364"
+  },
+  "m_Enabled": 1,
+  "m_EditorHideFlags": 0,
+  "m_Script": {
+    "fileID": 11500000,
+    "guid": "14f9e6f80577e2a479630376530993ca",
+    "type": 3
+  },
+  "m_Name": null,
+  "m_EditorClassIdentifier": null,
+  "resetStorage": 0,
+  "levels": [
+    {
+      "name": "Tutorial Regular",
+      "buildId": 4,
+      "levelNum": 1,
+      "idealTime": 1.5,
+      "isUnlocked": 1,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Regular 1",
+      "buildId": 5,
+      "levelNum": 2,
+      "idealTime": 8.01,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Regular 2",
+      "buildId": 6,
+      "levelNum": 3,
+      "idealTime": 7.89,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Regular 3",
+      "buildId": 7,
+      "levelNum": 4,
+      "idealTime": 7.11,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Regular 4",
+      "buildId": 8,
+      "levelNum": 5,
+      "idealTime": 7.87,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Tutorial Unlock",
+      "buildId": 9,
+      "levelNum": 6,
+      "idealTime": 4.45,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 1
+    },
+    {
+      "name": "Unlock 1",
+      "buildId": 10,
+      "levelNum": 7,
+      "idealTime": 11.58,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 1
+    },
+    {
+      "name": "Regular 5",
+      "buildId": 11,
+      "levelNum": 8,
+      "idealTime": 8.64,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Unlock 2",
+      "buildId": 12,
+      "levelNum": 9,
+      "idealTime": 8.49,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 1
+    },
+    {
+      "name": "Tutorial SpotLight",
+      "buildId": 13,
+      "levelNum": 10,
+      "idealTime": 1.5,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 2
+    },
+    {
+      "name": "Spotlight 1",
+      "buildId": 14,
+      "levelNum": 11,
+      "idealTime": 5.52,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 2
+    },
+    {
+      "name": "Regular 6",
+      "buildId": 15,
+      "levelNum": 12,
+      "idealTime": 6.77,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Unlock 3",
+      "buildId": 16,
+      "levelNum": 13,
+      "idealTime": 10.53,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 1
+    },
+    {
+      "name": "Spotlight 2",
+      "buildId": 17,
+      "levelNum": 14,
+      "idealTime": 6.77,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 2
+    },
+    {
+      "name": "Tutorial Invisible",
+      "buildId": 18,
+      "levelNum": 15,
+      "idealTime": 1.5,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 3
+    },
+    {
+      "name": "Invisible 1",
+      "buildId": 19,
+      "levelNum": 16,
+      "idealTime": 8.18,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 3
+    },
+    {
+      "name": "Regular 7",
+      "buildId": 20,
+      "levelNum": 17,
+      "idealTime": 6.27,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Unlock 4",
+      "buildId": 21,
+      "levelNum": 18,
+      "idealTime": 12.46,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 1
+    },
+    {
+      "name": "Spotlight 3",
+      "buildId": 22,
+      "levelNum": 19,
+      "idealTime": 5.81,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 2
+    },
+    {
+      "name": "Invisible 2",
+      "buildId": 23,
+      "levelNum": 20,
+      "idealTime": 7.61,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 3
+    },
+    {
+      "name": "Unlock Spotlight 1",
+      "buildId": 24,
+      "levelNum": 21,
+      "idealTime": 11.61,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 4
+    },
+    {
+      "name": "Regular 8",
+      "buildId": 25,
+      "levelNum": 22,
+      "idealTime": 6.59,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Unlock 5",
+      "buildId": 26,
+      "levelNum": 23,
+      "idealTime": 12.49,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 1
+    },
+    {
+      "name": "Spotlight 4",
+      "buildId": 27,
+      "levelNum": 24,
+      "idealTime": 6.59,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 2
+    },
+    {
+      "name": "Invisible 3",
+      "buildId": 28,
+      "levelNum": 25,
+      "idealTime": 4.95,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 3
+    },
+    {
+      "name": "UnlockSpotlight 2",
+      "buildId": 29,
+      "levelNum": 26,
+      "idealTime": 11.71,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 4
+    },
+    {
+      "name": "Unlock Invisible 1",
+      "buildId": 30,
+      "levelNum": 27,
+      "idealTime": 13.13,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 5
+    },
+    {
+      "name": "Regular 9",
+      "buildId": 31,
+      "levelNum": 28,
+      "idealTime": 7.95,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Unlock 6",
+      "buildId": 32,
+      "levelNum": 29,
+      "idealTime": 10.39,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 1
+    },
+    {
+      "name": "Spotlight 5",
+      "buildId": 33,
+      "levelNum": 30,
+      "idealTime": 6.51,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 2
+    },
+    {
+      "name": "Invisible 4",
+      "buildId": 34,
+      "levelNum": 31,
+      "idealTime": 6.77,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 3
+    },
+    {
+      "name": "Unlock Spotlight 3",
+      "buildId": 35,
+      "levelNum": 32,
+      "idealTime": 16.38,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 4
+    },
+    {
+      "name": "Unlock Invisible 2",
+      "buildId": 36,
+      "levelNum": 33,
+      "idealTime": 11.47,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 5
+    },
+    {
+      "name": "Regular 10",
+      "buildId": 37,
+      "levelNum": 34,
+      "idealTime": 8.02,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Unlock 7",
+      "buildId": 38,
+      "levelNum": 35,
+      "idealTime": 10.18,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 1
+    },
+    {
+      "name": "Spotlight 6",
+      "buildId": 39,
+      "levelNum": 36,
+      "idealTime": 5.55,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 2
+    },
+    {
+      "name": "Invisible 5",
+      "buildId": 40,
+      "levelNum": 37,
+      "idealTime": 6.11,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 3
+    },
+    {
+      "name": "Unlock Spotlight 4",
+      "buildId": 41,
+      "levelNum": 38,
+      "idealTime": 12.19,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 4
+    },
+    {
+      "name": "Unlock Invisible 3",
+      "buildId": 42,
+      "levelNum": 39,
+      "idealTime": 9.91,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 5
+    },
+    {
+      "name": "Regular 11",
+      "buildId": 43,
+      "levelNum": 40,
+      "idealTime": 6.9,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Unlock 8",
+      "buildId": 44,
+      "levelNum": 41,
+      "idealTime": 11.78,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 1
+    },
+    {
+      "name": "Spotlight 7",
+      "buildId": 45,
+      "levelNum": 42,
+      "idealTime": 7.05,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 2
+    },
+    {
+      "name": "Invisible 6",
+      "buildId": 46,
+      "levelNum": 43,
+      "idealTime": 8.75,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 3
+    },
+    {
+      "name": "Unlock Spotlight 5",
+      "buildId": 47,
+      "levelNum": 44,
+      "idealTime": 15.87,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 4
+    },
+    {
+      "name": "Unlock Invisible 4",
+      "buildId": 48,
+      "levelNum": 45,
+      "idealTime": 9.99,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 5
+    },
+    {
+      "name": "Regular 12",
+      "buildId": 49,
+      "levelNum": 46,
+      "idealTime": 6.56,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Regular 13",
+      "buildId": 50,
+      "levelNum": 47,
+      "idealTime": 14.68,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Regular 14",
+      "buildId": 51,
+      "levelNum": 48,
+      "idealTime": 15.06,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Regular 15",
+      "buildId": 52,
+      "levelNum": 49,
+      "idealTime": 13.72,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    },
+    {
+      "name": "Regular 16",
+      "buildId": 4,
+      "levelNum": 50,
+      "idealTime": 1.5,
+      "isUnlocked": 0,
+      "bestTime": 0,
+      "type": 0
+    }
+  ]
+}
