@@ -15,23 +15,11 @@
     "Test": 4,
     "UnityTest": 0
   },
-  "Assets\\Scripts\\Editor\\Tests\\Board\\LevelEndFlowControllerTests.cs": {
-    "Test": 0,
-    "UnityTest": 3
-  },
-  "Assets\\Scripts\\Editor\\Tests\\Board\\LevelManagerValidationTests.cs": {
-    "Test": 0,
-    "UnityTest": 3
-  },
   "Assets\\Scripts\\Editor\\Tests\\Board\\SceneContractTests.cs": {
     "Test": 3,
     "UnityTest": 0
   },
   "Assets\\Scripts\\Editor\\Tests\\Core\\MockGameEvents.cs": {
-    "Test": 0,
-    "UnityTest": 0
-  },
-  "Assets\\Scripts\\Editor\\Tests\\Core\\SandboxPlayTest.cs": {
     "Test": 0,
     "UnityTest": 0
   },
@@ -75,12 +63,24 @@
     "Test": 15,
     "UnityTest": 0
   },
-  "Assets\\Scripts\\Editor\\Tests\\Marble\\MarbleBehaviourTests.cs": {
-    "Test": 0,
-    "UnityTest": 6
-  },
   "Assets\\Scripts\\Editor\\Tests\\Marble\\MarbleControllerTests.cs": {
     "Test": 18,
+    "UnityTest": 0
+  },
+  "Assets\\Tests\\PlayMode\\LevelEndFlowControllerTests.cs": {
+    "Test": 0,
+    "UnityTest": 3
+  },
+  "Assets\\Tests\\PlayMode\\LevelManagerValidationTests.cs": {
+    "Test": 0,
+    "UnityTest": 4
+  },
+  "Assets\\Tests\\PlayMode\\MarbleBehaviourTests.cs": {
+    "Test": 0,
+    "UnityTest": 7
+  },
+  "Assets\\Tests\\PlayMode\\SandboxPlayTest.cs": {
+    "Test": 0,
     "UnityTest": 0
   }
 }

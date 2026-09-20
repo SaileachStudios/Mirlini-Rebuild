@@ -1,17 +1,42 @@
-# Phase 1 — Stabilize the production foundation
+# Phase 1 â€” Stabilize the production foundation
 
-Completed source work: 15 September 2026. Production repository: Mirlini-Rebuild. Phase 2 has not started.
+Completed source work: 15 September 2026. Exact-editor closeout: 20 September 2026. Production repository: Mirlini-Rebuild. Phase 2 has not started.
 
 ## Result and readiness
 
-The requested foundation changes are implemented, with **51 standalone checks passing** and a successful source compilation of runtime, editor and tests. The scene's 480 wall placements and completion-flow wiring were also checked directly from resolved YAML.
+**Phase 1 complete with non-blocking follow-up items; ready for Phase 2 review.** Unity **6000.3.11f1 (3000ef702840)** compiled/imported the project and passed the full suites: **79/79 EditMode and 14/14 PlayMode**, zero failures, skips or inconclusive tests. These are actual Unity runs, including Sandbox physics/lifecycle tests, not the earlier standalone harness. Captured results are in `Verification/EditMode.xml` and `Verification/PlayMode.xml`.
 
-**Ready for Phase 2 design review, conditionally ready for representative migration.** Before treating the foundation as verified in-engine, run the full Unity suite and smoke-test Sandbox with the recorded **6000.3.11f1** editor. That editor was not available in the standard installed Hub directory. No editor was launched and no Unity upgrade was performed. Android sensor behavior and collision feel remain pending. Do not mistake the standalone/compiler checks for Unity test results.
+The user's exact-editor manual smoke test found Sandbox healthy, with no obvious wall snagging. Movement felt slightly slow; tuning is deliberately deferred. Help has no UI and was verified through its actual Unity API instead. Android sensor/device verification and player builds remain separate follow-ups. No Unity upgrade, geometry/feel tuning or Phase 2 migration occurred.
+
+## Closeout findings and changes
+
+### Failed respawn assertion: numerical precision, not an incorrect destination
+
+Reproduced the reported exact `Vector3` equality failure. A diagnostic run after a real fixed physics step measured:
+
+- Before entry: `(-13.5000019, 0.00000147819458, 13.500001)`.
+- After recovery: `(-13.5, 0, 13.5)`, the authored start.
+- Delta: `(0.00000190734863, -0.00000147819458, -0.0000009536743)`; magnitude approximately **0.00000259 world units**.
+
+The test captured a live, physics-adjusted resting position, then compared it exactly with the authored position restored by respawn. Frame timing made the tiny contact/float difference intermittent; the default vector formatting hid it. The runtime respawn position was correct. The test now reads the expected start from the selected level asset and allows a **0.00001 world-unit distance**, only 1/50,000 of the marble radius. No broad tolerance or respawn runtime change was introduced.
+
+Both zero-duration recovery and an added nonzero-duration animation test assert the authored destination, full scale, return to Playing, dynamic body restoration, unchanged level index, continued external pause and rejected help during resolution/pause. The animated test observes Respawning explicitly. The correct-hole test now also runs a nonzero shrink and rejects duplicate outcomes throughout it.
+
+### Reproduced setup timing defect
+
+Early completion/setup could combine stale native `Collider.bounds` with a newly assigned transform position, incorrectly rejecting a valid goal footprint. A focused test deliberately moves the goal before the next physics step: it failed before the fix and passes afterward. `LevelManager.TryValidateSetup` now calls `Physics.SyncTransforms()` before reading goal bounds, matching the existing help-path policy. It still validates before applying the next level. This is the only production behavior change in closeout; no geometry or movement tuning changed.
+
+### Real EditMode and PlayMode test discovery
+
+Previously all 91 methods lived in the editor assembly; 12 entered/exited Play Mode through an EditMode fixture. They were not a separately discoverable PlayMode suite. Added a runtime assembly definition and separate EditMode/PlayMode test assembly definitions, moving the three scene test classes plus their fixture with their existing meta GUIDs. The PlayMode fixture loads the real Sandbox and cleans up the persistent manager between cases without calling lifecycle methods or repeatedly switching editor modes. These are **editor-hosted PlayMode tests**, with an `UNITY_EDITOR` constraint because they load the scene via editor APIs; they are not player-build tests.
+
+No test was removed. Two regression tests were added, giving 79 EditMode + 14 PlayMode = **93 tests**. The existing help integration test already exercises `LevelManager.TryCallForHelp`, boundary recovery, velocity clearing, unchanged level/state and invalid-state rejection; duplicating it was unnecessary.
 
 ## Baseline and scope
 
 - Started on `main`, HEAD `4e520d2fd024697593b141365bee13101caae156`. The only pre-existing untracked content was the previous `Docs/Audits` report package; it is not included in Phase 1 commits.
-- ProjectVersion remains `6000.3.11f1`. Available newer reference assemblies from `6000.6.0f1` were read for compilation only. Project settings/packages were not upgraded.
+- ProjectVersion remains `6000.3.11f1`. The initial implementation used 6000.6 reference assemblies for a source-only check because the exact editor was unavailable then. Closeout used the now-installed exact 6000.3.11f1 editor. Project settings/packages were not upgraded.
+- Closeout started on `main` at `6d6740c`, after local commits `1521c5f` and `2456643`. The pre-existing extra empty entry in `ProjectSettings/GvhProjectSettings.xml` and untracked `Docs/Audits/` were preserved and excluded from closeout. No push was performed.
 - Mirlini-Original was not modified. No original levels were migrated.
 - Corrected audit detail: Sandbox configures two levels, but the repository contains **three** prototype assets: Level 1, Level 2 and Test 1. All three now use the shared coordinate convention. Their wall occupancy is unchanged.
 - No new menu, help button/binding, scoring formula, saves, analytics, monetization or generalized modifier framework was added.
@@ -89,32 +114,39 @@ New C# assets include stable `.meta` GUIDs. Existing scene/asset GUIDs are prese
 - Removed 3 obsolete Stuck enum/transition tests; retained 15 ball-state tests.
 - Replaced the previous 8 marble tests, including the 2 automatic-stuck heuristic cases, with 6 realistic lifecycle scenarios: startup, duplicate hole entry, failed-hole pause preservation, guarded help/velocity clearing, sustained input without automatic respawn and disabled-listener cleanup.
 - Reworked the 3 completion-flow tests to load the actual Sandbox, including disabled and re-enabled listener cases.
-- Touched integration tests no longer reflectively invoke Awake/Start/OnEnable. Their fixture enters Play Mode using Unity Test Tools and loads Sandbox through the editor's Play Mode scene-loading API.
+- Integration tests do not reflectively invoke Awake/Start/OnEnable. At closeout they moved to the dedicated PlayMode suite and load Sandbox through the editor's Play Mode scene-loading API.
+- Closeout added animated failure recovery and stale-goal-bounds regression tests. No obsolete test removals were needed during closeout.
 
-The final source inventory contains **79 `[Test]` methods and 12 `[UnityTest]` methods** (91 total). This is a method count, not a coverage percentage.
+The final source inventory contains **79 `[Test]` methods and 14 `[UnityTest]` methods** (93 total). This is a method count, not a coverage percentage.
 
-### Actually executed
+### Actually executed in Unity 6000.3.11f1
 
-1. **51 standalone test methods passed, zero failed.** The actual NUnit methods for geometry, help, ball states and input were invoked by the local .NET harness. The geometry/help/state code is engine-independent; input tests use managed Unity vector types and mocked device wrappers. No sensor or native Unity runtime was exercised. See `standalone-results.txt`.
-2. **All runtime/editor/test sources compiled with zero errors and zero warnings** against locally installed 6.6 reference assemblies. This is a secondary source/API check, not a recorded-editor build. See `compile-results.txt`.
-3. Resolved Sandbox YAML: checked all 480 authored positions against the chosen grid, four boundary assignments, the completion-flow component/reference, and the prototype point positions against wall clearance. Original occupancy arrays were retained.
-4. Git/diff and metadata checks: limited write set, no recorded-version change, no original-repository edits. Prior audit artifacts were preserved.
+| Full suite | Total | Passed | Failed | Skipped | Inconclusive | NUnit duration |
+|---|---:|---:|---:|---:|---:|---:|
+| EditMode | 79 | 79 | 0 | 0 | 0 | 0.159 s |
+| PlayMode (editor hosted) | 14 | 14 | 0 | 0 | 0 | 0.970 s |
 
-### Not executed
+Runs used `-batchmode -nographics -runTests` with `-testPlatform EditMode` / `PlayMode`, without a test filter. Durations are the runner's reported suite durations, excluding editor startup/import. See `Verification/RunSummary.json` for exact timestamps, editor revision and result files. Negative setup tests intentionally expect error logs; neither final run contains an unexpected test failure or compile error.
 
-- Unity's full EditMode suite, its Play Mode integration scenarios, a player build and visual/physics smoke tests: exact `6000.3.11f1` editor unavailable in the standard installation directory.
-- The remaining 40 test methods were compiled but not executed by the standalone harness. This includes Unity scene/lifecycle tests and other existing controller tests.
-- Android sensor activation, suspend/resume, orientation and physical-device feel: no device run.
+Verified by these suites: real Sandbox startup and explicit marble initialization; authored completion wiring and 480-edge geometry; progression listener disable/re-enable; correct shrink and frozen duplicate outcome; failed shrink/respawn/growth and independent external pause; input magnitude/provider semantics; obsolete stuck behavior absence; real help API gating and velocity clearing; disabled listeners; safe invalid setup; immediate setup before a physics step. Android hardware and visual rendering are not exercised by headless tests.
+
+### Historical source-only verification (15 September)
+
+51 standalone methods passed; all then-current source compiled against installed 6.6 reference assemblies with zero errors/warnings. YAML checks covered 480 wall placements, boundaries, completion wiring and prototype points. `standalone-results.txt` and `compile-results.txt` remain historical evidence, superseded for engine verification by the exact-editor runs above.
+
+### Manual verification and work not run
+
+The user reported exact-editor Sandbox smoke testing healthy, no obvious snagging, and slightly slow movement. This is user-reported manual evidence; the closeout agent performed automated engine tests, not a new visual smoke pass. Help was not manually exercised because there is no UI; its API integration test passed. No Android device run, player build, prolonged collision stress test or final-feel tuning was performed.
 
 ## D. Remaining risks
 
-1. **Exact-editor import and execution are the main release gate.** The new tests must run in 6000.3.11f1, especially startup, disabled/re-enabled listeners, hole animations and next-level setup.
-2. **Geometry needs playtesting.** Standardized origin, join overlaps and boundaries slightly shift prototype geometry. Confirm corner contacts, clearances, camera framing and maximum-speed collisions in Sandbox before migration.
+1. **Android hardware remains unverified.** Real gyro enable/disable, suspend/resume, orientation and device feel still need a physical device. Mocked sensor lifecycle tests pass.
+2. **Broader physics/feel testing remains.** Automated geometry checks and the user's smoke pass are healthy. Long-running corner/maximum-speed collision tests and cross-device feel remain later work; the reported slight slowness is a tuning follow-up, not a Phase 1 defect.
 3. **Help is a technical API, not finished UX.** Conservative corner clearance and bounded relocation need practical testing; failure returns false for the future UI to explain. No penalty was added.
 4. **Future mechanics integration remains necessary.** Unlock/reveal state is not implemented; future feature code must not subscribe to help as an attempt reset.
 5. **Pause/session ownership remains deliberately small.** Full menu/game-flow state and timer will come later. Their pause reason must remain separate from hole resolution.
 6. **No star targets are calibrated.** Original ideal times are historical only; production scoring and reference-runner work are deferred.
-7. **Source validation is not build readiness.** Build scene/profile setup and release pipeline remain later roadmap items.
+7. **Editor verification is not build certification.** Player builds, build profiles and release pipeline remain later roadmap items. New assembly boundaries passed exact-editor compilation and both suites, but were not exercised in a player build.
 
 ## E. Authoritative production geometry
 
@@ -122,22 +154,22 @@ The final source inventory contains **79 `[Test]` methods and 12 `[UnityTest]` m
 
 | Property | Definition |
 |---|---|
-| Logical board | 16 × 16 cells, centered on (0,0), X/Z range −8 to +8 |
+| Logical board | 16 Ã— 16 cells, centered on (0,0), X/Z range âˆ’8 to +8 |
 | Physical cell spacing | 1.8 world units per logical unit |
 | Internal edges | 480: 240 along X and 240 along Z |
 | Index order | Each descending-Z row has 15 Z-parallel edges followed by 16 X-parallel edges; the last row has only 15 Z-parallel edges. `GetEdge`/`TryGetEdgeIndex` are authoritative. |
-| Index landmarks | 0: `(7,7.5)` along Z; 15: `(7.5,7)` along X; 479: `(−7,−7.5)` along Z, all logical coordinates |
+| Index landmarks | 0: `(7,7.5)` along Z; 15: `(7.5,7)` along X; 479: `(âˆ’7,âˆ’7.5)` along Z, all logical coordinates |
 | Internal wall | Length 2.2, thickness 0.4, height 1.5 world units; deliberate 0.4 join overlap |
-| Floor and wall height | Floor Y −0.5; wall bottom at floor, center Y 0.25, top Y 1.0 |
-| Boundaries | Inner faces at X/Z ±14.4; thickness 0.4 outward; centers ±14.6; outer board footprint 29.6 × 29.6 |
+| Floor and wall height | Floor Y âˆ’0.5; wall bottom at floor, center Y 0.25, top Y 1.0 |
+| Boundaries | Inner faces at X/Z Â±14.4; thickness 0.4 outward; centers Â±14.6; outer board footprint 29.6 Ã— 29.6 |
 | Boundary order | East, North, West, South |
 | Board transform | Translation allowed; identity rotation and unit scale required in Phase 1. Camera tilt remains visual. |
 | Point authoring | Half-unit logical snap by default: 0.9 world-unit increments. Start/goal support numeric unsnapped coordinates as an escape hatch. The same conversion/snap API is available for future unlock rings. |
 | Serialized point storage | Existing Vector3 fields remain board-local physical coordinates, with Y 0. No LevelData schema replacement yet. |
 | Editor relationship | Wall controls query shared edge poses; point fields convert through shared logical/physical functions. Undo records edits. Malformed arrays require explicit repair. |
 
-Why 1.8: it matches the existing Sandbox's dominant spacing while removing its small offsets and disagreement with the old 1.824 editor spacing. The existing 2.2 × 0.4 internal-wall footprint is retained. Normal adjacent-wall corridor width is 1.4, leaving 0.4 clearance beyond a diameter-one marble before the configurable help margin. This is a coherent starting convention, not a claim of finalized gameplay feel.
+Why 1.8: it matches the existing Sandbox's dominant spacing while removing its small offsets and disagreement with the old 1.824 editor spacing. The existing 2.2 Ã— 0.4 internal-wall footprint is retained. Normal adjacent-wall corridor width is 1.4, leaving 0.4 clearance beyond a diameter-one marble before the configurable help margin. This is a coherent starting convention, not a claim of finalized gameplay feel.
 
 ## F. Next review gate
 
-Review this Phase 1 implementation, run the exact-editor checks and inspect Sandbox. Then proceed, by a separate instruction, to **Phase 2: Production LevelData schema + representative level migration**. Phase 2 should standardize accidental source offsets/duplicates and unnecessary corner posts rather than preserve them with exception machinery. Star baselines should remain Needs Calibration.
+Exact-editor verification is complete. Review the closeout, then proceed only by a separate instruction to **Phase 2: Production LevelData schema + representative level migration**. Phase 2 should standardize accidental source offsets/duplicates and unnecessary corner posts rather than preserve them with exception machinery. Star baselines should remain Needs Calibration.

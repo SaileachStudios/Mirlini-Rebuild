@@ -19,29 +19,68 @@ public class MarbleBehaviourTests : SandboxPlayTest
     [UnityTest]
     public IEnumerator DuplicateHoleEntryCannotOverwriteAcceptedOutcome() {
         Find<LevelEndFlowController>().enabled=false;
-        var ball=Find<MarbleBehaviour>();Set(ball,"shrinkDuration",0);
+        var ball=Find<MarbleBehaviour>();Set(ball,"shrinkDuration",.05f);
         Assert.IsTrue(ball.TryEnterHole(true,new Vector3(1,0,1)));
         Assert.IsFalse(ball.TryEnterHole(false,new Vector3(9,0,9)));
         Assert.AreEqual(BallState.Falling,ball.CurrentState);
         Assert.IsTrue(GameManagerBehavior.Instance.IsPaused);
-        yield return null;yield return null;
+        float deadline = Time.realtimeSinceStartup + 3f;
+        while (ball.CurrentState == BallState.Falling && Time.realtimeSinceStartup < deadline) {
+            Assert.IsTrue(GameManagerBehavior.Instance.IsPaused);
+            Assert.IsFalse(ball.TryEnterHole(false, new Vector3(9,0,9)));
+            yield return null;
+        }
         Assert.AreEqual(BallState.LevelComplete,ball.CurrentState);
+        Assert.AreEqual(Vector3.zero, ball.transform.localScale);
+        Assert.IsTrue(ball.GetComponent<Rigidbody>().isKinematic);
         Assert.AreEqual(.5f,ball.CollisionRadius,.00001f);
         Assert.AreEqual(new Vector3(1,0,1),ball.transform.position);
     }
     [UnityTest]
     public IEnumerator FailureGrowthPreservesExternalPauseAndAttempt() {
-        var ball=Find<MarbleBehaviour>();Set(ball,"shrinkDuration",0);
-        Vector3 start=ball.transform.position;
-        Assert.IsTrue(ball.TryEnterHole(false,Vector3.zero));
-        GameManagerBehavior.Instance.SetPaused(true);
-        yield return null;yield return null;
-        Assert.AreEqual(BallState.Playing,ball.CurrentState);
-        Assert.AreEqual(start,ball.transform.position);
-        Assert.IsTrue(GameManagerBehavior.Instance.IsPaused);
-        Assert.IsFalse(Find<LevelManager>().TryCallForHelp());
-        GameManagerBehavior.Instance.SetPaused(false);
-        Assert.IsFalse(GameManagerBehavior.Instance.IsPaused);
+        yield return VerifyFailureRecovery(0f);
+    }
+    [UnityTest]
+    public IEnumerator AnimatedFailureRemainsPausedUntilFullyPlayable() {
+        yield return VerifyFailureRecovery(.05f);
+    }
+    private IEnumerator VerifyFailureRecovery(float duration) {
+        var level = Find<LevelManager>();
+        var ball = Find<MarbleBehaviour>();
+        var manager = GameManagerBehavior.Instance;
+        var body = ball.GetComponent<Rigidbody>();
+        var serialized = new UnityEditor.SerializedObject(level);
+        var data = (LevelData)serialized.FindProperty("levels").GetArrayElementAtIndex(level.CurrentLevelIndex).objectReferenceValue;
+        Vector3 expectedStart = level.transform.position + data.MarbleStartPosition;
+        Vector3 fullScale = ball.transform.localScale;
+        int attemptLevel = level.CurrentLevelIndex;
+        Set(ball, "shrinkDuration", duration);
+        yield return new WaitForFixedUpdate();
+        // Resting contacts can reconstruct positions a few millionths away from the authored start.
+        // This is 1/50,000 of the marble radius, not permission for meaningful displacement.
+        const float positionTolerance = .00001f;
+        Assert.LessOrEqual(Vector3.Distance(expectedStart, ball.transform.position), positionTolerance);
+        Assert.IsTrue(ball.TryEnterHole(false, Vector3.zero));
+        manager.SetPaused(true);
+        bool sawGrowth = false;
+        float deadline = Time.realtimeSinceStartup + 3f;
+        while (ball.CurrentState != BallState.Playing && Time.realtimeSinceStartup < deadline) {
+            sawGrowth |= ball.CurrentState == BallState.Respawning;
+            Assert.IsTrue(manager.IsPaused);
+            Assert.IsTrue(body.isKinematic);
+            Assert.IsFalse(level.TryCallForHelp());
+            yield return null;
+        }
+        Assert.AreEqual(BallState.Playing, ball.CurrentState, "Recovery must finish within the timeout.");
+        if (duration > 0f) Assert.IsTrue(sawGrowth, "Exercise the actual growth phase.");
+        Assert.LessOrEqual(Vector3.Distance(expectedStart, ball.transform.position), positionTolerance);
+        Assert.AreEqual(fullScale, ball.transform.localScale);
+        Assert.IsFalse(body.isKinematic);
+        Assert.AreEqual(attemptLevel, level.CurrentLevelIndex);
+        Assert.IsTrue(manager.IsPaused);
+        Assert.IsFalse(level.TryCallForHelp());
+        manager.SetPaused(false);
+        Assert.IsFalse(manager.IsPaused);
     }
     [UnityTest]
     public IEnumerator HelpIsGatedAndDoesNotRestartAttempt() {

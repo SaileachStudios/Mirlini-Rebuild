@@ -61,6 +61,9 @@ namespace SaileachStudios.Mirlini.Board
             }
             if (!LevelDataValidation.TryValidate(levels[levelIndex], out error, ball.CollisionRadius)) return false;
             var goalCollider = hole.GetComponent<Collider>();
+            // Setup may run before the next physics step. Match native bounds to current transforms
+            // before subtracting the transform position to calculate the local goal footprint.
+            Physics.SyncTransforms();
             Bounds goalBounds = goalCollider.bounds;
             float goalRadius = Mathf.Max(goalBounds.extents.x, goalBounds.extents.z);
             Vector3 goalPoint = levels[levelIndex].HolePosition + goalBounds.center - hole.transform.position;

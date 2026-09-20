@@ -9,6 +9,17 @@ using UnityEngine.TestTools;
 public class LevelManagerValidationTests : SandboxPlayTest
 {
     [UnityTest]
+    public IEnumerator SetupUsesCurrentGoalTransformBeforeNextPhysicsStep() {
+        var level = Find<LevelManager>();
+        var goal = Find<HoleBehavior>();
+        Physics.SyncTransforms();
+        // Deliberately make the native bounds stale, as can happen directly after setup.
+        goal.transform.position += Vector3.right * 20f;
+        Assert.IsTrue(level.TrySetupLevel(1));
+        Assert.AreEqual(1, level.CurrentLevelIndex);
+        yield break;
+    }
+    [UnityTest]
     public IEnumerator InvalidIndexCannotMutateLevel() {
         var level=Find<LevelManager>();var ball=Find<MarbleBehaviour>();Vector3 before=ball.transform.position;
         LogAssert.Expect(LogType.Error,"Invalid level index or missing level list.");

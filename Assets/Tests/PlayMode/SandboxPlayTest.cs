@@ -10,12 +10,19 @@ public abstract class SandboxPlayTest
 {
     [UnitySetUp]
     public IEnumerator OpenSandbox() {
-        yield return new EnterPlayMode();
+        if (SaileachStudios.Mirlini.Core.GameManagerBehavior.Instance != null) {
+            Object.Destroy(SaileachStudios.Mirlini.Core.GameManagerBehavior.Instance.gameObject);
+            yield return null;
+        }
         EditorSceneManager.LoadSceneInPlayMode("Assets/Scenes/Sandbox.unity",new LoadSceneParameters(LoadSceneMode.Single));
         yield return null;
     }
     [UnityTearDown]
-    public IEnumerator LeavePlayMode() { yield return new ExitPlayMode(); }
+    public IEnumerator LeavePlayMode() {
+        if (SaileachStudios.Mirlini.Core.GameManagerBehavior.Instance != null)
+            Object.Destroy(SaileachStudios.Mirlini.Core.GameManagerBehavior.Instance.gameObject);
+        yield return null;
+    }
     protected static T Find<T>() where T:Object => Object.FindAnyObjectByType<T>();
     protected static void Set(Object target,string field,float value) {
         var serialized=new SerializedObject(target);serialized.FindProperty(field).floatValue=value;serialized.ApplyModifiedPropertiesWithoutUndo();

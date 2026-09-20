@@ -3,6 +3,7 @@
   <ItemGroup>
     <Compile Include="../../../Assets/Scripts/**/*.cs" />
     <Compile Include="../../../Assets/Editor/**/*.cs" />
+    <Compile Include="../../../Assets/Tests/**/*.cs" />
     <Reference Include="$(UnityReferenceEditor)/Managed/UnityEngine/*.dll" />
     <Reference Include="$(UnityReferenceEditor)/Resources/PackageManager/BuiltInPackages/com.unity.ext.nunit/net472/unity-custom/nunit.framework.dll" />
     <Reference Include="$(UnityReferenceEditor)/Resources/PackageManager/ProjectTemplates/libcache/com.unity.template.urp-blank-17.2.1/ScriptAssemblies/UnityEngine.TestRunner.dll" />

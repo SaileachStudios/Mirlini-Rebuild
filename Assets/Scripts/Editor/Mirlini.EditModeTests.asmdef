@@ -1,0 +1,12 @@
+{
+  "name": "Mirlini.EditModeTests",
+  "references": [
+    "Mirlini.Runtime"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}
