@@ -12,6 +12,8 @@ public class SceneContractTests
         var scene=EditorSceneManager.OpenPreviewScene("Assets/Scenes/Sandbox.unity");
         try {
             var level=scene.GetRootGameObjects().SelectMany(g=>g.GetComponentsInChildren<LevelManager>(true)).Single();
+            Assert.AreEqual(1,level.GetComponents<LevelFeaturesBehavior>().Length);
+            Assert.IsTrue(level.GetComponent<LevelFeaturesBehavior>().enabled);
             var flows=level.GetComponents<LevelEndFlowController>();Assert.AreEqual(1,flows.Length);Assert.IsTrue(flows[0].enabled);
             Assert.AreSame(level,new SerializedObject(flows[0]).FindProperty("levelManager").objectReferenceValue);
             Assert.IsTrue(level.TryValidateGeometry(out string error),error);
@@ -32,15 +34,15 @@ public class SceneContractTests
         foreach(string guid in AssetDatabase.FindAssets("t:LevelData",new[]{"Assets/Levels"})) {
             var level=AssetDatabase.LoadAssetAtPath<LevelData>(AssetDatabase.GUIDToAssetPath(guid));
             Assert.IsTrue(LevelDataValidation.TryValidate(level,out string error,.5f),error);
-            Assert.AreEqual(0,level.IdealCompletionTime);
+            Assert.AreEqual(StarCalibrationState.NeedsCalibration,level.StarCalibration);
         }
     }
     [Test]
     public void InvalidWallArrayAndCoincidentPointsAreRejected() {
         var data=ScriptableObject.CreateInstance<LevelData>();
         try {
-            data.wallInfo=new bool[1];Assert.IsFalse(LevelDataValidation.TryValidate(data,out _));
-            data.wallInfo=new bool[BoardGrid.EdgeCount];Assert.IsFalse(LevelDataValidation.TryValidate(data,out _));
+            data.LevelId="test";data.Walls=new WallState[1];Assert.IsFalse(LevelDataValidation.TryValidate(data,out _));
+            data.Walls=new WallState[BoardGrid.EdgeCount];Assert.IsFalse(LevelDataValidation.TryValidate(data,out _));
             data.HolePosition=Vector3.one;Assert.IsFalse(LevelDataValidation.TryValidate(data,out _));
         } finally { Object.DestroyImmediate(data); }
     }

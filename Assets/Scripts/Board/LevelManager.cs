@@ -5,12 +5,14 @@ using SaileachStudios.Mirlini.Marble;
 
 namespace SaileachStudios.Mirlini.Board
 {
-    [RequireComponent(typeof(LevelEndFlowController))]
+    [RequireComponent(typeof(LevelEndFlowController), typeof(LevelFeaturesBehavior))]
     public class LevelManager : MonoBehaviour
     {
         [SerializeField] private GameObject marble;
         [SerializeField] private GameObject hole;
         [SerializeField] private LevelData[] levels;
+        [SerializeField] private LevelCampaign campaign;
+        private LevelData[] ActiveLevels => campaign != null ? campaign.Levels : levels;
         [SerializeField] private GameObject[] walls;
         [Tooltip("East, North, West, South; unit cube colliders.")]
         [SerializeField] private GameObject[] boundaryWalls;
@@ -29,19 +31,21 @@ namespace SaileachStudios.Mirlini.Board
             var goal = hole.GetComponent<HoleBehavior>();
             // Validation completes before any geometry, state or index is changed.
             ApplyGeometry();
-            for (int i = 0; i < walls.Length; i++) walls[i].SetActive(levels[levelIndex].wallInfo[i]);
-            marble.transform.position = transform.position + levels[levelIndex].MarbleStartPosition;
-            hole.transform.position = transform.position + levels[levelIndex].HolePosition;
+            marble.transform.position = transform.position + ActiveLevels[levelIndex].MarbleStartPosition;
+            hole.transform.position = transform.position + ActiveLevels[levelIndex].HolePosition;
             ball.Bind(owner); goal.Bind(owner);
-            goal.SetIsCorrectHole(true);
+            GetComponent<LevelFeaturesBehavior>().Configure(ActiveLevels[levelIndex],walls,ball,goal);
             ball.StartPlaying(); // validated live object initialized in Awake, never Start-order dependent
             currentLevelIndex = levelIndex;
             return true;
         }
         public bool TryValidateSetup(int levelIndex, out string error) {
             error = null;
-            if (levels == null || levelIndex < 0 || levelIndex >= levels.Length) { error = "Invalid level index or missing level list."; return false; }
+            if (ActiveLevels == null || levelIndex < 0 || levelIndex >= ActiveLevels.Length) { error = "Invalid level index or missing level list."; return false; }
+            if (campaign != null && !LevelDataValidation.TryValidateCampaign(ActiveLevels, out error)) return false;
             if (GameManagerBehavior.Instance == null || !GameManagerBehavior.Instance.isActiveAndEnabled) { error = "An active GameManagerBehavior is required."; return false; }
+            var features = GetComponent<LevelFeaturesBehavior>();
+            if (features == null || !features.isActiveAndEnabled) { error = "An active authored LevelFeaturesBehavior is required."; return false; }
             var flow = GetComponent<LevelEndFlowController>();
             if (flow == null || !flow.enabled) { error = "Authored LevelEndFlowController is missing or disabled."; return false; }
             if (marble == null || hole == null || marble == hole) { error = "Marble and goal references must be distinct and assigned."; return false; }
@@ -59,19 +63,19 @@ namespace SaileachStudios.Mirlini.Board
             if (goal == null || !goal.isActiveAndEnabled || !goal.IsConfigured || hole.GetComponent<Collider>() == null || !hole.GetComponent<Collider>().enabled || !hole.GetComponent<Collider>().isTrigger) {
                 error = "Goal requires active HoleBehavior, two indicators and its trigger collider."; return false;
             }
-            if (!LevelDataValidation.TryValidate(levels[levelIndex], out error, ball.CollisionRadius)) return false;
+            if (!LevelDataValidation.TryValidate(ActiveLevels[levelIndex], out error, ball.CollisionRadius)) return false;
             var goalCollider = hole.GetComponent<Collider>();
             // Setup may run before the next physics step. Match native bounds to current transforms
             // before subtracting the transform position to calculate the local goal footprint.
             Physics.SyncTransforms();
             Bounds goalBounds = goalCollider.bounds;
             float goalRadius = Mathf.Max(goalBounds.extents.x, goalBounds.extents.z);
-            Vector3 goalPoint = levels[levelIndex].HolePosition + goalBounds.center - hole.transform.position;
+            Vector3 goalPoint = ActiveLevels[levelIndex].HolePosition + goalBounds.center - hole.transform.position;
             if (!BoardGrid.IsInside(new BoardPoint(goalPoint.x,goalPoint.z), goalRadius) ||
-                Vector2.Distance(new Vector2(levels[levelIndex].MarbleStartPosition.x, levels[levelIndex].MarbleStartPosition.z), new Vector2(goalPoint.x,goalPoint.z)) < ball.CollisionRadius + goalRadius) {
+                Vector2.Distance(new Vector2(ActiveLevels[levelIndex].MarbleStartPosition.x, ActiveLevels[levelIndex].MarbleStartPosition.z), new Vector2(goalPoint.x,goalPoint.z)) < ball.CollisionRadius + goalRadius) {
                 error = "Goal footprint must fit inside the board and remain separate from the marble start."; return false;
             }
-            for (int i=0;i<BoardGrid.EdgeCount;i++) if (levels[levelIndex].wallInfo[i] &&
+            for (int i=0;i<BoardGrid.EdgeCount;i++) if (ActiveLevels[levelIndex].Walls[i] != WallState.Empty &&
                 BoardGrid.GetWallRectangle(i).Expanded(goalRadius).ContainsInterior(new BoardPoint(goalPoint.x,goalPoint.z))) {
                 error = $"Goal footprint overlaps wall edge {i}."; return false;
             }
@@ -89,6 +93,7 @@ namespace SaileachStudios.Mirlini.Board
             var seen = new HashSet<GameObject> { marble, hole, gameObject, floor.gameObject };
             foreach (var array in new[] { walls, boundaryWalls }) foreach (GameObject wall in array) {
                 if (wall == null || !seen.Add(wall)) { error = "Wall references must be assigned and unique."; return false; }
+                if (wall.GetComponentInChildren<Renderer>(true) == null) { error = "Walls require a renderer."; return false; }
                 var box = wall.GetComponent<BoxCollider>();
                 if (box == null || !box.enabled || box.isTrigger || box.center != Vector3.zero || box.size != Vector3.one ||
                     (wall.transform.parent != null && (wall.transform.parent.lossyScale-Vector3.one).sqrMagnitude > 0.000001f)) {
@@ -106,7 +111,7 @@ namespace SaileachStudios.Mirlini.Board
         }
         public bool LoadNextLevel() {
             int next = currentLevelIndex + 1;
-            return levels != null && next < levels.Length && TrySetupLevel(next);
+            return ActiveLevels != null && next < ActiveLevels.Length && TrySetupLevel(next);
         }
         public bool TryCallForHelp() {
             var ball = marble != null ? marble.GetComponent<MarbleBehaviour>() : null;

@@ -1,0 +1,5 @@
+{
+  "name": "Mirlini.Editor",
+  "references": ["Mirlini.Runtime"],
+  "includePlatforms": ["Editor"]
+}

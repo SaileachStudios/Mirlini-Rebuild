@@ -8,6 +8,7 @@ namespace SaileachStudios.Mirlini.Board
     {
         [SerializeField] private GameObject correctIndicator;
         [SerializeField] private GameObject incorrectIndicator;
+        public bool IsCorrect { get; private set; }
         private HoleController controller;
         private GameManagerBehavior manager;
         public bool IsConfigured => correctIndicator != null && incorrectIndicator != null && correctIndicator != incorrectIndicator;
@@ -20,6 +21,7 @@ namespace SaileachStudios.Mirlini.Board
         }
         public void SetIsCorrectHole(bool correct) {
             if (!IsConfigured || controller == null) return;
+            IsCorrect = correct;
             controller.SetAsCorrectHole(correct);
             correctIndicator.SetActive(correct);
             incorrectIndicator.SetActive(!correct);
