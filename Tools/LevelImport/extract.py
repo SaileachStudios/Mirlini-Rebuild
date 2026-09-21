@@ -6,9 +6,13 @@ SELECTED=[1,6,10,15,21,27,29,40,45,46,50]
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--original',type=Path,required=True)
-    parser.add_argument('--levels',type=int,nargs='+',default=SELECTED)
-    parser.add_argument('--output',type=Path,default=REPO/'Docs/Phase2/representatives.json')
+    selection=parser.add_mutually_exclusive_group()
+    selection.add_argument('--levels',type=int,nargs='+')
+    selection.add_argument('--all',action='store_true',help='Extract the explicit Level 1-50 production batch')
+    parser.add_argument('--output',type=Path)
     args=parser.parse_args()
+    args.levels=list(range(1,51)) if args.all else (args.levels or SELECTED)
+    args.output=args.output or REPO/("Docs/Phase3/full-campaign.json" if args.all else "Docs/Phase2/representatives.json")
     audit=REPO/'Docs/Audits/2026-09-14'
     for relative,expected in json.loads((audit/'source-hashes.json').read_text(encoding='utf-8')).items():
         path=args.original/Path(relative.replace('\\','/'))
