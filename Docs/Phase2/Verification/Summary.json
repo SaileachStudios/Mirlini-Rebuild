@@ -1,0 +1,29 @@
+{
+  "editor": "6000.3.11f1",
+  "revision": "3000ef702840",
+  "headless": true,
+  "suites": {
+    "EditMode": {
+      "total": "98",
+      "passed": "98",
+      "failed": "0",
+      "skipped": "0",
+      "inconclusive": "0",
+      "duration": "0.7008155",
+      "start-time": "2026-09-20 20:05:55Z",
+      "end-time": "2026-09-20 20:05:56Z"
+    },
+    "PlayMode": {
+      "total": "20",
+      "passed": "20",
+      "failed": "0",
+      "skipped": "0",
+      "inconclusive": "0",
+      "duration": "8.8883697",
+      "start-time": "2026-09-20 20:02:10Z",
+      "end-time": "2026-09-20 20:02:19Z"
+    }
+  },
+  "repeatImport": "11 unchanged; byte hashes of existing level assets and meta files unchanged on repeat import",
+  "originalRepository": "read-only; audit source hashes verified; working tree clean"
+}

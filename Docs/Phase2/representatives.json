@@ -1,0 +1,7494 @@
+{
+  "version": 1,
+  "levels": [
+    {
+      "number": 1,
+      "sourceGuid": "303494f6733fbaf449734261e9b1f7fd",
+      "sourceHash": "bb7fd39393283b7502ad03a154db71895dc73d5f70fe9acbcc57872f80de1eb0",
+      "displayName": "Tutorial Regular",
+      "historicalTime": 1.5,
+      "start": {
+        "x": -7,
+        "y": 0,
+        "z": -7
+      },
+      "goal": {
+        "x": 6.5,
+        "y": -0.5,
+        "z": 6.5
+      },
+      "unlock": false,
+      "ring": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dark": false,
+      "cornerPosts": 0,
+      "instructions": {
+        "Keyboard": "Goal: Use the arrow keys or WASD keys to move the marble to the hole\n\nClick to Start",
+        "Touch": "Goal:Drag finger to move the marble to the hole\n\nTap to Start",
+        "Gyro": "Goal: Tilt the device to move the marble to the hole.\n\nTap to Start"
+      },
+      "walls": []
+    },
+    {
+      "number": 6,
+      "sourceGuid": "001acc8bef215bf4082c4d80d9a739e7",
+      "sourceHash": "39f6e90fee9eeab49eb9e1f58ad9a08f85b5fa2855552cfd70715cd90f33a572",
+      "displayName": "Tutorial Unlock",
+      "historicalTime": 4.45,
+      "start": {
+        "x": -7,
+        "y": 0,
+        "z": -7
+      },
+      "goal": {
+        "x": 6.5,
+        "y": -0.5,
+        "z": 6.5
+      },
+      "unlock": true,
+      "ring": {
+        "x": 0.0,
+        "y": -0.49,
+        "z": 0.0
+      },
+      "dark": false,
+      "cornerPosts": 0,
+      "instructions": {
+        "Keyboard": "Goal: Stay in large ring for 2 seconds to unlock the hole.\n\nTap to Start",
+        "Touch": "Goal: Stay in large ring for 2 seconds to unlock the hole.\n\nTap to Start",
+        "Gyro": "Goal: Stay in large ring for 2 seconds to unlock the hole.\n\nTap to Start"
+      },
+      "walls": []
+    },
+    {
+      "number": 10,
+      "sourceGuid": "56389b1445a03a64fb1212798d6737f7",
+      "sourceHash": "a7befc4d5c4195c94b7ba367605eea78ad1c739e70be4531e209c3eac6c4fa3a",
+      "displayName": "Tutorial SpotLight",
+      "historicalTime": 1.5,
+      "start": {
+        "x": -7,
+        "y": 0,
+        "z": -7
+      },
+      "goal": {
+        "x": 6.5,
+        "y": -0.5,
+        "z": 6.5
+      },
+      "unlock": false,
+      "ring": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dark": true,
+      "cornerPosts": 0,
+      "instructions": {
+        "Keyboard": "Goal: use the spotlight to navigate to the hole.\n\nTap to Start",
+        "Touch": "Goal: use the spotlight to navigate to the hole.\n\nTap to Start",
+        "Gyro": "Goal: use the spotlight to navigate to the hole.\n\nTap to Start"
+      },
+      "walls": []
+    },
+    {
+      "number": 15,
+      "sourceGuid": "f1a21044d0b793f46b416da77e9d455f",
+      "sourceHash": "526d505e3ec758f4975468567a397c3fdd1ea7899064420fa3da20ea1d6e74f4",
+      "displayName": "Tutorial Invisible",
+      "historicalTime": 1.5,
+      "start": {
+        "x": -7,
+        "y": 0,
+        "z": -7
+      },
+      "goal": {
+        "x": 6.5,
+        "y": -0.5,
+        "z": 6.5
+      },
+      "unlock": false,
+      "ring": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dark": false,
+      "cornerPosts": 0,
+      "instructions": {
+        "Keyboard": "Goal: Navigate your way through the invisible maze.\n\nTap to Start",
+        "Touch": "Goal: Navigate your way through the invisible maze.\n\nTap to Start",
+        "Gyro": "Goal: Navigate your way through the invisible maze.\n\nTap to Start"
+      },
+      "walls": [
+        {
+          "sourceId": "113067295/2004161312879537304",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "220045830/2004161312879537304",
+          "center": {
+            "x": 7.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "231669674/2004161312879537304",
+          "center": {
+            "x": 5.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "259904913/2004161312879537304",
+          "center": {
+            "x": 6.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "451037550/2004161312879537304",
+          "center": {
+            "x": -7.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "584997305/2004161312879537304",
+          "center": {
+            "x": -4.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "809223797/2004161312879537304",
+          "center": {
+            "x": 1.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "969178655/2004161312879537304",
+          "center": {
+            "x": 4.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1453441641/2004161312879537304",
+          "center": {
+            "x": -6.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1523291363/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1543623656/2004161312879537304",
+          "center": {
+            "x": -5.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1609734625/2004161312879537304",
+          "center": {
+            "x": -1.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1674986402/2004161312879537304",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1700111349/2004161312879537304",
+          "center": {
+            "x": 7.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2145460301/2004161312879537304",
+          "center": {
+            "x": -3.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "sourceGuid": "7de5daece8dae6840887c891e46ff089",
+      "sourceHash": "ff85f3c5dddbc2c03d7b0e3173adbd9a9937e3bdff30ae44bc35c0fc559d526f",
+      "displayName": "Unlock Spotlight 1",
+      "historicalTime": 11.61,
+      "start": {
+        "x": -7,
+        "y": 0,
+        "z": -7
+      },
+      "goal": {
+        "x": 7.0,
+        "y": -0.5,
+        "z": 7.0
+      },
+      "unlock": true,
+      "ring": {
+        "x": 0.0,
+        "y": -0.49,
+        "z": -2.0
+      },
+      "dark": true,
+      "cornerPosts": 0,
+      "instructions": {
+        "Keyboard": "Goal: use the spotlight to the unlock ring before finding the hole.\n\nTap to Start",
+        "Touch": "Goal: use the spotlight to the unlock ring before finding the hole.\n\nTap to Start",
+        "Gyro": "Goal: use the spotlight to the unlock ring before finding the hole.\n\nTap to Start"
+      },
+      "walls": [
+        {
+          "sourceId": "11251033/4068962259744522030",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 0.300001,
+            "y": 0.8,
+            "z": 10.000001
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "83868345/4460185503380588202",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "139407732/2362074390108534436",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 8.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "150463293/4460185503380588202",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "354507917/4460185503380588202",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "498558621/4460185503380588202",
+          "center": {
+            "x": -7.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "594996783/4460185503380588202",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 3.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "642433432/4460185503380588202",
+          "center": {
+            "x": -7.0,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "671225537/3315767750148257856",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "764982592/4460185503380588202",
+          "center": {
+            "x": -5.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "780516747/3315767750148257856",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "875114024/3315767750148257856",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "906125017/4460185503380588202",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -7.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "992756830/2362074390108534436",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 8.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1066556510/3034219381164808560",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 6.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1218993395/4460185503380588202",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 7.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1298209557/4460185503380588202",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1403997946/3315767750148257856",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1602738801/4460185503380588202",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1688390694/3180369441939698698",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 12.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1795521664/3315767750148257856",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1799902176/2362074390108534436",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 8.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1811070530/4460185503380588202",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -3.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "sourceGuid": "e18db4eaf9743ab4689080b15fdba31b",
+      "sourceHash": "3d7e7fb3cb5a18b31c87e9fdc14a0f02e01544c35497cf61cf5915ffdd256afc",
+      "displayName": "Unlock Invisible 1",
+      "historicalTime": 13.13,
+      "start": {
+        "x": -7,
+        "y": 0,
+        "z": 3
+      },
+      "goal": {
+        "x": 7.0,
+        "y": -0.5,
+        "z": 7.0
+      },
+      "unlock": true,
+      "ring": {
+        "x": 4.0,
+        "y": -0.49,
+        "z": 6.0
+      },
+      "dark": false,
+      "cornerPosts": 0,
+      "instructions": {
+        "Keyboard": "Goal: Find your way through the invisible maze to the large ring to unlock the hole.\n\nTap to Start",
+        "Touch": "Goal: Find your way through the invisible maze to the large ring to unlock the hole.\n\nTap to Start",
+        "Gyro": "Goal: Find your way through the invisible maze to the large ring to unlock the hole.\n\nTap to Start"
+      },
+      "walls": [
+        {
+          "sourceId": "19145121/2004161312879537304",
+          "center": {
+            "x": -5.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "43310471/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "51740870/2004161312879537304",
+          "center": {
+            "x": -4.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "72836277/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "76172752/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "89429153/2004161312879537304",
+          "center": {
+            "x": 5.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "98442471/2004161312879537304",
+          "center": {
+            "x": -5.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "98948797/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "145300433/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "185807062/2004161312879537304",
+          "center": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "201514977/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "258277412/2004161312879537304",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "278727298/2004161312879537304",
+          "center": {
+            "x": 1.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "314949516/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "323295256/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "326782143/2004161312879537304",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "356101191/2004161312879537304",
+          "center": {
+            "x": 1.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "366123001/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "375661203/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "397749177/2004161312879537304",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "399302793/2004161312879537304",
+          "center": {
+            "x": -0.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "408575515/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "428625985/2004161312879537304",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "434929790/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "443112242/2004161312879537304",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "511397600/2004161312879537304",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "526807671/2004161312879537304",
+          "center": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "533340251/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "580464867/2004161312879537304",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "585470170/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 7.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "590972147/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "617671951/2004161312879537304",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "624624270/2004161312879537304",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "648010959/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "656536004/2004161312879537304",
+          "center": {
+            "x": 1.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "672807066/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "740987459/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "747872852/2004161312879537304",
+          "center": {
+            "x": -0.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "752250254/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "787584934/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "790089786/2004161312879537304",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "810275881/2004161312879537304",
+          "center": {
+            "x": -1.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "813860555/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "824570438/2004161312879537304",
+          "center": {
+            "x": 1.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "835335756/2004161312879537304",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "851470299/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": -1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "952766405/2004161312879537304",
+          "center": {
+            "x": 4.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "966065859/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1047003765/2004161312879537304",
+          "center": {
+            "x": -0.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1047516952/2004161312879537304",
+          "center": {
+            "x": -3.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1054482307/2004161312879537304",
+          "center": {
+            "x": 1.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1071487982/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1073561254/2004161312879537304",
+          "center": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1096185792/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1106305751/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1138678105/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1146276038/2004161312879537304",
+          "center": {
+            "x": -1.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1161857834/2004161312879537304",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1189407219/2004161312879537304",
+          "center": {
+            "x": -3.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1190384112/2004161312879537304",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1198945647/2004161312879537304",
+          "center": {
+            "x": -3.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1234155055/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1260947932/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": -0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1295639878/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1319142034/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1328203683/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1332544486/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1334197963/2004161312879537304",
+          "center": {
+            "x": 4.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1337123750/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1343791392/2004161312879537304",
+          "center": {
+            "x": -6.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1367471232/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1384041534/2004161312879537304",
+          "center": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1391003883/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1411583668/2004161312879537304",
+          "center": {
+            "x": -3.5,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1416875868/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1572428485/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 7.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1579485892/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1630714573/2004161312879537304",
+          "center": {
+            "x": -1.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1691650401/2004161312879537304",
+          "center": {
+            "x": -7.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1695998568/2004161312879537304",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1745260384/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1762624884/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1825068150/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1834759694/2004161312879537304",
+          "center": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1862348981/2004161312879537304",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1895511925/2004161312879537304",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1950522051/2004161312879537304",
+          "center": {
+            "x": -4.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1982338695/2004161312879537304",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2003092657/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2050025649/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2053683255/2004161312879537304",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2117917740/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2118540010/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2121071573/2004161312879537304",
+          "center": {
+            "x": 5.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "sourceGuid": "8d727e922db66ed42b4734faa488e8ee",
+      "sourceHash": "6353f0b72f10d9ff568d5aae22f4f0cfda4671defac3a5ddaec38c2045a1cdc0",
+      "displayName": "Unlock 6",
+      "historicalTime": 10.39,
+      "start": {
+        "x": 5,
+        "y": 0,
+        "z": 5
+      },
+      "goal": {
+        "x": 7.0,
+        "y": -0.5,
+        "z": -1.0
+      },
+      "unlock": true,
+      "ring": {
+        "x": -6.0,
+        "y": -0.49,
+        "z": -6.0
+      },
+      "dark": false,
+      "cornerPosts": 16,
+      "instructions": {
+        "Keyboard": "Goal: Stay in large ring for 2 seconds to unlock the hole.\n\nTap to Start",
+        "Touch": "Goal: Stay in large ring for 2 seconds to unlock the hole.\n\nTap to Start",
+        "Gyro": "Goal: Stay in large ring for 2 seconds to unlock the hole.\n\nTap to Start"
+      },
+      "walls": [
+        {
+          "sourceId": "19136508/4460185503380588202",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "31380419/4460185503380588202",
+          "center": {
+            "x": -7.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "31735438/4460185503380588202",
+          "center": {
+            "x": -5.0,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "95502815/4460185503380588202",
+          "center": {
+            "x": -5.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "229345408/4460185503380588202",
+          "center": {
+            "x": -3.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "570941537/4068962259744522030",
+          "center": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 10.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "598476994/4460185503380588202",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "640527350/3315767750148257856",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "658266417/3034219381164808560",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -3.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 6.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "733857685/4460185503380588202",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "737788081/4460185503380588202",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "809870109/4460185503380588202",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": -3.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "833877776/3034219381164808560",
+          "center": {
+            "x": -5.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 6.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "908085107/4460185503380588202",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "972117931/4460185503380588202",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1013228183/4460185503380588202",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": -3.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1094535685/3315767750148257856",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1270114159/4460185503380588202",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1372208493/4460185503380588202",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1638969218/3315767750148257856",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1663089982/3315767750148257856",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1673582116/3315767750148257856",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1673962649/4460185503380588202",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1726841231/3315767750148257856",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1727067962/2362074390108534436",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 8.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1804851735/3034219381164808560",
+          "center": {
+            "x": -5.0,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 6.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2015119600/3315767750148257856",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2046555634/4460185503380588202",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        }
+      ]
+    },
+    {
+      "number": 40,
+      "sourceGuid": "5a2f92b299ace994fb2d66d65f35dabe",
+      "sourceHash": "98683d3c03913a6886b8d2e0d0fe80ac25ec94a2862e045cadea5cfca6da995d",
+      "displayName": "Regular 11",
+      "historicalTime": 6.9,
+      "start": {
+        "x": 7,
+        "y": 0,
+        "z": 5
+      },
+      "goal": {
+        "x": -3.0,
+        "y": -0.5,
+        "z": -3.0
+      },
+      "unlock": false,
+      "ring": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dark": false,
+      "cornerPosts": 11,
+      "instructions": {
+        "Keyboard": "Goal: Use the arrow keys or WASD keys to move the marble to the hole\n\nClick to Start",
+        "Touch": "Goal:Drag finger to move the marble to the hole\n\nTap to Start",
+        "Gyro": "Goal: Tilt the device to move the marble to the hole.\n\nTap to Start"
+      },
+      "walls": [
+        {
+          "sourceId": "28620689/2362074390108534436",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 8.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "53771707/4460185503380588202",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "57552759/4460185503380588202",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "87146380/4460185503380588202",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "88054209/3034219381164808560",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 6.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "231756301/4460185503380588202",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "291964310/3315767750148257856",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "357784409/4460185503380588202",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "456670487/4460185503380588202",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "457037881/3034219381164808560",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 6.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1011993144/4460185503380588202",
+          "center": {
+            "x": -5.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1079308625/3034219381164808560",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 6.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1154819276/4460185503380588202",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1193123779/3315767750148257856",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1220016424/4460185503380588202",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1359971932/3315767750148257856",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1394778429/3034219381164808560",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": -3.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 6.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1417379514/4460185503380588202",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": -3.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1438054437/4460185503380588202",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -7.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1470361733/3315767750148257856",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1721919893/3315767750148257856",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1760859179/4460185503380588202",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1829227231/3315767750148257856",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1841613894/3315767750148257856",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 6.05
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2017565449/4068962259744522030",
+          "center": {
+            "x": -3.0,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 10.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2040469180/4460185503380588202",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2047142212/4460185503380588202",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "sourceGuid": "3d148de7a4aa6a94a930dc990ea502ad",
+      "sourceHash": "466939a08e9de1747befc8e1356d99340a973bfeae62b8e5137576f1c5d544b2",
+      "displayName": "Unlock Invisible 4",
+      "historicalTime": 9.99,
+      "start": {
+        "x": -3,
+        "y": 0,
+        "z": 7
+      },
+      "goal": {
+        "x": 7.0,
+        "y": -0.5,
+        "z": -3.0
+      },
+      "unlock": true,
+      "ring": {
+        "x": 1.0,
+        "y": -0.49,
+        "z": -2.0
+      },
+      "dark": false,
+      "cornerPosts": 0,
+      "instructions": {
+        "Keyboard": "Goal: Find your way through the invisible maze to the large ring to unlock the hole.\n\nTap to Start",
+        "Touch": "Goal: Find your way through the invisible maze to the large ring to unlock the hole.\n\nTap to Start",
+        "Gyro": "Goal: Find your way through the invisible maze to the large ring to unlock the hole.\n\nTap to Start"
+      },
+      "walls": [
+        {
+          "sourceId": "22708270/2004161312879537304",
+          "center": {
+            "x": 7.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "33341423/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "44546979/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "78505753/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "177322598/2004161312879537304",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "187589058/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "209041706/2004161312879537304",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "259899427/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "307294659/2004161312879537304",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "326539496/2004161312879537304",
+          "center": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "334668094/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "386170222/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "422988805/2004161312879537304",
+          "center": {
+            "x": -3.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "470380163/2004161312879537304",
+          "center": {
+            "x": 1.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "499879468/2004161312879537304",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "563395889/2004161312879537304",
+          "center": {
+            "x": 4.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "580002200/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "625243116/2004161312879537304",
+          "center": {
+            "x": -5.5,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "647878193/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "659933096/2004161312879537304",
+          "center": {
+            "x": -1.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "665333301/2004161312879537304",
+          "center": {
+            "x": -1.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "699679131/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "700284267/2004161312879537304",
+          "center": {
+            "x": 4.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "706070505/2004161312879537304",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "711447269/2004161312879537304",
+          "center": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "747146356/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "754969133/2004161312879537304",
+          "center": {
+            "x": 5.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "768250319/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": -3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "782407305/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "799490047/2004161312879537304",
+          "center": {
+            "x": 5.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "822111301/2004161312879537304",
+          "center": {
+            "x": -0.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "824706609/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "836985037/2004161312879537304",
+          "center": {
+            "x": 1.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "891520655/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "909885298/2004161312879537304",
+          "center": {
+            "x": -1.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "922689756/2004161312879537304",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "932834066/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "938265850/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "940801585/2004161312879537304",
+          "center": {
+            "x": 6.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "956094094/2004161312879537304",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "959303335/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": -2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "989341710/2004161312879537304",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "993297060/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "996891068/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1051294851/2004161312879537304",
+          "center": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1083904838/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1087022953/2004161312879537304",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1160979274/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1161367752/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1175703801/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 7.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1177739969/2004161312879537304",
+          "center": {
+            "x": -0.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1197167452/2004161312879537304",
+          "center": {
+            "x": 4.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1247238793/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1285160277/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1292000640/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1299669872/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1345115196/2004161312879537304",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1348558730/2004161312879537304",
+          "center": {
+            "x": -4.5,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1360113764/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1415619314/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1444817136/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1445413123/2004161312879537304",
+          "center": {
+            "x": -0.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1451568193/2004161312879537304",
+          "center": {
+            "x": 1.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1452518972/2004161312879537304",
+          "center": {
+            "x": 1.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1466649475/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1472345394/2004161312879537304",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1481011371/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1482812148/2004161312879537304",
+          "center": {
+            "x": -0.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1489103283/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1511976291/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1524811266/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1568068749/2004161312879537304",
+          "center": {
+            "x": -1.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1592029989/2004161312879537304",
+          "center": {
+            "x": -3.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1600218165/2004161312879537304",
+          "center": {
+            "x": -1.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1607365310/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1609544516/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1656192391/2004161312879537304",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1681005344/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1691901089/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1718227577/2004161312879537304",
+          "center": {
+            "x": 6.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1791796281/2004161312879537304",
+          "center": {
+            "x": 5.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1818576004/2004161312879537304",
+          "center": {
+            "x": -3.5,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1829311829/2004161312879537304",
+          "center": {
+            "x": 1.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1897208620/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1923110630/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "1986203566/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2009455963/2004161312879537304",
+          "center": {
+            "x": -0.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2049052402/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2109235621/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2109874653/2004161312879537304",
+          "center": {
+            "x": 7.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2113395439/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2125949395/2004161312879537304",
+          "center": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2134539215/2004161312879537304",
+          "center": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        },
+        {
+          "sourceId": "2141387045/2004161312879537304",
+          "center": {
+            "x": -3.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": true
+        }
+      ]
+    },
+    {
+      "number": 46,
+      "sourceGuid": "e4cb8370053175744ba64e8bca66b6af",
+      "sourceHash": "c3748c900d6831fcc65e811a768b2912bceb647417b3c498aaad63689c11743d",
+      "displayName": "Regular 12",
+      "historicalTime": 6.56,
+      "start": {
+        "x": -7.5,
+        "y": 0.0,
+        "z": -5.5
+      },
+      "goal": {
+        "x": 7.5,
+        "y": -0.5,
+        "z": 2.5
+      },
+      "unlock": false,
+      "ring": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dark": false,
+      "cornerPosts": 61,
+      "instructions": {
+        "Keyboard": "Goal: Use the arrow keys or WASD keys to move the marble to the hole\n\nClick to Start",
+        "Touch": "Goal:Drag finger to move the marble to the hole\n\nTap to Start",
+        "Gyro": "Goal: Tilt the device to move the marble to the hole.\n\nTap to Start"
+      },
+      "walls": [
+        {
+          "sourceId": "16894935/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "44700582/4460185503380588202",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "55658330/2004161312879537304",
+          "center": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "60855335/2004161312879537304",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": 6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "64223346/4460185503380588202",
+          "center": {
+            "x": -7.0,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "72397911/701606584901306669",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 3.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "81598052/701606584901306669",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "108376778/2004161312879537304",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": -0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "115225792/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "122270219/2004161312879537304",
+          "center": {
+            "x": -0.5,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "164546171/2004161312879537304",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": 4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "174562626/4460185503380588202",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "178620167/2004161312879537304",
+          "center": {
+            "x": -6.5,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "195558003/2004161312879537304",
+          "center": {
+            "x": 6.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "200736342/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 7.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "228045696/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "253378116/2004161312879537304",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "256819936/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "263285249/701606584901306669",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "276580992/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": 7.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "286112534/2004161312879537304",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": 4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "291303969/3315767750148257856",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "302026475/3315767750148257856",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -3.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "312041454/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "331668395/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "364151734/4460185503380588202",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "382197622/4460185503380588202",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "395394312/2004161312879537304",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "430492986/701606584901306669",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 3.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "445754417/3315767750148257856",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "470220420/4460185503380588202",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "472505211/2004161312879537304",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": 6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "478293525/4460185503380588202",
+          "center": {
+            "x": -3.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "513865461/4460185503380588202",
+          "center": {
+            "x": -3.0,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "516859289/2004161312879537304",
+          "center": {
+            "x": -1.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "522547258/2004161312879537304",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "548817696/4460185503380588202",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "571919021/4460185503380588202",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "573480670/4460185503380588202",
+          "center": {
+            "x": -7.0,
+            "y": 0.0,
+            "z": 7.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "587125207/4460185503380588202",
+          "center": {
+            "x": -7.0,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "601336078/2004161312879537304",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": 2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "635334639/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "641455729/701606584901306669",
+          "center": {
+            "x": -5.0,
+            "y": 0.0,
+            "z": 5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "669804673/4460185503380588202",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "671617764/4460185503380588202",
+          "center": {
+            "x": -3.0,
+            "y": 0.0,
+            "z": -7.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "671821676/2004161312879537304",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": 7.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "685583557/4460185503380588202",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "721392556/2004161312879537304",
+          "center": {
+            "x": 7.5,
+            "y": 0.0,
+            "z": 7.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "732263082/4460185503380588202",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "741102041/2004161312879537304",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": -5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "745884161/701606584901306669",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "789049309/2362074390108534436",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 3.0
+          },
+          "size": {
+            "x": 8.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "799785282/3315767750148257856",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "805807293/701606584901306669",
+          "center": {
+            "x": -3.0,
+            "y": 0.0,
+            "z": -4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "819381200/2004161312879537304",
+          "center": {
+            "x": -1.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "860650858/2004161312879537304",
+          "center": {
+            "x": 6.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "868111833/4460185503380588202",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "917148757/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1014006789/4460185503380588202",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1030995378/3315767750148257856",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1062757252/4460185503380588202",
+          "center": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1066753700/2004161312879537304",
+          "center": {
+            "x": 1.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1096287083/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1164657691/5710436036818902969",
+          "center": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": -3.0
+          },
+          "size": {
+            "x": 9.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1183018721/4460185503380588202",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 3.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1190605550/4460185503380588202",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1206940043/2004161312879537304",
+          "center": {
+            "x": 4.5,
+            "y": 0.0,
+            "z": 7.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1210311130/2004161312879537304",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": -2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1236059725/2004161312879537304",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": 4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1244859963/4460185503380588202",
+          "center": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1249584050/1853484282508595939",
+          "center": {
+            "x": -3.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 5.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1257780356/4460185503380588202",
+          "center": {
+            "x": -3.0,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1260665270/2004161312879537304",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 7.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1260951771/2004161312879537304",
+          "center": {
+            "x": -7.5,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1267040724/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": -6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1267452172/2004161312879537304",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": -7.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1320660971/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1358256984/2004161312879537304",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1421400049/2004161312879537304",
+          "center": {
+            "x": -5.0,
+            "y": 0.0,
+            "z": -6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1431654169/2004161312879537304",
+          "center": {
+            "x": -6.5,
+            "y": 0.0,
+            "z": -7.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1434550669/701606584901306669",
+          "center": {
+            "x": -4.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 3.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1448433574/4460185503380588202",
+          "center": {
+            "x": -7.0,
+            "y": 0.0,
+            "z": -3.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1450523353/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -7.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1454156720/2004161312879537304",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1475503934/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1479596061/4460185503380588202",
+          "center": {
+            "x": -7.0,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1488757524/4460185503380588202",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1491680734/1853484282508595939",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "size": {
+            "x": 5.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1514232912/2004161312879537304",
+          "center": {
+            "x": -6.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1523752861/701606584901306669",
+          "center": {
+            "x": 5.5,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 3.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1547667561/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1549431095/2004161312879537304",
+          "center": {
+            "x": -5.0,
+            "y": 0.0,
+            "z": 2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1596858272/3034219381164808560",
+          "center": {
+            "x": -5.0,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 6.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1632194525/4460185503380588202",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1664313429/2004161312879537304",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1674660297/4460185503380588202",
+          "center": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1688533743/2004161312879537304",
+          "center": {
+            "x": 7.5,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1698154664/4460185503380588202",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": -7.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1725496293/2004161312879537304",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1749284727/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1761312573/3315767750148257856",
+          "center": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": -7.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1831201753/2004161312879537304",
+          "center": {
+            "x": -3.0,
+            "y": 0.0,
+            "z": 6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1835023208/4460185503380588202",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1873153248/4460185503380588202",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1883065687/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": 3.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1936328312/3034219381164808560",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 6.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1938076197/701606584901306669",
+          "center": {
+            "x": -7.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1945901222/2004161312879537304",
+          "center": {
+            "x": 1.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1965064432/2004161312879537304",
+          "center": {
+            "x": -1.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1991171325/4460185503380588202",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 3.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2026654695/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2040464141/2004161312879537304",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": -0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2053086181/2004161312879537304",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": -7.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2054586466/2004161312879537304",
+          "center": {
+            "x": -1.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2058016489/701606584901306669",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2060995276/701606584901306669",
+          "center": {
+            "x": -4.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 3.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2096167952/2004161312879537304",
+          "center": {
+            "x": -1.5,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2146014177/2004161312879537304",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        }
+      ]
+    },
+    {
+      "number": 50,
+      "sourceGuid": "48816a98512e05f48bce06b3286c19bb",
+      "sourceHash": "dacf27755094ca8535f9494fef4f9d500fd743e9f40f64b5afda84230e07b13a",
+      "displayName": "Regular 16",
+      "historicalTime": 17.92,
+      "start": {
+        "x": -4.5,
+        "y": 0.0,
+        "z": 7.5
+      },
+      "goal": {
+        "x": 4.5,
+        "y": -0.5,
+        "z": -5.5
+      },
+      "unlock": false,
+      "ring": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dark": false,
+      "cornerPosts": 53,
+      "instructions": {
+        "Keyboard": "Goal: Use the arrow keys or WASD keys to move the marble to the hole\n\nClick to Start",
+        "Touch": "Goal:Drag finger to move the marble to the hole\n\nTap to Start",
+        "Gyro": "Goal: Tilt the device to move the marble to the hole.\n\nTap to Start"
+      },
+      "walls": [
+        {
+          "sourceId": "3960297/701606584901306669",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": -5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "21199128/701606584901306669",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "27897480/1853484282508595939",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 5.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "46363985/2004161312879537304",
+          "center": {
+            "x": 3.5,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "103288656/4460185503380588202",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": -7.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "129171746/4460185503380588202",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "132712406/2004161312879537304",
+          "center": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "139856122/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "155092798/2004161312879537304",
+          "center": {
+            "x": -5.5,
+            "y": 0.0,
+            "z": 3.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "204981995/4460185503380588202",
+          "center": {
+            "x": -5.0,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "215206880/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "239922033/701606584901306669",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -1.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "241832660/4460185503380588202",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 7.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "306583165/4460185503380588202",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "324284339/3315767750148257856",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "334496704/4460185503380588202",
+          "center": {
+            "x": -3.0,
+            "y": 0.0,
+            "z": -7.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "379089172/1853484282508595939",
+          "center": {
+            "x": -4.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 5.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "393906491/2004161312879537304",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "402061468/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "424924282/2004161312879537304",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": 4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "426931534/2004161312879537304",
+          "center": {
+            "x": -3.5,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "430924816/4460185503380588202",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "433547726/2004161312879537304",
+          "center": {
+            "x": -7.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "437990492/2004161312879537304",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "438054935/2004161312879537304",
+          "center": {
+            "x": 6.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "441142670/2004161312879537304",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": -0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "487986238/4460185503380588202",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "508923686/2004161312879537304",
+          "center": {
+            "x": 4.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "516850976/2004161312879537304",
+          "center": {
+            "x": 4.5,
+            "y": 0.0,
+            "z": -3.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "538386511/3315767750148257856",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "590746501/2004161312879537304",
+          "center": {
+            "x": -5.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "611726457/2004161312879537304",
+          "center": {
+            "x": 7.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "625525268/2004161312879537304",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": -6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "641171133/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "652349944/4460185503380588202",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "652412873/2004161312879537304",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 7.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "686170829/1853484282508595939",
+          "center": {
+            "x": -3.5,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 5.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "692858252/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "734844729/3315767750148257856",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "746133162/701606584901306669",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "750059453/4460185503380588202",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 7.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "757148319/2004161312879537304",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 7.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "762161679/4460185503380588202",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "786091413/2004161312879537304",
+          "center": {
+            "x": -5.5,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "799735073/3315767750148257856",
+          "center": {
+            "x": -3.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "799895115/2004161312879537304",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": -3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "828331382/701606584901306669",
+          "center": {
+            "x": -0.5,
+            "y": 0.0,
+            "z": -7.0
+          },
+          "size": {
+            "x": 3.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "860187991/2004161312879537304",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": 7.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "875220522/4460185503380588202",
+          "center": {
+            "x": -3.0,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "905818238/2004161312879537304",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "919986665/701606584901306669",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": -0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "920203121/1853484282508595939",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 5.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "937432755/2004161312879537304",
+          "center": {
+            "x": -4.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "952422139/2004161312879537304",
+          "center": {
+            "x": 7.5,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "953964662/701606584901306669",
+          "center": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "957154088/2004161312879537304",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1027589572/2004161312879537304",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": -2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1057760859/4460185503380588202",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1060869335/2004161312879537304",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": 7.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1067162102/701606584901306669",
+          "center": {
+            "x": 4.5,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 3.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1067221561/2004161312879537304",
+          "center": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1079420198/4460185503380588202",
+          "center": {
+            "x": -7.0,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1083002239/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1133928474/3315767750148257856",
+          "center": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1163181650/3315767750148257856",
+          "center": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": -3.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1172393841/4460185503380588202",
+          "center": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": -2.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1186060019/2004161312879537304",
+          "center": {
+            "x": -6.5,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1227618345/2004161312879537304",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": 4.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1248548923/2004161312879537304",
+          "center": {
+            "x": 7.5,
+            "y": 0.0,
+            "z": 3.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1288353304/701606584901306669",
+          "center": {
+            "x": -5.0,
+            "y": 0.0,
+            "z": 6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1321443146/4068962259744522030",
+          "center": {
+            "x": -7.0,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 0.300001,
+            "y": 0.8,
+            "z": 10.000001
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1324712652/4460185503380588202",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1435454650/3315767750148257856",
+          "center": {
+            "x": -5.0,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1450784140/2004161312879537304",
+          "center": {
+            "x": -6.5,
+            "y": 0.0,
+            "z": 7.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1458340658/4460185503380588202",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -3.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1492880877/2004161312879537304",
+          "center": {
+            "x": -2.5,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1510096584/701606584901306669",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": -2.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1514965643/2004161312879537304",
+          "center": {
+            "x": 7.5,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1519789497/2004161312879537304",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": -0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1543065841/2004161312879537304",
+          "center": {
+            "x": -3.5,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1575329964/701606584901306669",
+          "center": {
+            "x": 2.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 3.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1588392662/4460185503380588202",
+          "center": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1601231273/4460185503380588202",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1607175273/4460185503380588202",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1609293393/3315767750148257856",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": -7.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1629503756/3315767750148257856",
+          "center": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1636034320/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1643175374/2004161312879537304",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": 5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1660871114/4460185503380588202",
+          "center": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -5.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1711510995/4460185503380588202",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 3.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1737836109/2004161312879537304",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": 6.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1757335504/3315767750148257856",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": 3.0
+          },
+          "size": {
+            "x": 4.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1790491766/1853484282508595939",
+          "center": {
+            "x": -4.5,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 5.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1791781148/4460185503380588202",
+          "center": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1820350059/3315767750148257856",
+          "center": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 4.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1842757734/4460185503380588202",
+          "center": {
+            "x": -3.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1861342885/2004161312879537304",
+          "center": {
+            "x": -6.5,
+            "y": 0.0,
+            "z": -7.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1865459712/2004161312879537304",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": -7.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1884704070/4460185503380588202",
+          "center": {
+            "x": -4.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1891499478/2004161312879537304",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1894536334/4460185503380588202",
+          "center": {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 7.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1926400868/2004161312879537304",
+          "center": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1930954769/4460185503380588202",
+          "center": {
+            "x": -3.0,
+            "y": 0.0,
+            "z": -4.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1932977408/4460185503380588202",
+          "center": {
+            "x": -6.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "1934581074/4460185503380588202",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 4.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2019116695/2004161312879537304",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 5.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 1.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2043844957/4460185503380588202",
+          "center": {
+            "x": 6.0,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "size": {
+            "x": 2.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2047753869/2004161312879537304",
+          "center": {
+            "x": -5.5,
+            "y": 0.0,
+            "z": -6.0
+          },
+          "size": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2084860810/701606584901306669",
+          "center": {
+            "x": 6.5,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "size": {
+            "x": 3.0,
+            "y": 0.8,
+            "z": 0.3
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2105626026/4460185503380588202",
+          "center": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 2.0
+          },
+          "reveal": false
+        },
+        {
+          "sourceId": "2138640646/701606584901306669",
+          "center": {
+            "x": 7.0,
+            "y": 0.0,
+            "z": -3.5
+          },
+          "size": {
+            "x": 0.3,
+            "y": 0.8,
+            "z": 3.0
+          },
+          "reveal": false
+        }
+      ]
+    }
+  ]
+}

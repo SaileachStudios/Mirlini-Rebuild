@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3818d64c4f09464f8e27c14a77df019d, type: 3}
+  m_Name: Representative Campaign
+  m_EditorClassIdentifier: Mirlini.Runtime::SaileachStudios.Mirlini.Board.LevelCampaign
+  Levels:
+  - {fileID: 11400000, guid: e9a3b7bf9de676f48a09ecb263f7168e, type: 2}
+  - {fileID: 11400000, guid: d46a2b2ea72630e45a670e19e60ba786, type: 2}
+  - {fileID: 11400000, guid: a869679c883d8b9428af487813542f4e, type: 2}
+  - {fileID: 11400000, guid: 656a71349be34e641ad5f1c18b9faeb6, type: 2}
+  - {fileID: 11400000, guid: 6940fbe6d6f24ba49b553b2aa58997f6, type: 2}
+  - {fileID: 11400000, guid: 25b8cc39b5b3fc14eb9e5392cb709d54, type: 2}
+  - {fileID: 11400000, guid: 20edcbd1cb7d49c41b3cd61f7dd07096, type: 2}
+  - {fileID: 11400000, guid: 3233559dcfac23d4eae06818744d2dea, type: 2}
+  - {fileID: 11400000, guid: db8b16ea72bda1a4bad3f524379988ce, type: 2}
+  - {fileID: 11400000, guid: aeac56323edb1f94aaec29992bf992f5, type: 2}
+  - {fileID: 11400000, guid: 3e5e86cdd2c8fe441aeea6403cb4f3ab, type: 2}
