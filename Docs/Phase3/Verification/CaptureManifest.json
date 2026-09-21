@@ -1,0 +1,371 @@
+{
+  "directory": "C:\\Users\\coyot\\Documents\\ChatGPT\\Jessica\\Phase3\\Review",
+  "captures": [
+    {
+      "file": "Level-01.png",
+      "sha256": "af0af9fa7e5fecd0735178fb548c383fe4d381e40955af22835aeec01b8ad7ea",
+      "bytes": 1550000,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-02.png",
+      "sha256": "7c9059061c445af9538e58105acd0c03dd81a701b4090810b6a9ec93ceee239a",
+      "bytes": 1526081,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-03.png",
+      "sha256": "1a9c8a005f3015825d26dd472de65aca4c998e4a46f0019c493bc2fbb7f27901",
+      "bytes": 1526235,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-04.png",
+      "sha256": "e97f956b8d87eb6b7a48c37c7905013acd9f473aa62151bbd8562ccde28ca21e",
+      "bytes": 1526712,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-05.png",
+      "sha256": "e74ac3c3889d1af04e86312a77a15df06f56181b24dfd44e0277b5759fb21ed5",
+      "bytes": 1524648,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-06.png",
+      "sha256": "019b81277db0ba146f01d0290d9cef29df45b0b3b89a1fbbdd513b681dd65c42",
+      "bytes": 1551836,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-07.png",
+      "sha256": "2c184b893bf5f9bde089463790f89cba78117abaeae1f7e99cb743af4ad80d10",
+      "bytes": 1534074,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-08.png",
+      "sha256": "e0a5ec4baadc70cf8af72f5aec27ccc48eff7881e5afeca741d2d55916e50f66",
+      "bytes": 1532726,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-09.png",
+      "sha256": "e6ae3495673dd278d660a5cb795fdc20672f9cfa56fa7432617e4300f6966478",
+      "bytes": 1537882,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-10.png",
+      "sha256": "0952007d0d36ca4f3e12964d5c85e4259a13283fcbcf66ddd5f9802dfe319b3a",
+      "bytes": 164868,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-11.png",
+      "sha256": "d6c1efe83ae1c0b591bb111830133b7e02d0eed4301c37e437d78252e109fabd",
+      "bytes": 117478,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-12.png",
+      "sha256": "79b3b6a1ac0ecd770cb83836510f15f894d9484c08dafed2f87d51f0ab1a8771",
+      "bytes": 1531942,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-13.png",
+      "sha256": "0aed3c10f34c529903e51356d9c212f27932cd38c714681483d027202c3aaa81",
+      "bytes": 1536062,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-14.png",
+      "sha256": "f27f7a5bafbccedc1f89c3439b5b6bfb5ae4ba0482a817d509a824dc77f94ed1",
+      "bytes": 163664,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-15-layout-diagnostic.png",
+      "sha256": "6e90d46cdfec7adb986e85206c9ae9416b90f132f6e54a20f9253238f4629405",
+      "bytes": 1551488,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-15.png",
+      "sha256": "ee0558fcdcd6a563c848cc135a29f6321b100fd04c55e01346e86e5650fa46fe",
+      "bytes": 1549999,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-16-layout-diagnostic.png",
+      "sha256": "322f56a07ad9a62a7a080bfc0956704e3c350811acedcfa584e9e1754cdcbdb7",
+      "bytes": 1534044,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-16.png",
+      "sha256": "6d779ae153ee01b996d4cbf4fe5a8f4983be7a22cbf39438d6cc2b7fc5d5f367",
+      "bytes": 1550190,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-17.png",
+      "sha256": "2a448e2f635fbbc992149e20d98addf71c74e1292e301454b753e736d78d084f",
+      "bytes": 1528773,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-18.png",
+      "sha256": "d89f8e6d2fae64e778a673014f4d4ab194a8610d360a91b8e1a69898e1b49626",
+      "bytes": 1536922,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-19.png",
+      "sha256": "40cc910888f267c3b771802ebe8ed4942a4cb55af456223bb16a890ac7dc04b7",
+      "bytes": 120481,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-20-layout-diagnostic.png",
+      "sha256": "d3469bb6e840c13ad6e19d20230c1b478d950641b1901ea4e63dff4637892770",
+      "bytes": 1529979,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-20.png",
+      "sha256": "3134469bcf5cf844f1296914f4b36e5897af2d955ee0ac821f46a8f65eb86d18",
+      "bytes": 1550229,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-21.png",
+      "sha256": "c5710c2f67c899ea3ebad405cdd6fcf832f6d76e77d88161807572cf7c4d060e",
+      "bytes": 165921,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-22.png",
+      "sha256": "2f9e2556602076cd1e25ed0973e201c6b5e303384cf46ecb56e03e23ff396937",
+      "bytes": 1533420,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-23.png",
+      "sha256": "d2401abf1f5519f4e924a80400fc793eaf6b1b4bf4ae2ba2d8ad71a109a59d89",
+      "bytes": 1535991,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-24.png",
+      "sha256": "39d8904bf8f6cc38322a7507d402b8923049986253567c57cbde7ee2a9ca8852",
+      "bytes": 115687,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-25-layout-diagnostic.png",
+      "sha256": "490c9e857e3afcf07dba439521a64b5cce5063b2ea2e5eb32be56b9425e13760",
+      "bytes": 1536997,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-25.png",
+      "sha256": "b3c8879aae652442f8d67c0b7240589f4c333046ad9db1a9abcd4f027ccae2bd",
+      "bytes": 1550012,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-26.png",
+      "sha256": "66d686e7098aea64a3e61539d664e2dd25d1a3eedd068debf110f260d492ba6f",
+      "bytes": 148224,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-27-layout-diagnostic.png",
+      "sha256": "8b34d2fe4495d362e322f2f24742c6d835933ad393d3a54bcfd2e67c81e0cd57",
+      "bytes": 1528415,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-27.png",
+      "sha256": "94713f6ad0e79648cabc874efdeb0380b8485d5f2b5c25d37a9797c04300778f",
+      "bytes": 1552007,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-28.png",
+      "sha256": "6fb52cc4ad680d1beec193ede650de36a3c2ae9908c365be914b866520bb215a",
+      "bytes": 1533421,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-29.png",
+      "sha256": "d292f25c62af1281a8e6a0cce84c5363405ab5c09046aeda3a7c0d59d503ecad",
+      "bytes": 1534665,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-30.png",
+      "sha256": "7e6b794fdd9db0694f8d161c9b9c97caed1a2184777867896ea1e9f4f0e4b72b",
+      "bytes": 161590,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-31-layout-diagnostic.png",
+      "sha256": "38d99684ab31f7310fc5716314c4ef486decc11fc6a180790391860ebf8087be",
+      "bytes": 1527318,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-31.png",
+      "sha256": "b60d82f278d42b815dbf6f554e7b41487cacd610349614325d91e0f6eb0dd0df",
+      "bytes": 1550338,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-32.png",
+      "sha256": "fede53a1e41a419e0e4f4fcc7d9649d1c9f8726de6172c50eb19b75c49177d8f",
+      "bytes": 146998,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-33-layout-diagnostic.png",
+      "sha256": "1276aa336225d5553523b1699968fb85dc875a856ada04d8cd17cf2c98cd4856",
+      "bytes": 1532211,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-33.png",
+      "sha256": "0ea13e4b49eec3a7140a6223ba4b67def410309092a736c406ded41b3c6dc648",
+      "bytes": 1552137,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-34.png",
+      "sha256": "fe62dc28dcf161da132c1f7ff68a24c2ab01fb17c2a7140c2761158c76d8f955",
+      "bytes": 1534903,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-35.png",
+      "sha256": "df02b97d784896dc025a68bdc60187be361d24e0ccae17e26423c3138dfc5d87",
+      "bytes": 1535589,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-36.png",
+      "sha256": "d0ebd6153748c6be31bdba2aa1fd84b0527e41309f61bdec26110f5ecc253053",
+      "bytes": 121168,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-37-layout-diagnostic.png",
+      "sha256": "538bb261c09a1ef48767583baeec0cc63ea59b1954fe846a190c592ecbb7b994",
+      "bytes": 1525516,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-37.png",
+      "sha256": "b9c2fc73c6032a7f310944d9a5d95628d8f4b94db3c7ca79c2f2130171556c51",
+      "bytes": 1550238,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-38.png",
+      "sha256": "8fcf1684ed1d4df8545af816eee2427f2c263b5c07e5c5174ddab40d33f6105d",
+      "bytes": 120778,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-39-layout-diagnostic.png",
+      "sha256": "c01358cbc3219ccaa935a58e5e5e61ca89d39783c4273c7958bc8ec854a68a07",
+      "bytes": 1536158,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-39.png",
+      "sha256": "1cee066f21669d3b011e747e43ac74683184741edf89596164750d9ef8ca1b1e",
+      "bytes": 1551815,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-40.png",
+      "sha256": "96ce60419642a1cee10b46ef95213f5312664a031c99637cb053b6377ab1989f",
+      "bytes": 1533718,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-41.png",
+      "sha256": "7ff5c10ec0a192e2d7727ac129d9cf178a8e99d90a5600f7666951095077d2c3",
+      "bytes": 1532227,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-42.png",
+      "sha256": "1f81cfbceb3571823ffff7b9ad888759b23c6831a9736158977fae45d930c5dd",
+      "bytes": 114880,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-43-layout-diagnostic.png",
+      "sha256": "e3aa738b8ac2ec492b55a348c861ef07564f5d6e17919543947d4d984f83e327",
+      "bytes": 1530608,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-43.png",
+      "sha256": "7752fa73e4684d34e222f8d1ac98609ff5de59e7d63ba0bc51db28ab0d935761",
+      "bytes": 1550274,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-44.png",
+      "sha256": "de5361e9c7cff37d8cf9299b1ba03f96699960701e2bffc922296ad95df0957e",
+      "bytes": 164649,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-45-layout-diagnostic.png",
+      "sha256": "8556bc54446d10a7842639ea815bbab722eb2a0d3177061998b3cf2b239368ec",
+      "bytes": 1530325,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-45.png",
+      "sha256": "6a634828c2a7ad41353c4a04d4bdb38350b1c6e09d1bab300e05092977119d7b",
+      "bytes": 1551599,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-46.png",
+      "sha256": "c052eab5daa8b477edbcfde80193b36bdb4ad947a01c8e26e8aa7e7bfcc1a3cb",
+      "bytes": 1494701,
+      "visuallyReviewed": false
+    },
+    {
+      "file": "Level-47.png",
+      "sha256": "d617ace4f79891a129c73829fc13db19309a70b3be9e15f9a2406c25f318960d",
+      "bytes": 1493604,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-48.png",
+      "sha256": "8eaa677b19782fd12a221b6e7634c215b3e37c272b28041d98d3c3ad5b744301",
+      "bytes": 1495422,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-49.png",
+      "sha256": "40328ea622bff0584baab7e30c1c8644e2f67c831f65da3e1a0883c5350abade",
+      "bytes": 1496676,
+      "visuallyReviewed": true
+    },
+    {
+      "file": "Level-50.png",
+      "sha256": "04e53606689e4cae52ecdc1d9c928e11067d59af5c83ceefae69536cff3de57f",
+      "bytes": 1494877,
+      "visuallyReviewed": true
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "assets": [
+    {
+      "path": "Assets/Levels/Production/Level 01.asset",
+      "sha256": "15459819db092c9b7c5f00b5fb9ccdad1b7236a8ee7593f51c4b028d41cb088f",
+      "id": "mirlini-303494f6733fbaf449734261e9b1f7fd",
+      "guid": "e9a3b7bf9de676f48a09ecb263f7168e"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 01.asset.meta",
+      "sha256": "730642b312174b0b4f68617135e4b71ed125ba2c6b40ba3d0629e9d768a75ab5"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 06.asset",
+      "sha256": "4fd465be3fb78d5d2dc71706a1d8e00e726d807c17b3be6a7130ed883cef0d4d",
+      "id": "mirlini-001acc8bef215bf4082c4d80d9a739e7",
+      "guid": "d46a2b2ea72630e45a670e19e60ba786"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 06.asset.meta",
+      "sha256": "dfd8b9d5e9da2d2f98f1f602f2ae98c51579109d08d10da57669a691455bc61b"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 10.asset",
+      "sha256": "754c5035739385625159001cd24a3bb9a84544b419fce2767f1364d5cada36f3",
+      "id": "mirlini-56389b1445a03a64fb1212798d6737f7",
+      "guid": "a869679c883d8b9428af487813542f4e"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 10.asset.meta",
+      "sha256": "198d06e249121a35dba93f7f619aa55d7bc21a60b23cd1892ee3ff1fe844f26b"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 15.asset",
+      "sha256": "e647b4ac50a4af8118e5f7af23981c0a2186b0b720f77472cf61dc8de8ad5b87",
+      "id": "mirlini-f1a21044d0b793f46b416da77e9d455f",
+      "guid": "656a71349be34e641ad5f1c18b9faeb6"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 15.asset.meta",
+      "sha256": "23f84b8943e1219b490b0b4f75dc2b1b4f0d1350d403fc0125f48f48b5fb2aee"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 21.asset",
+      "sha256": "580313d491017e5783825c8ef4262f8b1a14f2713d325713c5917fefdcbd530a",
+      "id": "mirlini-7de5daece8dae6840887c891e46ff089",
+      "guid": "6940fbe6d6f24ba49b553b2aa58997f6"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 21.asset.meta",
+      "sha256": "7a9cf118ccf3d57d4fb70aae90ee4402e0f9c14e825ea782ad7d6b0797e0d323"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 27.asset",
+      "sha256": "75b7732a8d41df7ba0c9b4dab6323ca3f4c159a642f3ef2a20977f2e699062f7",
+      "id": "mirlini-e18db4eaf9743ab4689080b15fdba31b",
+      "guid": "25b8cc39b5b3fc14eb9e5392cb709d54"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 27.asset.meta",
+      "sha256": "b87c3fa46e1d4985cd6fb438d0f1cd80775d895fe077202f1c4dd0b3e2241772"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 29.asset",
+      "sha256": "e005a38c9dd2778e48994c9b802cac193bcb6e5bafc3d2ea6a610301d7f45e8c",
+      "id": "mirlini-8d727e922db66ed42b4734faa488e8ee",
+      "guid": "20edcbd1cb7d49c41b3cd61f7dd07096"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 29.asset.meta",
+      "sha256": "f5c83ccb1df7e9c8c17110aef1e5d3b3ee87531d93f6861c01d87826a38620bf"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 40.asset",
+      "sha256": "c6874f2539739b0dd35e26375fa841f8fb6affe185d4fd19b08f36fee2a55c7a",
+      "id": "mirlini-5a2f92b299ace994fb2d66d65f35dabe",
+      "guid": "3233559dcfac23d4eae06818744d2dea"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 40.asset.meta",
+      "sha256": "2aaece1861ce1a21a1c6348d854a981b09859874e8843ed374bc5b4ff8472ed8"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 45.asset",
+      "sha256": "7bdf22bb6a1daf390641f074e21bd627f3f70578118c2bf963bd76b3dfe62906",
+      "id": "mirlini-3d148de7a4aa6a94a930dc990ea502ad",
+      "guid": "db8b16ea72bda1a4bad3f524379988ce"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 45.asset.meta",
+      "sha256": "4d6bfa48e0ed539ede0cf65e411e73aca60e1b6c13c0e2ba66b1d063be27d833"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 46.asset",
+      "sha256": "7640b3b8fdc1550719dee4072ae8ebcfdb7ceac0832c1ab62f51ad77661d204b",
+      "id": "mirlini-e4cb8370053175744ba64e8bca66b6af",
+      "guid": "aeac56323edb1f94aaec29992bf992f5"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 46.asset.meta",
+      "sha256": "8e3fe73beb6ef2c3c0e6061934fe5076c99d84f549d41ab23afb3065cc7a929a"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 50.asset",
+      "sha256": "57c22ce57ba08a203f84dc6273cf0485e3985549d92916bfa633c2ae2b8755dd",
+      "id": "mirlini-48816a98512e05f48bce06b3286c19bb",
+      "guid": "3e5e86cdd2c8fe441aeea6403cb4f3ab"
+    },
+    {
+      "path": "Assets/Levels/Production/Level 50.asset.meta",
+      "sha256": "11def3d6eef994526eb38a0cf7e880b1558cb662993089d3c4da2845d0a4605a"
+    },
+    {
+      "path": "Assets/Levels/Representative Campaign.asset",
+      "sha256": "1b228986beb98fb468d91d8b2bd1a98d112051e78e6ded0ea5e8366f989d46d9"
+    },
+    {
+      "path": "Assets/Levels/Representative Campaign.asset.meta",
+      "sha256": "71c41f39ef5e7fb713d0a2281f5044eef5b84c044def773e6dd3424b688d0de1"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "unity": "6000.3.11f1",
+  "revision": "3000ef702840",
+  "baseline": "7c8ddea",
+  "verifiedOriginalSourceFiles": 216,
+  "firstImport": {
+    "new": 39,
+    "unchanged": 11
+  },
+  "repeatImport": {
+    "new": 0,
+    "changed": 0,
+    "unchanged": 50,
+    "byteStableLibraryFiles": 113
+  },
+  "unchangedRepresentativeFiles": 24,
+  "extractionSha256": "a0331d376a76487decfebe9a30779bc99bc088be29e89de9f0db06fdcf7f72b6",
+  "tests": {
+    "EditMode": {
+      "total": "104",
+      "passed": "104",
+      "failed": "0",
+      "skipped": "0",
+      "inconclusive": "0",
+      "duration": "4.0935185",
+      "start-time": "2026-09-21 23:23:23Z",
+      "end-time": "2026-09-21 23:23:27Z"
+    },
+    "PlayMode": {
+      "total": "21",
+      "passed": "21",
+      "failed": "0",
+      "skipped": "0",
+      "inconclusive": "0",
+      "duration": "13.2227328",
+      "start-time": "2026-09-21 23:24:26Z",
+      "end-time": "2026-09-21 23:24:40Z"
+    }
+  },
+  "distribution": {
+    "Normal": 17,
+    "Unlock": 9,
+    "Dark": 8,
+    "Reveal": 7,
+    "UnlockDark": 5,
+    "UnlockReveal": 4
+  },
+  "allLevelsNeedsCalibration": true,
+  "visualReviewLevels": 16,
+  "handsOnPlaythroughPerformed": false
+}
