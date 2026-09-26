@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="24" result="Passed" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-26 22:22:25Z" end-time="2026-09-26 22:22:49Z" duration="23.4979131">
+  <test-suite type="TestSuite" id="1033" name="Mirlini" fullname="Mirlini" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-09-26 22:22:25Z" end-time="2026-09-26 22:22:49Z" duration="23.497913" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1031" name="Mirlini.PlayModeTests.dll" fullname="C:/Users/coyot/Documents/Unity Projects/Github/Mirlini-Rebuild/Library/ScriptAssemblies/Mirlini.PlayModeTests.dll" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-09-26 22:22:25Z" end-time="2026-09-26 22:22:49Z" duration="23.489710" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="31804" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="FullCampaignRuntimeTests" fullname="FullCampaignRuntimeTests" classname="FullCampaignRuntimeTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-26 22:22:25Z" end-time="2026-09-26 22:22:30Z" duration="4.515408" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1002" name="FullCampaignConfiguresFiftyAttemptsAndStopsAtItsEnd" fullname="FullCampaignRuntimeTests.FullCampaignConfiguresFiftyAttemptsAndStopsAtItsEnd" methodname="FullCampaignConfiguresFiftyAttemptsAndStopsAtItsEnd" classname="FullCampaignRuntimeTests" runstate="Runnable" seed="1071377969" result="Passed" start-time="2026-09-26 22:22:25Z" end-time="2026-09-26 22:22:30Z" duration="4.502762" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Level completed. Routing progression through LevelEndFlowController.
+No additional levels are configured.
+]]></output>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1003" name="GameplayReadabilityTests" fullname="GameplayReadabilityTests" classname="GameplayReadabilityTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-26 22:22:30Z" end-time="2026-09-26 22:22:39Z" duration="9.936334" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1005" name="RevealHighlightSettlesAndReplayRemovesItWithoutChangingCollider" fullname="GameplayReadabilityTests.RevealHighlightSettlesAndReplayRemovesItWithoutChangingCollider" methodname="RevealHighlightSettlesAndReplayRemovesItWithoutChangingCollider" classname="GameplayReadabilityTests" runstate="Runnable" seed="1063571637" result="Passed" start-time="2026-09-26 22:22:30Z" end-time="2026-09-26 22:22:30Z" duration="0.569496" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1004" name="RingProgressResetCompletionAndReplayMatchAttempt" fullname="GameplayReadabilityTests.RingProgressResetCompletionAndReplayMatchAttempt" methodname="RingProgressResetCompletionAndReplayMatchAttempt" classname="GameplayReadabilityTests" runstate="Runnable" seed="1499718348" result="Passed" start-time="2026-09-26 22:22:30Z" end-time="2026-09-26 22:22:33Z" duration="3.102709" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1006" name="SharedMovementAcceleratesStopsAndKeepsAnalogInRealPhysics" fullname="GameplayReadabilityTests.SharedMovementAcceleratesStopsAndKeepsAnalogInRealPhysics" methodname="SharedMovementAcceleratesStopsAndKeepsAnalogInRealPhysics" classname="GameplayReadabilityTests" runstate="Runnable" seed="95678896" result="Passed" start-time="2026-09-26 22:22:33Z" end-time="2026-09-26 22:22:39Z" duration="6.262663" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[PHASE4_PHYSICS sample=0 speed=7.2059 releaseDistance=0.5309 reversalSeconds=0.080
+PHASE4_PHYSICS sample=1 speed=2.2729 releaseDistance=0.1265 reversalSeconds=0.060
+PHASE4_PHYSICS sample=2 speed=8.6452 releaseDistance=0.4004 reversalSeconds=0.080
+]]></output>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1007" name="LevelEndFlowControllerTests" fullname="LevelEndFlowControllerTests" classname="LevelEndFlowControllerTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-26 22:22:39Z" end-time="2026-09-26 22:22:40Z" duration="0.180787" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1008" name="CompletionLoadsNextConfiguredLevelOnce" fullname="LevelEndFlowControllerTests.CompletionLoadsNextConfiguredLevelOnce" methodname="CompletionLoadsNextConfiguredLevelOnce" classname="LevelEndFlowControllerTests" runstate="Runnable" seed="460355444" result="Passed" start-time="2026-09-26 22:22:39Z" end-time="2026-09-26 22:22:40Z" duration="0.062429" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Level completed. Routing progression through LevelEndFlowController.
+]]></output>
+        </test-case>
+        <test-case id="1009" name="DisabledFlowDoesNotReceiveCompletion" fullname="LevelEndFlowControllerTests.DisabledFlowDoesNotReceiveCompletion" methodname="DisabledFlowDoesNotReceiveCompletion" classname="LevelEndFlowControllerTests" runstate="Runnable" seed="337230758" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.059093" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1010" name="ReenabledFlowReceivesOnlyOneSubscription" fullname="LevelEndFlowControllerTests.ReenabledFlowReceivesOnlyOneSubscription" methodname="ReenabledFlowReceivesOnlyOneSubscription" classname="LevelEndFlowControllerTests" runstate="Runnable" seed="856145801" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.058056" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Level completed. Routing progression through LevelEndFlowController.
+]]></output>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1011" name="LevelManagerValidationTests" fullname="LevelManagerValidationTests" classname="LevelManagerValidationTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.223880" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1013" name="InvalidIndexCannotMutateLevel" fullname="LevelManagerValidationTests.InvalidIndexCannotMutateLevel" methodname="InvalidIndexCannotMutateLevel" classname="LevelManagerValidationTests" runstate="Runnable" seed="1097337520" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.054912" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Invalid level index or missing level list.
+]]></output>
+        </test-case>
+        <test-case id="1015" name="MissingGoalFailsWithoutPartialSetup" fullname="LevelManagerValidationTests.MissingGoalFailsWithoutPartialSetup" methodname="MissingGoalFailsWithoutPartialSetup" classname="LevelManagerValidationTests" runstate="Runnable" seed="1928161187" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.055082" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Marble and goal references must be distinct and assigned.
+]]></output>
+        </test-case>
+        <test-case id="1014" name="MissingWallReferenceFailsBeforeChangingMarbleOrIndex" fullname="LevelManagerValidationTests.MissingWallReferenceFailsBeforeChangingMarbleOrIndex" methodname="MissingWallReferenceFailsBeforeChangingMarbleOrIndex" classname="LevelManagerValidationTests" runstate="Runnable" seed="1508739278" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.054942" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Wall references must be assigned and unique.
+]]></output>
+        </test-case>
+        <test-case id="1012" name="SetupUsesCurrentGoalTransformBeforeNextPhysicsStep" fullname="LevelManagerValidationTests.SetupUsesCurrentGoalTransformBeforeNextPhysicsStep" methodname="SetupUsesCurrentGoalTransformBeforeNextPhysicsStep" classname="LevelManagerValidationTests" runstate="Runnable" seed="1086363896" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.057531" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1016" name="MarbleBehaviourTests" fullname="MarbleBehaviourTests" classname="MarbleBehaviourTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.554839" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1020" name="AnimatedFailureRemainsPausedUntilFullyPlayable" fullname="MarbleBehaviourTests.AnimatedFailureRemainsPausedUntilFullyPlayable" methodname="AnimatedFailureRemainsPausedUntilFullyPlayable" classname="MarbleBehaviourTests" runstate="Runnable" seed="1437078981" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.165314" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1023" name="DisabledMarbleAndTiltDetachFromPersistentEvents" fullname="MarbleBehaviourTests.DisabledMarbleAndTiltDetachFromPersistentEvents" methodname="DisabledMarbleAndTiltDetachFromPersistentEvents" classname="MarbleBehaviourTests" runstate="Runnable" seed="392155764" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.056153" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1018" name="DuplicateHoleEntryCannotOverwriteAcceptedOutcome" fullname="MarbleBehaviourTests.DuplicateHoleEntryCannotOverwriteAcceptedOutcome" methodname="DuplicateHoleEntryCannotOverwriteAcceptedOutcome" classname="MarbleBehaviourTests" runstate="Runnable" seed="177179826" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.105318" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1019" name="FailureGrowthPreservesExternalPauseAndAttempt" fullname="MarbleBehaviourTests.FailureGrowthPreservesExternalPauseAndAttempt" methodname="FailureGrowthPreservesExternalPauseAndAttempt" classname="MarbleBehaviourTests" runstate="Runnable" seed="437541175" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.058866" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1021" name="HelpIsGatedAndDoesNotRestartAttempt" fullname="MarbleBehaviourTests.HelpIsGatedAndDoesNotRestartAttempt" methodname="HelpIsGatedAndDoesNotRestartAttempt" classname="MarbleBehaviourTests" runstate="Runnable" seed="345953446" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.055915" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1017" name="RealSceneStartupExplicitlyStartsMarble" fullname="MarbleBehaviourTests.RealSceneStartupExplicitlyStartsMarble" methodname="RealSceneStartupExplicitlyStartsMarble" classname="MarbleBehaviourTests" runstate="Runnable" seed="850226921" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.054335" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1022" name="SustainedBlockedInputNeverRespawnsAutomatically" fullname="MarbleBehaviourTests.SustainedBlockedInputNeverRespawnsAutomatically" methodname="SustainedBlockedInputNeverRespawnsAutomatically" classname="MarbleBehaviourTests" runstate="Runnable" seed="188142631" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:40Z" duration="0.057293" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1024" name="ProductionFeatureTests" fullname="ProductionFeatureTests" classname="ProductionFeatureTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:49Z" duration="8.076434" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1025" name="AllRepresentativesBuildCorrectWallStatesWithoutMutatingAssets" fullname="ProductionFeatureTests.AllRepresentativesBuildCorrectWallStatesWithoutMutatingAssets" methodname="AllRepresentativesBuildCorrectWallStatesWithoutMutatingAssets" classname="ProductionFeatureTests" runstate="Runnable" seed="793559735" result="Passed" start-time="2026-09-26 22:22:40Z" end-time="2026-09-26 22:22:41Z" duration="0.263651" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1027" name="LockedGoalTriggerRecoversWithinTheSameAttempt" fullname="ProductionFeatureTests.LockedGoalTriggerRecoversWithinTheSameAttempt" methodname="LockedGoalTriggerRecoversWithinTheSameAttempt" classname="ProductionFeatureTests" runstate="Runnable" seed="1884675887" result="Passed" start-time="2026-09-26 22:22:41Z" end-time="2026-09-26 22:22:41Z" duration="0.394243" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1026" name="RevealFiltersCollisionAndSurvivesRecoveryAndHelpUntilReplay" fullname="ProductionFeatureTests.RevealFiltersCollisionAndSurvivesRecoveryAndHelpUntilReplay" methodname="RevealFiltersCollisionAndSurvivesRecoveryAndHelpUntilReplay" classname="ProductionFeatureTests" runstate="Runnable" seed="1472350030" result="Passed" start-time="2026-09-26 22:22:41Z" end-time="2026-09-26 22:22:41Z" duration="0.139571" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1028" name="RingFiltersNonMarbleAndResetsEarlyExit" fullname="ProductionFeatureTests.RingFiltersNonMarbleAndResetsEarlyExit" methodname="RingFiltersNonMarbleAndResetsEarlyExit" classname="ProductionFeatureTests" runstate="Runnable" seed="1519594503" result="Passed" start-time="2026-09-26 22:22:41Z" end-time="2026-09-26 22:22:42Z" duration="0.530780" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1029" name="UnlockAndDarkPersistUntilNewAttemptAndLightingRestores" fullname="ProductionFeatureTests.UnlockAndDarkPersistUntilNewAttemptAndLightingRestores" methodname="UnlockAndDarkPersistUntilNewAttemptAndLightingRestores" classname="ProductionFeatureTests" runstate="Runnable" seed="1333489050" result="Passed" start-time="2026-09-26 22:22:42Z" end-time="2026-09-26 22:22:44Z" duration="2.373901" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1030" name="UnlockAndRevealConfigureIndependently" fullname="ProductionFeatureTests.UnlockAndRevealConfigureIndependently" methodname="UnlockAndRevealConfigureIndependently" classname="ProductionFeatureTests" runstate="Runnable" seed="2034646284" result="Passed" start-time="2026-09-26 22:22:44Z" end-time="2026-09-26 22:22:49Z" duration="4.372720" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: C:\Users\coyot\Documents\ChatGPT\Jessica\Phase4\play-reviewed.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

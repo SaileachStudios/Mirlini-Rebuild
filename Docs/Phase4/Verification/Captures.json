@@ -1,0 +1,38 @@
+[
+  {
+    "file": "Captures/07-progress.png",
+    "sha256": "c0c3abc74a8bf55599d9b717a843eea0d0ca29d43e3e1b939b0423a01b7c1880"
+  },
+  {
+    "file": "Captures/07-reset.png",
+    "sha256": "334b54a7f92326532e80d0226f02de58f16b87f5c162a39328c031ed1cd78222"
+  },
+  {
+    "file": "Captures/07-complete.png",
+    "sha256": "b5697933313c32bb7bb9ee423943d130a56e592adf9a4c770fefa2372eda3e78"
+  },
+  {
+    "file": "Captures/16-discovery.png",
+    "sha256": "b39f62f105a6c74bbede046072b5e2a9d49a2742949141b31d247aaf2db948c2"
+  },
+  {
+    "file": "Captures/16-settled.png",
+    "sha256": "6bfd60ce08133cc62e438a7ec16fb2f7205d11f0a8370cb9dbd1726e5a433011"
+  },
+  {
+    "file": "Captures/Level-11.png",
+    "sha256": "7f66575249a0ba2eb17621e03ff62eef04b765fc33f59ffa6c4aef34a9d3d4a7"
+  },
+  {
+    "file": "Captures/Level-26.png",
+    "sha256": "3a784f84a06b60f0491a47cefb89f11dc4e39fc8fcfc233ae62baba6a63a96cb"
+  },
+  {
+    "file": "Captures/Level-48.png",
+    "sha256": "c068b948c4351d9384c2bfd6bf5af95fc82502c5e7ba0dd43eb7f4829d0b2da6"
+  },
+  {
+    "file": "Captures/Level-50.png",
+    "sha256": "420734acd81a685c95610e4821f5cf7a5d26f4f697a35a28e0b2b094a0910464"
+  }
+]

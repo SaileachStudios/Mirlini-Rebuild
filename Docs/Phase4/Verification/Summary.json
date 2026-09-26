@@ -1,0 +1,33 @@
+{
+  "unity": "6000.3.11f1",
+  "baseline": "2b57cc5",
+  "humanPlaytest": "User reports abrupt stopping and confusing offset goal marker; per-level ratings and acceptance pending",
+  "unchangedContentFiles": 102,
+  "tests": {
+    "EditMode": {
+      "total": "109",
+      "passed": "109",
+      "failed": "0",
+      "skipped": "0",
+      "inconclusive": "0",
+      "duration": "4.614438",
+      "start-time": "2026-09-26 22:17:37Z",
+      "end-time": "2026-09-26 22:17:42Z"
+    },
+    "PlayMode": {
+      "total": "24",
+      "passed": "24",
+      "failed": "0",
+      "skipped": "0",
+      "inconclusive": "0",
+      "duration": "23.4979131",
+      "start-time": "2026-09-26 22:22:25Z",
+      "end-time": "2026-09-26 22:22:49Z"
+    }
+  },
+  "controlledPhysicsMeasurements": [
+    "PHASE4_PHYSICS sample=0 speed=7.2059 releaseDistance=0.5309 reversalSeconds=0.080",
+    "PHASE4_PHYSICS sample=1 speed=2.2729 releaseDistance=0.1265 reversalSeconds=0.060",
+    "PHASE4_PHYSICS sample=2 speed=8.6452 releaseDistance=0.4004 reversalSeconds=0.080"
+  ]
+}
