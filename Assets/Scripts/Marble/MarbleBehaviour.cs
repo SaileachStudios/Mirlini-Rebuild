@@ -7,10 +7,7 @@ namespace SaileachStudios.Mirlini.Marble
     [RequireComponent(typeof(Rigidbody), typeof(SphereCollider))]
     public class MarbleBehaviour : MonoBehaviour
     {
-        [SerializeField] private float speed = 5f;
-        [SerializeField] private float accelerationRate = 5f;
         [SerializeField] private float shrinkDuration = 1f;
-        [SerializeField] private float maxSpeed = 10f;
         private Rigidbody rb;
         private MarbleController controller;
         private BallStateMachine stateMachine;
@@ -39,7 +36,11 @@ namespace SaileachStudios.Mirlini.Marble
             rb = GetComponent<Rigidbody>();
             initialScale = transform.localScale;
             rb.isKinematic = true; // inert until the level has explicitly supplied its start
-            controller = new MarbleController(speed, accelerationRate);
+            var feel = GameplayFeel.Load();
+            controller = new MarbleController(feel);
+            rb.linearDamping = feel.LinearDamping;
+            rb.interpolation = RigidbodyInterpolation.Interpolate;
+            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             stateMachine = new BallStateMachine();
         }
         private void OnEnable() { Bind(GameManagerBehavior.Instance); }
@@ -79,11 +80,7 @@ namespace SaileachStudios.Mirlini.Marble
         private void OnPlayerInput(bool isPaused, Vector2 input) {
             if (rb == null || controller == null) return;
             if (isPaused || CurrentState != BallState.Playing) { if (!rb.isKinematic) ClearVelocity(); return; }
-            controller.CalculateTargetVelocity(input);
-            Vector3 force = controller.CalculateForceToReachTarget(rb.linearVelocity);
-            Vector3 velocity = rb.linearVelocity + force * Time.fixedDeltaTime;
-            Vector3 horizontal = Vector3.ClampMagnitude(new Vector3(velocity.x, 0f, velocity.z), maxSpeed);
-            rb.linearVelocity = new Vector3(horizontal.x, rb.linearVelocity.y, horizontal.z);
+            rb.linearVelocity = controller.Step(rb.linearVelocity, input, Time.fixedDeltaTime);
         }
         public void OnMarbleDropped(bool isCorrect, Vector3 holeLocation) { TryEnterHole(isCorrect, holeLocation); }
         public bool TryEnterHole(bool isCorrect, Vector3 holeLocation) {

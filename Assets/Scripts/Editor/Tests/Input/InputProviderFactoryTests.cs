@@ -13,7 +13,7 @@ public class InputProviderFactoryTests
         var inputProvider = factory.Create();
 
         Assert.IsInstanceOf<KeyboardInputProvider>(inputProvider);
-        Assert.AreEqual(100f, inputProvider.GetSpeedModifier());
+        Assert.AreEqual(SaileachStudios.Mirlini.Core.GameplayFeel.Load().KeyboardMultiplier, inputProvider.GetSpeedModifier());
     }
 
     [Test]
@@ -26,7 +26,7 @@ public class InputProviderFactoryTests
 
 
         Assert.IsInstanceOf<TouchInputProvider>(inputProvider);
-        Assert.AreEqual(0.2f, inputProvider.GetSpeedModifier());
+        Assert.AreEqual(SaileachStudios.Mirlini.Core.GameplayFeel.Load().TouchMultiplier, inputProvider.GetSpeedModifier());
     }
 
     [Test]
@@ -39,6 +39,6 @@ public class InputProviderFactoryTests
 
 
         Assert.IsInstanceOf<GyroInputProvider>(inputProvider);
-        Assert.AreEqual(2f, inputProvider.GetSpeedModifier());
+        Assert.AreEqual(SaileachStudios.Mirlini.Core.GameplayFeel.Load().GyroMultiplier, inputProvider.GetSpeedModifier());
     }
 }

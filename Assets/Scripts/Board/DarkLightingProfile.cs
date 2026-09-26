@@ -5,11 +5,12 @@ namespace SaileachStudios.Mirlini.Board {
         public float Height = 6f * BoardGrid.CellSize;
         public float Range = 21.45f * BoardGrid.CellSize;
         public float SpotAngle = 46.6f;
+        public float InnerSpotAngle = 4f;
         public float Intensity = 3f;
         public Color Color = Color.white;
         public bool IsValid => BoardGrid.IsFinite(Height) && Height > 0 &&
             BoardGrid.IsFinite(Range) && Range > Height && BoardGrid.IsFinite(SpotAngle) &&
-            SpotAngle > 0 && SpotAngle < 179 && BoardGrid.IsFinite(Intensity) && Intensity > 0 &&
+            SpotAngle > 0 && SpotAngle < 179 && BoardGrid.IsFinite(InnerSpotAngle) && InnerSpotAngle>=0 && InnerSpotAngle<=SpotAngle && BoardGrid.IsFinite(Intensity) && Intensity > 0 &&
             BoardGrid.IsFinite(Color.r) && BoardGrid.IsFinite(Color.g) && BoardGrid.IsFinite(Color.b) && BoardGrid.IsFinite(Color.a);
     }
 }

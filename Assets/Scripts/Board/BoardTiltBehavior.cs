@@ -5,12 +5,10 @@ namespace SaileachStudios.Mirlini.Board
 {
     public class BoardTiltBehavior : MonoBehaviour
     {
-        [SerializeField] private float maxTiltAngle = 10f;
-        [SerializeField] private float tiltSpeed = 5f;
         private BoardTiltController controller;
         private GameManagerBehavior manager;
         private GameEvents subscribedEvents;
-        private void Awake() { controller = new BoardTiltController(maxTiltAngle, tiltSpeed); }
+        private void Awake() { var feel=GameplayFeel.Load();controller = new BoardTiltController(feel.TiltDegrees, feel.TiltResponse); }
         private void OnEnable() {
             manager = GameManagerBehavior.Instance;
             if (manager == null) return;

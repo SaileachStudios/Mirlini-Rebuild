@@ -15,7 +15,7 @@ namespace SaileachStudios.Mirlini.Board {
         private Color ambientColor;
         private float ambientIntensity,reflectionIntensity;
         private bool lightingCaptured;
-        private Material ringMaterial;
+
         public void Configure(LevelData data,GameObject[] walls,MarbleBehaviour ball,HoleBehavior goal) {
             RestoreLighting();marble=ball;dark=data.Dark;Attempt=new LevelAttempt(data.Unlock.Enabled);
             for(int i=0;i<walls.Length;i++) {
@@ -25,6 +25,7 @@ namespace SaileachStudios.Mirlini.Board {
                 else foreach(var renderer in walls[i].GetComponentsInChildren<Renderer>(true)) renderer.enabled=true;
                 walls[i].SetActive(state!=WallState.Empty);
             }
+            if(goal.GetComponent<GoalPresentation>()==null) goal.gameObject.AddComponent<GoalPresentation>();
             goal.SetIsCorrectHole(Attempt.GoalUnlocked);
             if(data.Unlock.Enabled) {
                 if(Ring==null) CreateRing();
@@ -37,22 +38,16 @@ namespace SaileachStudios.Mirlini.Board {
                     var go=new GameObject("Marble spotlight");go.transform.SetParent(transform,false);Spotlight=go.AddComponent<Light>();
                 }
                 Spotlight.type=LightType.Spot;Spotlight.range=dark.Range;Spotlight.spotAngle=dark.SpotAngle;
-                Spotlight.innerSpotAngle=4;Spotlight.intensity=dark.Intensity;Spotlight.color=dark.Color;
+                Spotlight.innerSpotAngle=dark.InnerSpotAngle;Spotlight.intensity=dark.Intensity;Spotlight.color=dark.Color;
                 Spotlight.shadows=LightShadows.None;Spotlight.enabled=true;FollowMarble();
             } else if(Spotlight!=null) Spotlight.enabled=false;
         }
         private void CreateRing() {
             var go=new GameObject("Unlock ring");go.transform.SetParent(transform,false);
             go.SetActive(false);go.AddComponent<SphereCollider>();Ring=go.AddComponent<UnlockRingBehavior>();
-            var line=go.AddComponent<LineRenderer>();line.useWorldSpace=false;line.loop=true;line.positionCount=64;
-            line.widthMultiplier=.06f;
-            ringMaterial=new Material(Shader.Find("Sprites/Default"));
-            ringMaterial.color=Color.yellow;line.sharedMaterial=ringMaterial;
-            for(int i=0;i<64;i++) {
-                float angle=i*Mathf.PI*2/64;
-                line.SetPosition(i,new Vector3(Mathf.Cos(angle)*LevelMechanics.RingRadius,BoardGrid.FloorY+.03f,Mathf.Sin(angle)*LevelMechanics.RingRadius));
-            }
+            go.AddComponent<UnlockRingPresentation>();
         }
+
         private void CaptureLighting() {
             lightingCaptured=true;ambientMode=RenderSettings.ambientMode;ambientColor=RenderSettings.ambientLight;
             ambientIntensity=RenderSettings.ambientIntensity;reflectionIntensity=RenderSettings.reflectionIntensity;
@@ -76,6 +71,5 @@ namespace SaileachStudios.Mirlini.Board {
             Spotlight.transform.rotation=Quaternion.Euler(90,0,0);
         }
         private void OnDisable() { RestoreLighting();if(Spotlight!=null) Spotlight.enabled=false;if(Ring!=null) Ring.gameObject.SetActive(false); }
-        private void OnDestroy() { if(ringMaterial!=null) Destroy(ringMaterial); }
     }
 }

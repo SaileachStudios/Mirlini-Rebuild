@@ -15,13 +15,14 @@ namespace SaileachStudios.Mirlini.InputSystem
         }
 
         public IInputProvider Create() {
+            var feel = SaileachStudios.Mirlini.Core.GameplayFeel.Load();
             switch (platfromDetector.GetPlatform()) {
                 case Platform.mobile_with_touch:
-                    return new TouchInputProvider(inputWrapper, 0.2f);
+                    return new TouchInputProvider(inputWrapper, feel.TouchMultiplier);
                 case Platform.mobile_with_gyro:
-                    return new GyroInputProvider(inputWrapper, 2f);
+                    return new GyroInputProvider(inputWrapper, feel.GyroMultiplier);
                 default:
-                    return new KeyboardInputProvider(inputWrapper, 100f);
+                    return new KeyboardInputProvider(inputWrapper, feel.KeyboardMultiplier);
             }
         }
 

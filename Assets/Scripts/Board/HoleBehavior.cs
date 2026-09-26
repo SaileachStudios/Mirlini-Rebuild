@@ -25,6 +25,7 @@ namespace SaileachStudios.Mirlini.Board
             controller.SetAsCorrectHole(correct);
             correctIndicator.SetActive(correct);
             incorrectIndicator.SetActive(!correct);
+            GetComponent<GoalPresentation>()?.SetUnlocked(correct);
         }
         private void OnTriggerEnter(Collider other) {
             var marble = other.GetComponent<MarbleBehaviour>();

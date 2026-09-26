@@ -13,6 +13,7 @@ namespace SaileachStudios.Mirlini.Board {
             marble=ball;marbleCollider=ball.GetComponent<Collider>();attempt=activeAttempt;goal=hole;
             region=GetComponent<SphereCollider>();region.isTrigger=true;region.radius=LevelMechanics.RingRadius;
             occupied=false;
+            GetComponent<UnlockRingPresentation>()?.Bind(attempt);
         }
         private void OnTriggerEnter(Collider other) { if(other==marbleCollider) occupied=true; }
         private void OnTriggerStay(Collider other) { if(other==marbleCollider) occupied=true; }

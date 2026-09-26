@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d73b455f07e2483892abe6eb04ce0c7f, type: 3}
   m_Name: Shared Dark
   m_EditorClassIdentifier: Mirlini.Runtime::SaileachStudios.Mirlini.Board.DarkLightingProfile
-  Height: 10.799999
-  Range: 38.61
-  SpotAngle: 46.6
-  Intensity: 3
+  Height: 8
+  Range: 16
+  SpotAngle: 62
+  InnerSpotAngle: 32
+  Intensity: 1.6
   Color: {r: 1, g: 1, b: 1, a: 1}
